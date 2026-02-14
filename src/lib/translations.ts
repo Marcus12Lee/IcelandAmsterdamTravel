@@ -65,6 +65,9 @@ export const translations: Record<
     forecastSafeTipBody: string;
     forecastTipsTitle: string;
     forecastOfficialLinks: string;
+    viewTripPlans: string;
+    backToDashboard: string;
+    tripPlansPageTitle: string;
   }
 > = {
   en: {
@@ -129,6 +132,9 @@ export const translations: Record<
     forecastSafeTipBody: "Check weather and road status before leaving. In winter, daylight is short—plan driving in daylight when possible. Save the emergency number 112.",
     forecastTipsTitle: "Quick tips",
     forecastOfficialLinks: "Official links",
+    viewTripPlans: "View AMS & Iceland trip plans",
+    backToDashboard: "Back to dashboard",
+    tripPlansPageTitle: "Trip plans",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -192,6 +198,9 @@ export const translations: Record<
     forecastSafeTipBody: "出發前查天氣與路況。冬季日照短，盡量安排在白天開車。記下緊急電話 112。",
     forecastTipsTitle: "小提醒",
     forecastOfficialLinks: "官方連結",
+    viewTripPlans: "查看阿姆斯特丹與冰島行程",
+    backToDashboard: "返回主頁",
+    tripPlansPageTitle: "行程與景點",
   },
 };
 

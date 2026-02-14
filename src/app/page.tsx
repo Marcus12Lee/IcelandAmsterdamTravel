@@ -1,15 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { ItineraryTimeline } from "@/components/ItineraryTimeline";
 import { ForecastLinksSection } from "@/components/ForecastLinksSection";
 import { IcelandMap } from "@/components/IcelandMap";
 import { AmsterdamMap } from "@/components/AmsterdamMap";
-import { TripPlansSection } from "@/components/TripPlansSection";
 import { DriverInfoSection } from "@/components/DriverInfoSection";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
-import type { TripPlanGroup, TripPlanItem } from "@/types/itinerary";
 import { itinerary } from "@/data/itinerary";
 import { drivers } from "@/data/drivers";
 import { getIcelandRoute, getAmsterdamStops } from "@/lib/getIcelandRoute";
@@ -46,53 +45,14 @@ export default function DashboardPage() {
         <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
       </div>
 
-      <div className="mb-8 grid gap-6 lg:grid-cols-2">
-        <TripPlansSection
-          title={t("amsTripPlans")}
-          subtitle={t("amsTripPlansSubtitle")}
-          groups={
-            (() => {
-              const a = itinerary.amsTripPlans ?? [];
-              const first = a[0];
-              return a.length > 0 && typeof first === "object" && first !== null && "section" in first && "items" in first
-                ? (a as TripPlanGroup[])
-                : undefined;
-            })()
-          }
-          items={
-            (() => {
-              const a = itinerary.amsTripPlans ?? [];
-              const first = a[0];
-              return a.length === 0 || (typeof first === "object" && first !== null && "section" in first && "items" in first)
-                ? []
-                : (a as TripPlanItem[]);
-            })()
-          }
-          emptyMessage={t("emptyPlansHint")}
-        />
-        <TripPlansSection
-          title={t("icelandTripPlans")}
-          subtitle={t("icelandTripPlansSubtitle")}
-          groups={
-            (() => {
-              const a = itinerary.icelandTripPlans ?? [];
-              const first = a[0];
-              return a.length > 0 && typeof first === "object" && first !== null && "section" in first && "items" in first
-                ? (a as TripPlanGroup[])
-                : undefined;
-            })()
-          }
-          items={
-            (() => {
-              const a = itinerary.icelandTripPlans ?? [];
-              const first = a[0];
-              return a.length === 0 || (typeof first === "object" && first !== null && "section" in first && "items" in first)
-                ? []
-                : (a as TripPlanItem[]);
-            })()
-          }
-          emptyMessage={t("emptyPlansHint")}
-        />
+      <div className="mb-8">
+        <Link
+          href="/trip-plans"
+          className="flex items-center justify-center gap-2 rounded-2xl border border-ice-700/50 bg-ice-950/60 px-6 py-5 text-frost-white shadow-xl transition hover:border-glacier-mid/50 hover:bg-ice-900/70"
+        >
+          <span className="font-semibold">{t("viewTripPlans")}</span>
+          <span className="text-glacier-mid">→</span>
+        </Link>
       </div>
 
       <div className="mb-8">
