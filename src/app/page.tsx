@@ -4,12 +4,14 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 import { ItineraryTimeline } from "@/components/ItineraryTimeline";
 import { WeatherModule } from "@/components/WeatherModule";
 import { IcelandMap } from "@/components/IcelandMap";
+import { AmsterdamMap } from "@/components/AmsterdamMap";
 import { TripPlansSection } from "@/components/TripPlansSection";
 import { DriverInfoSection } from "@/components/DriverInfoSection";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
 import { itinerary } from "@/data/itinerary";
 import { drivers } from "@/data/drivers";
+import { getIcelandRoute, getAmsterdamStops } from "@/lib/getIcelandRoute";
 
 export default function DashboardPage() {
   const { t } = useLocale();
@@ -50,7 +52,10 @@ export default function DashboardPage() {
 
       <div className="mb-8 grid gap-6 lg:grid-cols-2">
         <WeatherModule />
-        <IcelandMap />
+        <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
+      </div>
+      <div className="mb-8">
+        <IcelandMap route={getIcelandRoute(itinerary.days)} />
       </div>
 
       <div className="mb-8">

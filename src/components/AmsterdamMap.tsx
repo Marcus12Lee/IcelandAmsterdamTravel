@@ -5,11 +5,6 @@ import dynamic from "next/dynamic";
 import { useLocale } from "@/context/LocaleContext";
 import type { RoutePoint } from "@/lib/getIcelandRoute";
 
-const DEFAULT_ROUTE: RoutePoint[] = [
-  { lat: 63.985, lng: -22.6056, label: "KEF Airport" },
-  { lat: 64.1466, lng: -21.9426, label: "Reykjavík" },
-];
-
 function MapLoadingPlaceholder() {
   const { t } = useLocale();
   return (
@@ -19,31 +14,26 @@ function MapLoadingPlaceholder() {
   );
 }
 
-const MapInner = dynamic(
-  () => import("./IcelandMapInner").then((m) => m.IcelandMapInner),
+const AmsterdamMapInner = dynamic(
+  () => import("./AmsterdamMapInner").then((m) => m.AmsterdamMapInner),
   { ssr: false, loading: () => <MapLoadingPlaceholder /> }
 );
 
-interface IcelandMapProps {
-  /** Route from itinerary (KEF + Iceland hotels). If empty or not provided, shows default KEF → Reykjavík. */
-  route?: RoutePoint[];
+interface AmsterdamMapProps {
+  points?: RoutePoint[];
 }
 
-export function IcelandMap({ route: routeProp }: IcelandMapProps) {
+export function AmsterdamMap({ points = [] }: AmsterdamMapProps) {
   const { t } = useLocale();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const route = routeProp && routeProp.length > 0 ? routeProp : DEFAULT_ROUTE;
-
   return (
     <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
-      <h2 className="mb-4 text-lg font-semibold text-white">{t("mapTitle")}</h2>
-      <p className="mb-3 text-sm text-frost-slate">
-        {t("mapDescription")}
-      </p>
+      <h2 className="mb-4 text-lg font-semibold text-white">{t("mapTitleAmsterdam")}</h2>
+      <p className="mb-3 text-sm text-frost-slate">{t("mapDescriptionAmsterdam")}</p>
       {mounted ? (
-        <MapInner route={route} />
+        <AmsterdamMapInner points={points} />
       ) : (
         <div className="flex min-h-[280px] items-center justify-center rounded-xl border border-ice-700/50 bg-ice-900/50 text-frost-slate">
           {t("loading")}

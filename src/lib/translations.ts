@@ -27,6 +27,8 @@ export const translations: Record<
     wind: string;
     mapTitle: string;
     mapDescription: string;
+    mapTitleAmsterdam: string;
+    mapDescriptionAmsterdam: string;
     amsTripPlans: string;
     amsTripPlansSubtitle: string;
     icelandTripPlans: string;
@@ -75,6 +77,8 @@ export const translations: Record<
     wind: "wind",
     mapTitle: "Iceland self-drive from KEF",
     mapDescription: "Route from Keflavík Airport. Add your daily stops in the itinerary data to see them here.",
+    mapTitleAmsterdam: "Amsterdam – Hotel",
+    mapDescriptionAmsterdam: "Hotel location in Amsterdam.",
     amsTripPlans: "AMS trip plans",
     amsTripPlansSubtitle: "Places and plans for Amsterdam (Feb 20–21, Mar 2–3)",
     icelandTripPlans: "Iceland trip plans",
@@ -121,6 +125,8 @@ export const translations: Record<
     wind: "風速",
     mapTitle: "冰島自駕路線（凱夫拉維克機場出發）",
     mapDescription: "從凱夫拉維克機場出發。在行程資料中新增每日停留點即可顯示於地圖。",
+    mapTitleAmsterdam: "阿姆斯特丹 – 住宿",
+    mapDescriptionAmsterdam: "阿姆斯特丹住宿地點。",
     amsTripPlans: "阿姆斯特丹行程",
     amsTripPlansSubtitle: "阿姆斯特丹景點與計畫（2/20–21、3/2–3）",
     icelandTripPlans: "冰島行程",
