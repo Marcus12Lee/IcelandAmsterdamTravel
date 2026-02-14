@@ -53,7 +53,8 @@ export default function DashboardPage() {
           groups={
             (() => {
               const a = itinerary.amsTripPlans ?? [];
-              return a.length > 0 && "section" in a[0] && "items" in a[0]
+              const first = a[0];
+              return a.length > 0 && typeof first === "object" && first !== null && "section" in first && "items" in first
                 ? (a as TripPlanGroup[])
                 : undefined;
             })()
@@ -61,7 +62,8 @@ export default function DashboardPage() {
           items={
             (() => {
               const a = itinerary.amsTripPlans ?? [];
-              return a.length === 0 || ("section" in a[0] && "items" in a[0])
+              const first = a[0];
+              return a.length === 0 || (typeof first === "object" && first !== null && "section" in first && "items" in first)
                 ? []
                 : (a as TripPlanItem[]);
             })()
@@ -74,7 +76,8 @@ export default function DashboardPage() {
           groups={
             (() => {
               const a = itinerary.icelandTripPlans ?? [];
-              return a.length > 0 && "section" in a[0] && "items" in a[0]
+              const first = a[0];
+              return a.length > 0 && typeof first === "object" && first !== null && "section" in first && "items" in first
                 ? (a as TripPlanGroup[])
                 : undefined;
             })()
@@ -82,7 +85,8 @@ export default function DashboardPage() {
           items={
             (() => {
               const a = itinerary.icelandTripPlans ?? [];
-              return a.length === 0 || ("section" in a[0] && "items" in a[0])
+              const first = a[0];
+              return a.length === 0 || (typeof first === "object" && first !== null && "section" in first && "items" in first)
                 ? []
                 : (a as TripPlanItem[]);
             })()
