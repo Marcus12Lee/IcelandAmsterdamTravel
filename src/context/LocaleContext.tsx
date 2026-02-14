@@ -5,7 +5,7 @@ import { translations, translateKeyDateLabel, type Locale } from "@/lib/translat
 
 const STORAGE_KEY = "iceland-travel-locale";
 
-type TFunc = (key: keyof (typeof translations)["en"]) => string;
+export type TFunc = (key: keyof (typeof translations)["en"]) => string;
 type TKeyDate = (label: string) => string;
 
 interface LocaleContextValue {

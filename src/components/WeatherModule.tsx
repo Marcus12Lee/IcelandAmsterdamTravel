@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLocale } from "@/context/LocaleContext";
+import { useLocale, type TFunc } from "@/context/LocaleContext";
 
 interface WeatherData {
   city: string;
@@ -15,7 +15,7 @@ interface WeatherData {
 
 const CITIES = ["Amsterdam", "Reykjavík"] as const;
 
-function WeatherCard({ city, t }: { city: string; t: (k: string) => string }) {
+function WeatherCard({ city, t }: { city: string; t: TFunc }) {
   const [data, setData] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
 

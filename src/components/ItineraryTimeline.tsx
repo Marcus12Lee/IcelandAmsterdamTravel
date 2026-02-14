@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "@/context/LocaleContext";
+import { useLocale, type TFunc } from "@/context/LocaleContext";
 import type { ItineraryDay, FlightEvent, ActivityEvent, DayEvent, DayHotel } from "@/types/itinerary";
 
 interface ItineraryTimelineProps {
@@ -16,7 +16,7 @@ function PlanHotelNotes({
   plan?: string | string[];
   hotel?: DayHotel;
   notes?: string | string[];
-  t: (k: string) => string;
+  t: TFunc;
 }) {
   const hasPlan = plan !== undefined && (Array.isArray(plan) ? plan.length > 0 : plan.trim() !== "");
   const hasHotel = hotel?.name?.trim() !== "";
@@ -85,7 +85,7 @@ function PlanHotelNotes({
   );
 }
 
-function RemindersBlock({ reminders, t }: { reminders: string | string[]; t: (k: string) => string }) {
+function RemindersBlock({ reminders, t }: { reminders: string | string[]; t: TFunc }) {
   const items = Array.isArray(reminders) ? reminders : [reminders];
   return (
     <div className="rounded-lg border border-amber-900/50 bg-amber-950/30 p-3 sm:p-4">
@@ -102,7 +102,7 @@ function RemindersBlock({ reminders, t }: { reminders: string | string[]; t: (k:
   );
 }
 
-function FlightBlock({ event, t }: { event: FlightEvent; t: (k: string) => string }) {
+function FlightBlock({ event, t }: { event: FlightEvent; t: TFunc }) {
   return (
     <div className="rounded-lg border border-ice-700/40 bg-ice-900/40 p-3 sm:p-4">
       <span className="text-xs font-semibold uppercase text-glacier-mid">{t("flight")}</span>
