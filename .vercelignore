@@ -1,0 +1,10 @@
+# Ignore docs and local-only files so Vercel upload is smaller/faster
+README.md
+DEPLOY.md
+*.md
+.git
+.cursor
+.idea
+.vscode
+node_modules
+.next
