@@ -35,6 +35,31 @@ export default function DashboardPage() {
         <ItineraryTimeline days={itinerary.days} />
       </div>
 
+      <div className="mb-8 grid gap-4 sm:grid-cols-2">
+        <Link
+          href="/trip-plans/ams"
+          className="group block rounded-2xl border border-glacier-mid/40 bg-[#002D52] px-6 py-5 text-left shadow-lg ring-1 ring-glacier-mid/20 transition hover:border-glacier-mid/60 hover:ring-glacier-mid/40"
+        >
+          <h3 className="text-xl font-bold text-white">{t("amsTripPlans")}</h3>
+          <p className="mt-1 text-sm text-white/90">{t("amsTripPlansSubtitle")}</p>
+          <span className="mt-4 inline-flex items-center gap-2 rounded-lg bg-glacier-mid/20 px-4 py-2 text-sm font-medium text-white group-hover:bg-glacier-mid/30">
+            {t("viewAmsTripPlans")}
+            <span className="text-glacier-light">→</span>
+          </span>
+        </Link>
+        <Link
+          href="/trip-plans/iceland"
+          className="group block rounded-2xl border border-glacier-mid/40 bg-[#002D52] px-6 py-5 text-left shadow-lg ring-1 ring-glacier-mid/20 transition hover:border-glacier-mid/60 hover:ring-glacier-mid/40"
+        >
+          <h3 className="text-xl font-bold text-white">{t("icelandTripPlans")}</h3>
+          <p className="mt-1 text-sm text-white/90">{t("icelandTripPlansSubtitle")}</p>
+          <span className="mt-4 inline-flex items-center gap-2 rounded-lg bg-glacier-mid/20 px-4 py-2 text-sm font-medium text-white group-hover:bg-glacier-mid/30">
+            {t("viewIcelandTripPlans")}
+            <span className="text-glacier-light">→</span>
+          </span>
+        </Link>
+      </div>
+
       <div className="mb-8">
         <ForecastLinksSection />
       </div>
@@ -46,21 +71,11 @@ export default function DashboardPage() {
       </div>
 
       <div className="mb-8">
-        <Link
-          href="/trip-plans"
-          className="flex items-center justify-center gap-2 rounded-2xl border border-ice-700/50 bg-ice-950/60 px-6 py-5 text-frost-white shadow-xl transition hover:border-glacier-mid/50 hover:bg-ice-900/70"
-        >
-          <span className="font-semibold">{t("viewTripPlans")}</span>
-          <span className="text-glacier-mid">→</span>
-        </Link>
-      </div>
-
-      <div className="mb-8">
         <DriverInfoSection drivers={drivers} />
       </div>
 
       <footer className="mt-10 border-t border-ice-800/60 pt-6 text-center text-sm text-frost-slate">
-        {t("footer")} <code className="rounded bg-ice-800/80 px-1">src/data/itinerary.ts</code>
+        {t("footer")}
       </footer>
     </main>
   );

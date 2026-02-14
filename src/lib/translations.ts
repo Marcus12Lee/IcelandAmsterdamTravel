@@ -66,6 +66,8 @@ export const translations: Record<
     forecastTipsTitle: string;
     forecastOfficialLinks: string;
     viewTripPlans: string;
+    viewAmsTripPlans: string;
+    viewIcelandTripPlans: string;
     backToDashboard: string;
     tripPlansPageTitle: string;
   }
@@ -106,7 +108,7 @@ export const translations: Record<
     icelandTripPlans: "Iceland trip plans",
     icelandTripPlansSubtitle: "Places and plans for Iceland (Feb 22 – Mar 1)",
     emptyPlansHint: "Add your plans and places in src/data/itinerary.ts",
-    footer: "Feb 19 – Mar 5 · Add hotel locations in",
+    footer: "Feb 19 – Mar 5",
     switchToChinese: "繁體中文",
     switchToEnglish: "English",
     keyDateFirstFlight: "First flight (TPE → HKG → AMS)",
@@ -133,6 +135,8 @@ export const translations: Record<
     forecastTipsTitle: "Quick tips",
     forecastOfficialLinks: "Official links",
     viewTripPlans: "View AMS & Iceland trip plans",
+    viewAmsTripPlans: "View AMS trip plans",
+    viewIcelandTripPlans: "View Iceland trip plans",
     backToDashboard: "Back to dashboard",
     tripPlansPageTitle: "Trip plans",
   },
@@ -172,7 +176,7 @@ export const translations: Record<
     icelandTripPlans: "冰島行程",
     icelandTripPlansSubtitle: "冰島景點與計畫（2/22 – 3/1）",
     emptyPlansHint: "在 src/data/itinerary.ts 新增你的計畫與地點",
-    footer: "2/19 – 3/5 · 住宿與行程編輯於",
+    footer: "2/19 – 3/5",
     switchToChinese: "繁體中文",
     switchToEnglish: "English",
     keyDateFirstFlight: "首班機（台北 → 香港 → 阿姆斯特丹）",
@@ -199,6 +203,8 @@ export const translations: Record<
     forecastTipsTitle: "小提醒",
     forecastOfficialLinks: "官方連結",
     viewTripPlans: "查看阿姆斯特丹與冰島行程",
+    viewAmsTripPlans: "查看阿姆斯特丹行程",
+    viewIcelandTripPlans: "查看冰島行程",
     backToDashboard: "返回主頁",
     tripPlansPageTitle: "行程與景點",
   },
