@@ -5,9 +5,11 @@ import { ItineraryTimeline } from "@/components/ItineraryTimeline";
 import { WeatherModule } from "@/components/WeatherModule";
 import { IcelandMap } from "@/components/IcelandMap";
 import { TripPlansSection } from "@/components/TripPlansSection";
+import { DriverInfoSection } from "@/components/DriverInfoSection";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
 import { itinerary } from "@/data/itinerary";
+import { drivers } from "@/data/drivers";
 
 export default function DashboardPage() {
   const { t } = useLocale();
@@ -49,6 +51,10 @@ export default function DashboardPage() {
       <div className="mb-8 grid gap-6 lg:grid-cols-2">
         <WeatherModule />
         <IcelandMap />
+      </div>
+
+      <div className="mb-8">
+        <DriverInfoSection drivers={drivers} />
       </div>
 
       <footer className="mt-10 border-t border-ice-800/60 pt-6 text-center text-sm text-frost-slate">

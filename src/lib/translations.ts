@@ -43,6 +43,11 @@ export const translations: Record<
     keyDateKefToAms2: string;
     keyDateReturnFlight: string;
     keyDateArriveTaipei: string;
+    driversTitle: string;
+    driversSubtitle: string;
+    driverName: string;
+    driverFullNameId: string;
+    driverIntlLicense: string;
   }
 > = {
   en: {
@@ -85,6 +90,11 @@ export const translations: Record<
     keyDateKefToAms2: "Fly KEF → AMS (option 2)",
     keyDateReturnFlight: "Return flight AMS → HKG → TPE",
     keyDateArriveTaipei: "Arrive Taipei",
+    driversTitle: "Drivers (International)",
+    driversSubtitle: "International driver's license info for Iceland rental.",
+    driverName: "Name",
+    driverFullNameId: "Full name / ID",
+    driverIntlLicense: "Int'l license",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -126,6 +136,11 @@ export const translations: Record<
     keyDateKefToAms2: "凱夫拉維克 → 阿姆斯特丹（班次二）",
     keyDateReturnFlight: "返程班機 阿姆斯特丹 → 香港 → 台北",
     keyDateArriveTaipei: "抵達台北",
+    driversTitle: "駕駛人（國際駕照）",
+    driversSubtitle: "冰島租車用國際駕照資訊。",
+    driverName: "姓名",
+    driverFullNameId: "全名 / 證號",
+    driverIntlLicense: "國際駕照",
   },
 };
 

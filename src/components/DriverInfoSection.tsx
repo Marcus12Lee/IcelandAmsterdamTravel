@@ -1,0 +1,61 @@
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
+import type { DriverInfo } from "@/data/drivers";
+
+interface DriverInfoSectionProps {
+  drivers: DriverInfo[];
+}
+
+export function DriverInfoSection({ drivers }: DriverInfoSectionProps) {
+  const { t } = useLocale();
+  if (!drivers.length) return null;
+
+  return (
+    <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80 sm:p-8">
+      <h2 className="mb-4 text-lg font-semibold text-white sm:text-xl">
+        {t("driversTitle")}
+      </h2>
+      <p className="mb-4 text-sm text-frost-slate">
+        {t("driversSubtitle")}
+      </p>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[280px] border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-ice-700/60">
+              <th className="pb-2 pr-4 text-left font-semibold uppercase tracking-wider text-glacier-mid">
+                {t("driverName")}
+              </th>
+              <th className="pb-2 pr-4 text-left font-semibold uppercase tracking-wider text-glacier-mid">
+                {t("driverFullNameId")}
+              </th>
+              <th className="pb-2 text-left font-semibold uppercase tracking-wider text-glacier-mid">
+                {t("driverIntlLicense")}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {drivers.map((driver, i) => (
+              <tr
+                key={i}
+                className="border-b border-ice-800/50 last:border-0"
+              >
+                <td className="py-3 pr-4 font-medium text-white">
+                  {driver.name}
+                </td>
+                <td className="py-3 pr-4 text-frost-slate">
+                  <span className="block">{driver.fullNameAndId}</span>
+                </td>
+                <td className="py-3 text-frost-slate">
+                  <span className="font-mono tabular-nums">
+                    {driver.internationalLicense}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
