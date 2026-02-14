@@ -47,7 +47,7 @@ export default function IcelandTripPlansPage() {
       </div>
 
       <footer className="mt-10 border-t border-ice-800/60 pt-6 text-center text-sm text-frost-slate">
-        {t("footer")} <code className="rounded bg-ice-800/80 px-1">src/data/itinerary.ts</code>
+        {t("footer")}
       </footer>
     </main>
   );
