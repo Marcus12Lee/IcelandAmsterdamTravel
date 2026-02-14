@@ -50,6 +50,16 @@ export const translations: Record<
     driverName: string;
     driverFullNameId: string;
     driverIntlLicense: string;
+    forecastLinksTitle: string;
+    forecastLinksSubtitle: string;
+    forecastAuroraTipTitle: string;
+    forecastAuroraTipBody: string;
+    forecastRoadTipTitle: string;
+    forecastRoadTipBody: string;
+    forecastSafeTipTitle: string;
+    forecastSafeTipBody: string;
+    forecastTipsTitle: string;
+    forecastOfficialLinks: string;
   }
 > = {
   en: {
@@ -99,6 +109,16 @@ export const translations: Record<
     driverName: "Name",
     driverFullNameId: "Full name / ID",
     driverIntlLicense: "Int'l license",
+    forecastLinksTitle: "Weather & forecast links",
+    forecastLinksSubtitle: "Northern Lights, Iceland weather, road conditions and safe travel.",
+    forecastAuroraTipTitle: "Northern Lights (0–9 scale)",
+    forecastAuroraTipBody: "Higher number = stronger activity. You still need a clear or partly clear sky and darkness—check cloud cover and sunset/moon times on the aurora page.",
+    forecastRoadTipTitle: "Road conditions (road.is)",
+    forecastRoadTipBody: "Green = passable, light green = some ice/snow, yellow = slippery, orange/red = difficult or closed. Check the map and road numbers (e.g. Ring Road 1) before driving.",
+    forecastSafeTipTitle: "Safe Travel",
+    forecastSafeTipBody: "Check weather and road status before leaving. In winter, daylight is short—plan driving in daylight when possible. Save the emergency number 112.",
+    forecastTipsTitle: "Quick tips",
+    forecastOfficialLinks: "Official links",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -147,6 +167,16 @@ export const translations: Record<
     driverName: "姓名",
     driverFullNameId: "全名 / 證號",
     driverIntlLicense: "國際駕照",
+    forecastLinksTitle: "天氣與預報連結",
+    forecastLinksSubtitle: "極光、冰島天氣、路況與安全旅遊。",
+    forecastAuroraTipTitle: "極光指數（0–9）",
+    forecastAuroraTipBody: "數字愈高代表活動愈強。仍需晴朗或少雲且天黑；請在極光頁面查看雲量與日落／月出時間。",
+    forecastRoadTipTitle: "路況 (road.is)",
+    forecastRoadTipBody: "綠色＝可通行，淺綠＝部分冰雪，黃＝易滑，橘／紅＝難行或封閉。出發前查地圖與道路編號（如環島 1 號）。",
+    forecastSafeTipTitle: "安全旅遊",
+    forecastSafeTipBody: "出發前查天氣與路況。冬季日照短，盡量安排在白天開車。記下緊急電話 112。",
+    forecastTipsTitle: "小提醒",
+    forecastOfficialLinks: "官方連結",
   },
 };
 

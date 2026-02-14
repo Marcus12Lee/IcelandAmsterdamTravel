@@ -13,7 +13,14 @@ interface WeatherData {
   windSpeed: number;
 }
 
-const CITIES = ["Amsterdam", "Reykjavík"] as const;
+const CITIES = [
+  "Amsterdam",
+  "Reykjavík",
+  "Keflavík",
+  "Vík",
+  "Höfn",
+  "Akureyri",
+] as const;
 
 function WeatherCard({ city, t }: { city: string; t: TFunc }) {
   const [data, setData] = useState<WeatherData | null>(null);
@@ -73,7 +80,7 @@ export function WeatherModule() {
   return (
     <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
       <h2 className="mb-4 text-lg font-semibold text-white">{t("weather")}</h2>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CITIES.map((city) => (
           <WeatherCard key={city} city={city} t={t} />
         ))}

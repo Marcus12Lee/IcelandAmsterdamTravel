@@ -21,11 +21,16 @@ export async function GET(request: Request) {
     );
   }
 
+  // Display name → OpenWeatherMap query (city name or "City,IS" for Iceland)
   const cityMap: Record<string, string> = {
     Amsterdam: "Amsterdam",
     "Reykjavík": "Reykjavik",
+    "Keflavík": "Keflavik,IS",
+    "Vík": "Vik,IS",
+    "Höfn": "Hofn,IS",
+    "Akureyri": "Akureyri,IS",
   };
-  const q = city && cityMap[city] ? cityMap[city] : "Amsterdam";
+  const q = city && cityMap[city] ? cityMap[city] : (city ?? "Amsterdam");
   const params = new URLSearchParams({
     q,
     appid: apiKey,
