@@ -68,16 +68,24 @@ export interface ItineraryDay {
   coordinates?: { lat: number; lng: number }[];
 }
 
-/** One place or plan item (e.g. "Zaanse Schans" or "Golden Circle drive") */
-export type TripPlanItem = string;
+/** One place or plan item: plain string or rich object with link, time, note */
+export type TripPlanItem =
+  | string
+  | { text: string; url: string; time?: string; note?: string };
+
+/** Group of trip plan items with an optional section header (e.g. "阿姆斯特丹核心") */
+export interface TripPlanGroup {
+  section: string;
+  items: TripPlanItem[];
+}
 
 export interface Itinerary {
   tripName: string;
   days: ItineraryDay[];
   /** Key events used for countdown (e.g. first flight, next flight) */
   keyDates?: { label: string; isoDateTime: string }[];
-  /** Amsterdam: places and plans to fill in */
-  amsTripPlans?: TripPlanItem[];
-  /** Iceland: places and plans to fill in */
-  icelandTripPlans?: TripPlanItem[];
+  /** Amsterdam: can be flat list or grouped by section */
+  amsTripPlans?: TripPlanItem[] | TripPlanGroup[];
+  /** Iceland: places and plans, flat or grouped by section */
+  icelandTripPlans?: TripPlanItem[] | TripPlanGroup[];
 }

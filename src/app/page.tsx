@@ -9,6 +9,7 @@ import { TripPlansSection } from "@/components/TripPlansSection";
 import { DriverInfoSection } from "@/components/DriverInfoSection";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
+import type { TripPlanGroup, TripPlanItem } from "@/types/itinerary";
 import { itinerary } from "@/data/itinerary";
 import { drivers } from "@/data/drivers";
 import { getIcelandRoute, getAmsterdamStops } from "@/lib/getIcelandRoute";
@@ -39,13 +40,43 @@ export default function DashboardPage() {
         <TripPlansSection
           title={t("amsTripPlans")}
           subtitle={t("amsTripPlansSubtitle")}
-          items={itinerary.amsTripPlans ?? []}
+          groups={
+            (() => {
+              const a = itinerary.amsTripPlans ?? [];
+              return a.length > 0 && "section" in a[0] && "items" in a[0]
+                ? (a as TripPlanGroup[])
+                : undefined;
+            })()
+          }
+          items={
+            (() => {
+              const a = itinerary.amsTripPlans ?? [];
+              return a.length === 0 || ("section" in a[0] && "items" in a[0])
+                ? []
+                : (a as TripPlanItem[]);
+            })()
+          }
           emptyMessage={t("emptyPlansHint")}
         />
         <TripPlansSection
           title={t("icelandTripPlans")}
           subtitle={t("icelandTripPlansSubtitle")}
-          items={itinerary.icelandTripPlans ?? []}
+          groups={
+            (() => {
+              const a = itinerary.icelandTripPlans ?? [];
+              return a.length > 0 && "section" in a[0] && "items" in a[0]
+                ? (a as TripPlanGroup[])
+                : undefined;
+            })()
+          }
+          items={
+            (() => {
+              const a = itinerary.icelandTripPlans ?? [];
+              return a.length === 0 || ("section" in a[0] && "items" in a[0])
+                ? []
+                : (a as TripPlanItem[]);
+            })()
+          }
           emptyMessage={t("emptyPlansHint")}
         />
       </div>
