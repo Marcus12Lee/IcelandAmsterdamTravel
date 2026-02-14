@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { IcelandMap } from "@/components/IcelandMap";
 import { TripPlansSection } from "@/components/TripPlansSection";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
 import { getTripPlanProps } from "@/lib/tripPlans";
+import { getIcelandRoute } from "@/lib/getIcelandRoute";
 import { itinerary } from "@/data/itinerary";
 
 export default function IcelandTripPlansPage() {
   const { t } = useLocale();
   const props = getTripPlanProps(itinerary.icelandTripPlans);
+  const route = getIcelandRoute(itinerary.days, itinerary.icelandMapExtraStops);
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
@@ -28,6 +31,10 @@ export default function IcelandTripPlansPage() {
         </div>
         <LanguageToggle />
       </header>
+
+      <div className="mb-8">
+        <IcelandMap route={route} />
+      </div>
 
       <div className="mb-8">
         <TripPlansSection

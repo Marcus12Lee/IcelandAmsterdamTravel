@@ -1,4 +1,4 @@
-import type { ItineraryDay } from "@/types/itinerary";
+import type { ItineraryDay, IcelandMapStop } from "@/types/itinerary";
 
 const KEF = { lat: 63.985, lng: -22.6056, label: "KEF Airport" };
 
@@ -13,13 +13,17 @@ export interface RoutePoint {
   lat: number;
   lng: number;
   label?: string;
+  mapUrl?: string;
 }
 
 /**
- * Builds the Iceland self-drive route from itinerary: KEF + hotels in order.
+ * Builds the Iceland self-drive route from itinerary: KEF + hotels in order + extra stops.
  * Consecutive nights at the same hotel appear once.
  */
-export function getIcelandRoute(days: ItineraryDay[]): RoutePoint[] {
+export function getIcelandRoute(
+  days: ItineraryDay[],
+  extraStops?: IcelandMapStop[]
+): RoutePoint[] {
   const points: RoutePoint[] = [KEF];
   let lastCoords: string | null = null;
 
@@ -37,7 +41,19 @@ export function getIcelandRoute(days: ItineraryDay[]): RoutePoint[] {
       lat: coords.lat,
       lng: coords.lng,
       label: day.hotel?.name,
+      mapUrl: day.hotel?.mapUrl,
     });
+  }
+
+  if (extraStops?.length) {
+    for (const stop of extraStops) {
+      points.push({
+        lat: stop.lat,
+        lng: stop.lng,
+        label: stop.label,
+        mapUrl: stop.mapUrl,
+      });
+    }
   }
 
   return points;

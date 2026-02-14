@@ -8,6 +8,7 @@ export interface MapRoutePoint {
   lat: number;
   lng: number;
   label?: string;
+  mapUrl?: string;
 }
 
 interface IcelandMapInnerProps {
@@ -34,21 +35,24 @@ export function IcelandMapInner({ route }: IcelandMapInnerProps) {
       preferCanvas: true,
     });
 
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
       attribution: "&copy; OpenStreetMap, &copy; CARTO",
     }).addTo(map);
 
     route.forEach((point, i) => {
       const label = point.label ?? (i === 0 ? "KEF Airport" : `Stop ${i}`);
+      const popupContent = point.mapUrl
+        ? `<a href="${point.mapUrl}" target="_blank" rel="noopener noreferrer" style="color:#1a73e8;text-decoration:underline">${label}</a>`
+        : label;
       L.marker([point.lat, point.lng])
         .addTo(map)
-        .bindPopup(label);
+        .bindPopup(popupContent);
     });
 
     if (route.length >= 2) {
       L.polyline(
         route.map((p) => [p.lat, p.lng] as [number, number]),
-        { color: "#22d3ee", weight: 3, opacity: 0.9 }
+        { color: "#1a73e8", weight: 4, opacity: 0.9 }
       ).addTo(map);
     }
 

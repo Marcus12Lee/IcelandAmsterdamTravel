@@ -79,6 +79,14 @@ export interface TripPlanGroup {
   items: TripPlanItem[];
 }
 
+/** Extra stops to show on the Iceland map (e.g. restaurants, POIs) */
+export interface IcelandMapStop {
+  lat: number;
+  lng: number;
+  label?: string;
+  mapUrl?: string;
+}
+
 export interface Itinerary {
   tripName: string;
   days: ItineraryDay[];
@@ -88,4 +96,6 @@ export interface Itinerary {
   amsTripPlans?: TripPlanItem[] | TripPlanGroup[];
   /** Iceland: places and plans, flat or grouped by section */
   icelandTripPlans?: TripPlanItem[] | TripPlanGroup[];
+  /** Extra stops for Iceland map (restaurants, POIs). Merged after hotels. */
+  icelandMapExtraStops?: IcelandMapStop[];
 }

@@ -247,6 +247,15 @@ export const itinerary: Itinerary = {
       ],
     },
   ],
+  // Extra stops for Iceland map (restaurants, POIs)
+  icelandMapExtraStops: [
+    {
+      lat: 64.25029,
+      lng: -15.227,
+      label: "Pakkhús Restaurant (龍蝦餐廳)",
+      mapUrl: "https://maps.app.goo.gl/v9fCU1MkimRUrTva7",
+    },
+  ],
   // Iceland: 2/23 重點餐廳等
   icelandTripPlans: [
     {
@@ -254,7 +263,7 @@ export const itinerary: Itinerary = {
       items: [
         {
           text: "Pakkhús Restaurant (龍蝦餐廳)",
-          url: "https://maps.app.goo.gl/y322mPLjLhr8HZgTA",
+          url: "https://maps.app.goo.gl/v9fCU1MkimRUrTva7",
           time: "12:00 – 21:00",
           note: "赫本市區必吃。",
         },
@@ -339,19 +348,19 @@ export const itinerary: Itinerary = {
       label: "Feb 23",
       plan: [],
       hotel: {
-        name: "Vagnsstadir Guesthouse",
-        address: "Vagnsstaðir, Borgarhöfn. F985, 781 Hornafjörður, Iceland",
-        phone: "+354 854 3133",
-        coordinates: { lat: 64.5385, lng: -14.3894 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Vagnsstadir+Guesthouse+Borgarh%C3%B6fn+Iceland",
+        name: "Guesthouse Skálafell",
+        address: "Skálafell 1, 781 Hornafjörður, Iceland",
+        phone: "+354 478 1041",
+        coordinates: { lat: 64.24758, lng: -15.68699 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Guesthouse+Sk%C3%A1lafell+Sk%C3%A1lafell+1+Hornafj%C3%B6r%C3%B0ur+Iceland",
       },
       notes: [
         "08:30 海拉出發：晨曦中啟程，避開全黑駕駛，確保有充足日光看瀑布。",
         "12:00 維克午餐：在 Vík 快速用餐並加滿油。絕對跳過飛機殘骸，將寶貴的 2 小時日光留給冰河湖。",
         "15:30 冰河湖：享受傑古沙龍與鑽石沙灘的夕陽美景。",
         "17:00 赫本晚餐：抵達赫本吃龍蝦大餐（建議預約 17:00 開門首波）。",
-        "18:15 啟程回程：離開赫本往回開 50 公里（約 45–60 分鐘）。",
-        "19:00 抵達旅館：趕在天色全黑、視覺疲勞前抵達 Vagnsstadir Guesthouse。",
+        "18:15 啟程回程：離開赫本往回開約 50 公里（約 45–60 分鐘）。",
+        "19:00 抵達旅館：趕在天色全黑、視覺疲勞前抵達 Guesthouse Skálafell。",
       ],
       reminders: [
         "側風與黑冰：過了維克後的沙原路段風力極強，2 月路面常有看不見的黑冰，請保持車距。",
@@ -367,11 +376,11 @@ export const itinerary: Itinerary = {
       label: "Feb 24",
       plan: [],
       hotel: {
-        name: "Vagnsstadir Guesthouse",
-        address: "Vagnsstaðir, Borgarhöfn. F985, 781 Hornafjörður, Iceland",
-        phone: "+354 854 3133",
-        coordinates: { lat: 64.5385, lng: -14.3894 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Vagnsstadir+Guesthouse+Borgarh%C3%B6fn+Iceland",
+        name: "Guesthouse Skálafell",
+        address: "Skálafell 1, 781 Hornafjörður, Iceland",
+        phone: "+354 478 1041",
+        coordinates: { lat: 64.24758, lng: -15.68699 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Guesthouse+Sk%C3%A1lafell+Sk%C3%A1lafell+1+Hornafj%C3%B6r%C3%B0ur+Iceland",
       },
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 2", stops: [] },

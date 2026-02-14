@@ -64,7 +64,7 @@ export default function DashboardPage() {
         <ForecastLinksSection />
       </div>
       <div className="mb-8">
-        <IcelandMap route={getIcelandRoute(itinerary.days)} />
+        <IcelandMap route={getIcelandRoute(itinerary.days, itinerary.icelandMapExtraStops)} />
       </div>
       <div className="mb-8">
         <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
