@@ -416,7 +416,7 @@ export const itinerary: Itinerary = {
         address: "Urðarhvarf, 203 Kópavogur, Iceland",
         phone: "+354 449 4904",
         coordinates: { lat: 64.1124, lng: -21.9127 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Ur%C3%B0arhvarf+203+K%C3%B3pavogur+Iceland",
+        mapUrl: "https://maps.app.goo.gl/jdE6fjTKqdmSPxHC8",
       },
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 5", stops: [] },
@@ -431,7 +431,7 @@ export const itinerary: Itinerary = {
         address: "Urðarhvarf, 203 Kópavogur, Iceland",
         phone: "+354 449 4904",
         coordinates: { lat: 64.1124, lng: -21.9127 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Ur%C3%B0arhvarf+203+K%C3%B3pavogur+Iceland",
+        mapUrl: "https://maps.app.goo.gl/jdE6fjTKqdmSPxHC8",
       },
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 6", stops: [] },
