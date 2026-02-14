@@ -105,7 +105,7 @@ export const itinerary: Itinerary = {
       items: [
         {
           text: "Kaasbar Amsterdam (迴轉起司吧)",
-          url: "https://maps.google.com/maps/contrib/113335928288101654476",
+          url: "https://maps.app.goo.gl/X88kmu9kmLhouDXV6",
           note: "像迴轉壽司可品嚐各種起司與美酒，室內溫暖。",
         },
         {
@@ -211,7 +211,7 @@ export const itinerary: Itinerary = {
         },
         {
           text: "Grote Marktstraat",
-          url: "https://www.google.com/maps/search/?api=1&query=Grote+Marktstraat+Den+Haag",
+          url: "https://maps.app.goo.gl/5tnfAfc8yZBenzTY9",
           note: "主要商業大道，Uniqlo、Primark 等旗艦大店集中。",
         },
       ],
