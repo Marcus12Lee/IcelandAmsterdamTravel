@@ -254,7 +254,7 @@ export const itinerary: Itinerary = {
       items: [
         {
           text: "Pakkhús Restaurant (龍蝦餐廳)",
-          url: "https://maps.google.com/maps/contrib/102910275896821084251",
+          url: "https://maps.app.goo.gl/y322mPLjLhr8HZgTA",
           time: "12:00 – 21:00",
           note: "赫本市區必吃。",
         },
