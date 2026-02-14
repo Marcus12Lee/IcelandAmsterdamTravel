@@ -31,6 +31,8 @@ export const translations: Record<
     mapDescription: string;
     mapTitleAmsterdam: string;
     mapDescriptionAmsterdam: string;
+    rentalCarTitle: string;
+    rentalCarDescription: string;
     amsTripPlans: string;
     amsTripPlansSubtitle: string;
     icelandTripPlans: string;
@@ -52,6 +54,7 @@ export const translations: Record<
     driverName: string;
     driverFullNameId: string;
     driverIntlLicense: string;
+    rentalCarLinkText: string;
     forecastLinksTitle: string;
     forecastLinksSubtitle: string;
     forecastAuroraTipTitle: string;
@@ -93,6 +96,8 @@ export const translations: Record<
     mapDescription: "Route from Keflavík Airport. Add your daily stops in the itinerary data to see them here.",
     mapTitleAmsterdam: "Amsterdam – Hotel",
     mapDescriptionAmsterdam: "Hotel location in Amsterdam.",
+    rentalCarTitle: "Rental car – KEF to pick-up",
+    rentalCarDescription: "Route from the terminal (Passenger Arrivals / Shuttle) to the rental car location on Flugvellir.",
     amsTripPlans: "AMS trip plans",
     amsTripPlansSubtitle: "Places and plans for Amsterdam (Feb 20–21, Mar 2–3)",
     icelandTripPlans: "Iceland trip plans",
@@ -113,6 +118,7 @@ export const translations: Record<
     driverName: "Name",
     driverFullNameId: "Full name / ID",
     driverIntlLicense: "Int'l license",
+    rentalCarLinkText: "Lotus Car Rental – Book & info",
     forecastLinksTitle: "Weather & forecast links",
     forecastLinksSubtitle: "Northern Lights, Iceland weather, road conditions and safe travel.",
     forecastAuroraTipTitle: "Northern Lights (0–9 scale)",
@@ -153,6 +159,8 @@ export const translations: Record<
     mapDescription: "從凱夫拉維克機場出發。在行程資料中新增每日停留點即可顯示於地圖。",
     mapTitleAmsterdam: "阿姆斯特丹 – 住宿",
     mapDescriptionAmsterdam: "阿姆斯特丹住宿地點。",
+    rentalCarTitle: "租車 – 凱夫拉維克機場至取車點",
+    rentalCarDescription: "從機場航廈（入境／接駁車）到 Flugvellir 租車地點的路線。",
     amsTripPlans: "阿姆斯特丹行程",
     amsTripPlansSubtitle: "阿姆斯特丹景點與計畫（2/20–21、3/2–3）",
     icelandTripPlans: "冰島行程",
@@ -173,6 +181,7 @@ export const translations: Record<
     driverName: "姓名",
     driverFullNameId: "全名 / 證號",
     driverIntlLicense: "國際駕照",
+    rentalCarLinkText: "Lotus Car Rental – 預訂與資訊",
     forecastLinksTitle: "天氣與預報連結",
     forecastLinksSubtitle: "極光、冰島天氣、路況與安全旅遊。",
     forecastAuroraTipTitle: "極光指數（0–9）",

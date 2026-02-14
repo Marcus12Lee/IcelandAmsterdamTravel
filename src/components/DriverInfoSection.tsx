@@ -1,11 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale } from "@/context/LocaleContext";
 import type { DriverInfo } from "@/data/drivers";
 
 interface DriverInfoSectionProps {
   drivers: DriverInfo[];
 }
+
+const LOTUS_CAR_RENTAL_URL = "https://www.lotuscarrental.is";
 
 export function DriverInfoSection({ drivers }: DriverInfoSectionProps) {
   const { t } = useLocale();
@@ -55,6 +58,30 @@ export function DriverInfoSection({ drivers }: DriverInfoSectionProps) {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="mt-6 border-t border-ice-700/50 pt-6">
+        <a
+          href={LOTUS_CAR_RENTAL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-3 inline-block text-sm font-medium text-glacier-light underline hover:text-glacier-mid"
+        >
+          {t("rentalCarLinkText")} →
+        </a>
+        <p className="mb-3 text-xs text-frost-slate">
+          {t("rentalCarDescription")}
+        </p>
+        <div className="max-w-sm overflow-hidden rounded-lg border border-ice-700/50">
+          <Image
+            src="/rental-car-kef.png"
+            alt="KEF terminal to rental car pick-up route"
+            width={400}
+            height={300}
+            className="h-auto w-full object-contain"
+            unoptimized
+          />
+        </div>
       </div>
     </section>
   );
