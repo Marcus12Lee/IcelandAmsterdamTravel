@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ice-bg: #0c4a6e;
+  --ice-surface: #075985;
+  --ice-text: #f8fafc;
+  --ice-muted: #94a3b8;
+}
+
+.dark {
+  --ice-bg: #020617;
+  --ice-surface: #0f172a;
+  --ice-text: #f1f5f9;
+  --ice-muted: #64748b;
+}
+
+html {
+  @apply antialiased;
+}
+
+body {
+  @apply bg-ice-950 text-frost-white dark:bg-slate-950;
+  min-height: 100vh;
+}
+
+/* Thin scrollbar for timeline */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  @apply bg-ice-900 rounded-full;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  @apply bg-ice-600 rounded-full;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  @apply bg-ice-500;
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  @apply bg-ice-900 font-sans;
+}
