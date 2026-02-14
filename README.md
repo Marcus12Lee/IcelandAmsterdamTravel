@@ -55,8 +55,8 @@ If you **publish the app online**, you and others can use it from any device (iP
 
 ### Easiest: deploy with Vercel (free)
 
-1. **Put the project on GitHub**  
-   Create a new repo and push your code:
+1. **Put the project on GitHub** (if you haven’t already)  
+   Create a repo and push your code:
    ```bash
    git init
    git add .
@@ -65,25 +65,23 @@ If you **publish the app online**, you and others can use it from any device (iP
    git push -u origin main
    ```
 
-2. **Sign up and deploy on Vercel**  
-   - Go to [vercel.com](https://vercel.com) and sign up (free; you can use your GitHub account).  
-   - Click **Add New → Project** and **import** your GitHub repo.  
-   - Leave the default settings (Vercel detects Next.js). Click **Deploy**.  
-   - When it’s done, you get a URL like:  
-     `https://your-project-name.vercel.app`
+2. **Connect the repo to Vercel and deploy**  
+   - Go to [vercel.com](https://vercel.com) and sign in (or sign up with GitHub).  
+   - Click **Add New… → Project**.  
+   - Under **Import Git Repository**, find **IcelandAmsterdamTravel** (or your repo name) and click **Import**.  
+   - Leave **Framework Preset** as Next.js and **Root Directory** as `.`. Click **Deploy**.  
+   - Wait for the build to finish. Your app will be at a URL like:  
+     `https://iceland-amsterdam-travel.vercel.app`  
+   - Every push to `main` on GitHub will trigger a new deployment automatically.
 
-3. **Add your OpenWeatherMap key (required for weather)**  
-   Your code is on GitHub, but **`.env.local` is never pushed** (it’s in `.gitignore`). So Vercel doesn’t have your API key.  
-   In the Vercel project: **Project → Settings → Environment Variables** → add:
-   - **Name:** `OPENWEATHER_API_KEY`  
-   - **Value:** your OpenWeatherMap API key  
-   Then trigger a **Redeploy** (Deployments → ⋮ on latest → Redeploy) so the new variable is used. After that, the weather section will show data instead of “not set” or “Weather unavailable”.
+3. **Environment variables (optional)**  
+   The app works without any env vars. If you add weather later, in Vercel go to **Project → Settings → Environment Variables**, add `OPENWEATHER_API_KEY`, then **Redeploy**.
 
 4. **Use and share the link**  
-   - **You on iPhone/iPad:** Open that URL in Safari. Use **Share → Add to Home Screen** to add an icon.  
-   - **Other people:** Send them the same URL. They open it in any browser on phone, tablet, or computer.
+   - **You on iPhone/iPad:** Open the Vercel URL in Safari → **Share → Add to Home Screen**.  
+   - **Others:** Share the same URL; they can open it in any browser.
 
-No Mac needs to be on; the app runs on Vercel’s servers. You can update it by pushing new commits to GitHub; Vercel will redeploy automatically.
+No Mac needs to be on; the app runs on Vercel. Push to `main` anytime to update the live site.
 
 ### Other ways to publish
 
