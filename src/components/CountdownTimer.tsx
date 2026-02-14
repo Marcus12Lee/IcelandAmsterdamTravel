@@ -79,10 +79,11 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
         {t("countdownTo")}
       </p>
       <p className="mb-2 text-lg font-semibold text-white">{tKeyDate(result.label)}</p>
-      <div className="mb-4 space-y-1 text-xs text-frost-slate">
+      <div className="mb-4 space-y-3">
         {localClocks.map(({ label, value }) => (
-          <p key={label}>
-            {t("currentTime")}（{label}）: {value}
+          <p key={label} className="text-sm leading-relaxed text-frost-slate sm:text-base">
+            <span className="font-semibold text-frost-silver">{label}:</span>{" "}
+            <span className="tabular-nums">{value}</span>
           </p>
         ))}
       </div>
