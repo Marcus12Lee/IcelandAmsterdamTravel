@@ -2,7 +2,6 @@
 
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { ItineraryTimeline } from "@/components/ItineraryTimeline";
-import { WeatherModule } from "@/components/WeatherModule";
 import { ForecastLinksSection } from "@/components/ForecastLinksSection";
 import { IcelandMap } from "@/components/IcelandMap";
 import { AmsterdamMap } from "@/components/AmsterdamMap";
@@ -51,15 +50,14 @@ export default function DashboardPage() {
         />
       </div>
 
-      <div className="mb-8 grid gap-6 lg:grid-cols-2">
-        <WeatherModule />
-        <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
-      </div>
       <div className="mb-8">
         <ForecastLinksSection />
       </div>
       <div className="mb-8">
         <IcelandMap route={getIcelandRoute(itinerary.days)} />
+      </div>
+      <div className="mb-8">
+        <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
       </div>
 
       <div className="mb-8">

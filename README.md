@@ -15,7 +15,11 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) on your Mac.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+**If port 3000 is already in use:** run `npm run clean:ports` to free it, then `npm run dev` again. Or use `npm run dev:port` and open [http://localhost:3010](http://localhost:3010).
+
+**If you see "EMFILE: too many open files":** run `ulimit -n 10240` in the same terminal and try again.
 
 ## Run on iPhone / iPad
 
@@ -68,8 +72,12 @@ If you **publish the app online**, you and others can use it from any device (iP
    - When it’s done, you get a URL like:  
      `https://your-project-name.vercel.app`
 
-3. **Add your OpenWeatherMap key (optional)**  
-   In the Vercel project: **Settings → Environment Variables** → add `OPENWEATHER_API_KEY` with your key, then redeploy so the weather works.
+3. **Add your OpenWeatherMap key (required for weather)**  
+   Your code is on GitHub, but **`.env.local` is never pushed** (it’s in `.gitignore`). So Vercel doesn’t have your API key.  
+   In the Vercel project: **Project → Settings → Environment Variables** → add:
+   - **Name:** `OPENWEATHER_API_KEY`  
+   - **Value:** your OpenWeatherMap API key  
+   Then trigger a **Redeploy** (Deployments → ⋮ on latest → Redeploy) so the new variable is used. After that, the weather section will show data instead of “not set” or “Weather unavailable”.
 
 4. **Use and share the link**  
    - **You on iPhone/iPad:** Open that URL in Safari. Use **Share → Add to Home Screen** to add an icon.  

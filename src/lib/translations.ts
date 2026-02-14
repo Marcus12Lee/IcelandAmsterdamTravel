@@ -22,6 +22,8 @@ export const translations: Record<
     weather: string;
     loading: string;
     weatherApiHint: string;
+    weatherApiHintVercel: string;
+    weatherUnavailable: string;
     feelsLike: string;
     humidity: string;
     wind: string;
@@ -82,6 +84,8 @@ export const translations: Record<
     weather: "Weather",
     loading: "Loading…",
     weatherApiHint: "Set OPENWEATHER_API_KEY in .env.local for real-time data.",
+    weatherApiHintVercel: "On Vercel: add OPENWEATHER_API_KEY in Project Settings → Environment Variables, then redeploy.",
+    weatherUnavailable: "Weather unavailable",
     feelsLike: "Feels like",
     humidity: "humidity",
     wind: "wind",
@@ -140,6 +144,8 @@ export const translations: Record<
     weather: "天氣",
     loading: "載入中…",
     weatherApiHint: "在 .env.local 設定 OPENWEATHER_API_KEY 以取得即時天氣。",
+    weatherApiHintVercel: "Vercel 部署：在 Project Settings → Environment Variables 新增 OPENWEATHER_API_KEY，然後重新部署。",
+    weatherUnavailable: "無法取得天氣",
     feelsLike: "體感",
     humidity: "濕度",
     wind: "風速",

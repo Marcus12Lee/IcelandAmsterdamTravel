@@ -28,19 +28,31 @@ function WeatherCard({ city, t }: { city: string; t: TFunc }) {
 
   useEffect(() => {
     fetch(`/api/weather?city=${encodeURIComponent(city)}`)
-      .then((r) => {
-        if (!r.ok) return r.json().then((e) => { throw new Error(e?.error ?? "Failed"); });
-        return r.json();
+      .then(async (r) => {
+        const text = await r.text();
+        let body: { error?: string; city?: string; temp?: number } | null = null;
+        try {
+          body = JSON.parse(text);
+        } catch {
+          if (!r.ok) throw new Error("Weather unavailable");
+          throw new Error("Weather unavailable");
+        }
+        if (!r.ok) throw new Error(body?.error ?? "Weather unavailable");
+        if (body && "city" in body && typeof body.temp === "number") {
+          setData(body as WeatherData);
+        } else {
+          setError((body as { error?: string })?.error ?? "Weather unavailable");
+        }
       })
-      .then(setData)
-      .catch((e) => setError(e.message));
+      .catch((e) => setError(e.message ?? "Weather unavailable"));
   }, [city]);
 
   if (error) {
+    const message = error === "Weather unavailable" ? t("weatherUnavailable") : error;
     return (
       <div className="rounded-xl border border-ice-700/50 bg-ice-900/50 p-4">
         <p className="font-semibold text-white">{city}</p>
-        <p className="text-sm text-amber-400">{error}</p>
+        <p className="text-sm text-amber-400">{message}</p>
       </div>
     );
   }
@@ -87,6 +99,9 @@ export function WeatherModule() {
       </div>
       <p className="mt-3 text-xs text-frost-slate">
         {t("weatherApiHint")}
+      </p>
+      <p className="mt-1 text-xs text-glacier-mid">
+        {t("weatherApiHintVercel")}
       </p>
     </section>
   );
