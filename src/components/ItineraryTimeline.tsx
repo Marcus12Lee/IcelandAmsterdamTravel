@@ -146,7 +146,7 @@ export function ItineraryTimeline({ days }: ItineraryTimelineProps) {
   const { t } = useLocale();
   return (
     <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
-      <h2 className="mb-6 text-xl font-semibold text-white sm:text-2xl">{t("itinerary")}</h2>
+      <h2 className="mb-6 text-xl font-semibold text-frost-white sm:text-2xl">{t("itinerary")}</h2>
       <div className="flex max-h-[75vh] min-h-[420px] flex-col gap-8 overflow-y-auto pr-3 scrollbar-thin scrollbar-track-ice-900 scrollbar-thumb-ice-600">
         {days.map((day) => (
           <div key={day.date} className="flex gap-5">

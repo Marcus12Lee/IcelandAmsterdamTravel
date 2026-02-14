@@ -30,7 +30,7 @@ export function AmsterdamMap({ points = [] }: AmsterdamMapProps) {
 
   return (
     <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
-      <h2 className="mb-4 text-lg font-semibold text-white">{t("mapTitleAmsterdam")}</h2>
+      <h2 className="mb-4 text-lg font-semibold text-frost-white">{t("mapTitleAmsterdam")}</h2>
       <p className="mb-3 text-sm text-frost-slate">{t("mapDescriptionAmsterdam")}</p>
       {mounted ? (
         <AmsterdamMapInner points={points} />

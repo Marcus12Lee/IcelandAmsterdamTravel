@@ -1,4 +1,4 @@
-import type { Itinerary } from "@/types/itinerary";
+import type { Itinerary, TripPlanItem } from "@/types/itinerary";
 
 /**
  * Travel Companion – Itinerary data
@@ -72,6 +72,177 @@ export const itinerary: Itinerary = {
           url: "https://maps.google.com/maps/contrib/110276884242487209420",
           time: "園區開放至 17:00",
           note: "推薦 Henri Willig 霜淇淋。",
+        },
+      ],
+    },
+    {
+      section: "🇳🇱 重點餐廳：冬季暖胃首選",
+      items: [
+        {
+          text: "Moeders (媽媽的味道)",
+          url: "https://www.google.com/maps/search/?api=1&query=Moeders+Amsterdam",
+          note: "主打：傳統荷蘭家庭菜，裝潢溫馨。必點：Hutspot（馬鈴薯紅蘿蔔洋蔥燉菜配香腸或培根）。",
+        },
+        {
+          text: "The Seafood Bar",
+          url: "https://www.google.com/maps/search/?api=1&query=The+Seafood+Bar+Amsterdam",
+          note: "主打：新鮮海鮮，環境現代溫馨。必點：海鮮拼盤或烤魚。",
+        },
+        {
+          text: "Winkel 43",
+          url: "https://www.google.com/maps/search/?api=1&query=Winkel+43+Amsterdam",
+          note: "號稱全阿姆斯特丹最好吃的蘋果派，酥脆外皮＋厚實蘋果＋鮮奶油，配熱巧克力。",
+        },
+        {
+          text: "De Haven Van Texel (火車站附近)",
+          url: "https://www.google.com/maps/search/?api=1&query=De+Haven+Van+Texel+Amsterdam",
+          note: "運河景觀餐廳，冬季有豌豆濃湯 Erwtensoep。",
+        },
+      ],
+    },
+    {
+      section: "🧀 起司專賣店與超市必逛",
+      items: [
+        {
+          text: "Kaasbar Amsterdam (迴轉起司吧)",
+          url: "https://maps.google.com/maps/contrib/113335928288101654476",
+          note: "像迴轉壽司可品嚐各種起司與美酒，室內溫暖。",
+        },
+        {
+          text: "Old Amsterdam Cheese Store",
+          url: "https://www.google.com/maps/search/?api=1&query=Old+Amsterdam+Cheese+Store",
+          note: "知名陳年起司品牌，大量試吃，可買真空包裝回國。",
+        },
+        {
+          text: "Albert Heijn (AH) 超市",
+          url: "https://www.google.com/maps/search/?api=1&query=Albert+Heijn+Amsterdam",
+          note: "荷蘭最大連鎖超市。必買：Stroopwafels、Tony's Chocolonely、Chocomel 熱巧克力、Kanjers 煎餅。",
+        },
+      ],
+    },
+    {
+      section: "🛍️ 重點好物與逛街地圖",
+      items: [
+        {
+          text: "Rituals (荷蘭香氛品牌)",
+          url: "https://www.google.com/maps/search/?api=1&query=Rituals+Amsterdam",
+          note: "保養與居家噴霧，價格比台灣便宜，高品質伴手禮。",
+        },
+        {
+          text: "De 9 Straatjes (九小街)",
+          url: "https://www.google.com/maps/search/?api=1&query=De+9+Straatjes+Amsterdam",
+          note: "文青逛街區，獨立設計師小店與復古商店。",
+        },
+        {
+          text: "De Bijenkorf (蜂巢百貨)",
+          url: "https://maps.google.com/maps/contrib/101823263129660771153",
+          note: "高檔精品百貨，水壩廣場旁，冬天躲進去逛兼吹暖氣。",
+        },
+        {
+          text: "Hema (荷蘭大創)",
+          url: "https://www.google.com/maps/search/?api=1&query=Hema+Amsterdam",
+          note: "平價雜貨，文具小物與燻香腸 Rookworst 很受歡迎。",
+        },
+      ],
+    },
+    {
+      section: "❄️ 大冬季提醒",
+      items: [
+        { text: "日照短", note: "下午 4:30 天黑，戶外美照建議安排在 10:00–15:00。" },
+        { text: "防風防水", note: "冬季雨水多風大，建議準備防風防水連帽外套，比雨傘實用。" },
+      ] as TripPlanItem[],
+    },
+    {
+      section: "🎨 海牙 (The Hague)：必逛景點",
+      items: [
+        {
+          text: "莫瑞泰斯皇家美術館 (Mauritshuis)",
+          url: "https://www.google.com/maps/search/?api=1&query=Mauritshuis+Den+Haag",
+          note: "海牙最著名景點，必看維梅爾《戴珍珠耳環的少女》。",
+        },
+        {
+          text: "艾雪博物館 (Escher in Het Paleis)",
+          url: "https://www.google.com/maps/search/?api=1&query=Escher+in+Het+Paleis+Den+Haag",
+          note: "前皇室宮殿內，錯覺藝術大師艾雪作品。",
+        },
+        {
+          text: "荷蘭國會大廈與騎士廳 (Binnenhof)",
+          url: "https://www.google.com/maps/search/?api=1&query=Binnenhof+Den+Haag",
+          note: "荷蘭政治核心，建築古老宏偉，歐洲氛圍。",
+        },
+        {
+          text: "和平宮 (Peace Palace)",
+          url: "https://www.google.com/maps/search/?api=1&query=Peace+Palace+Den+Haag",
+          note: "聯合國國際法院所在地，海牙地標。",
+        },
+        {
+          text: "斯海弗寧恩海灘 (Scheveningen Beach)",
+          url: "https://www.google.com/maps/search/?api=1&query=Scheveningen+Beach+Den+Haag",
+          note: "離市區約 15 分鐘電車，海濱長廊、摩天輪 SkyView，冬日散步愜意。",
+        },
+        {
+          text: "行程建議",
+          note: "早上國會大廈＋莫瑞泰斯美術館 → 中午市中心或 Chinatown 用餐 → 下午 Passage 長廊與 Zeeheldenkwartier → 黃昏 Scheveningen 海邊摩天輪夕陽＋海鮮。",
+        },
+      ] as TripPlanItem[],
+    },
+    {
+      section: "🛍️ 海牙：必買與購物區",
+      items: [
+        {
+          text: "女王百貨 De Bijenkorf（海牙旗艦）",
+          url: "https://www.google.com/maps/search/?api=1&query=De+Bijenkorf+Den+Haag",
+          note: "荷蘭最高端百貨之一，化妝品精品齊全，Jellycat 公仔豐富。",
+        },
+        {
+          text: "HEMA",
+          url: "https://www.google.com/maps/search/?api=1&query=HEMA+Den+Haag",
+          note: "國民雜貨店，Miffy 兔生活用品，價格親民。",
+        },
+        {
+          text: "De Passage 長廊",
+          url: "https://www.google.com/maps/search/?api=1&query=De+Passage+Den+Haag",
+          note: "荷蘭最古老購物拱廊，建築即藝術品，精緻品牌與文創小店。",
+        },
+        {
+          text: "Zeeheldenkwartier 文青區",
+          url: "https://www.google.com/maps/search/?api=1&query=Zeeheldenkwartier+Den+Haag",
+          note: "設計師選物店、二手服飾、概念店，Prins Hendrikstraat 街道生活感十足。",
+        },
+        {
+          text: "Grote Marktstraat",
+          url: "https://www.google.com/maps/search/?api=1&query=Grote+Marktstraat+Den+Haag",
+          note: "主要商業大道，Uniqlo、Primark 等旗艦大店集中。",
+        },
+      ],
+    },
+    {
+      section: "🍴 海牙：好吃推薦",
+      items: [
+        {
+          text: "生鯡魚 (Haring)",
+          url: "https://www.google.com/maps/search/?api=1&query=Frens+Haringhandel+Den+Haag",
+          note: "經典生鯡魚配洋蔥酸黃瓜。推薦 Frens Haringhandel 或 Simonis。",
+        },
+        {
+          text: "荷蘭鬆餅 (Stroopwafel)",
+          url: "https://www.google.com/maps/search/?api=1&query=Stroopwafel+Den+Haag",
+          note: "市集或超市現做，焦糖香氣十足。",
+        },
+        {
+          text: "海牙中國城 (Chinatown)",
+          url: "https://www.google.com/maps/search/?api=1&query=Chinatown+Den+Haag",
+          note: "全荷蘭著名的中餐與亞洲料理，想念家鄉味可來。",
+        },
+        {
+          text: "Haagse Bluf / Foodhallen",
+          url: "https://www.google.com/maps/search/?api=1&query=Foodhallen+Den+Haag",
+          note: "室內美食廣場，12 個特色攤位與酒吧，一次嘗多國美食。",
+        },
+        {
+          text: "斯海弗寧恩海鮮",
+          url: "https://www.google.com/maps/search/?api=1&query=Scheveningen+seafood+restaurant",
+          note: "海邊鮮蝦、生蠔、炸魚 Kibbeling，配夕陽最高享受。",
         },
       ],
     },

@@ -20,7 +20,7 @@ export default function DashboardPage() {
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
       <header className="mb-8 flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-frost-white sm:text-4xl">
             {itinerary.tripName}
           </h1>
           <p className="mt-2 text-frost-slate">{t("travelCompanion")}</p>
@@ -34,6 +34,16 @@ export default function DashboardPage() {
 
       <div className="mb-8">
         <ItineraryTimeline days={itinerary.days} />
+      </div>
+
+      <div className="mb-8">
+        <ForecastLinksSection />
+      </div>
+      <div className="mb-8">
+        <IcelandMap route={getIcelandRoute(itinerary.days)} />
+      </div>
+      <div className="mb-8">
+        <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
       </div>
 
       <div className="mb-8 grid gap-6 lg:grid-cols-2">
@@ -79,16 +89,6 @@ export default function DashboardPage() {
           }
           emptyMessage={t("emptyPlansHint")}
         />
-      </div>
-
-      <div className="mb-8">
-        <ForecastLinksSection />
-      </div>
-      <div className="mb-8">
-        <IcelandMap route={getIcelandRoute(itinerary.days)} />
-      </div>
-      <div className="mb-8">
-        <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
       </div>
 
       <div className="mb-8">

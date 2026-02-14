@@ -78,7 +78,7 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
       <p className="mb-1 text-sm font-medium uppercase tracking-wider text-frost-silver">
         {t("countdownTo")}
       </p>
-      <p className="mb-2 text-lg font-semibold text-white">{tKeyDate(result.label)}</p>
+      <p className="mb-2 text-lg font-semibold text-frost-white">{tKeyDate(result.label)}</p>
       <div className="mb-4 space-y-3">
         {localClocks.map(({ label, value }) => (
           <p key={label} className="text-sm leading-relaxed text-frost-slate sm:text-base">

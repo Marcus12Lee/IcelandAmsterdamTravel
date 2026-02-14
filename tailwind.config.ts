@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Icelandic Winter (1st version) – fine-tuned
         ice: {
           50: "#f0f9ff",
           100: "#e0f2fe",
@@ -42,7 +43,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-winter":
-          "linear-gradient(135deg, #0c4a6e 0%, #075985 50%, #0369a1 100%)",
+          "linear-gradient(165deg, #0f172a 0%, #082f49 35%, #0c4a6e 70%, #075985 100%)",
         "gradient-aurora":
           "linear-gradient(180deg, #0e7490 0%, #0c4a6e 50%, #1e293b 100%)",
       },

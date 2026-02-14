@@ -10,10 +10,10 @@
 }
 
 .dark {
-  --ice-bg: #020617;
-  --ice-surface: #0f172a;
+  --ice-bg: #0f172a;
+  --ice-surface: #1e293b;
   --ice-text: #f1f5f9;
-  --ice-muted: #64748b;
+  --ice-muted: #94a3b8;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  @apply bg-ice-950 text-frost-white dark:bg-slate-950;
+  @apply bg-ice-950 text-frost-white;
   min-height: 100vh;
 }
 
@@ -39,7 +39,13 @@ body {
   @apply bg-ice-500;
 }
 
-/* Leaflet overrides for dark theme */
+/* Leaflet map container */
 .leaflet-container {
   @apply bg-ice-900 font-sans;
+}
+
+/* Focus for accessibility */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-glacier-mid/70;
 }

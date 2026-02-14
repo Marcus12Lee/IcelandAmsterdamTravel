@@ -55,7 +55,7 @@ export function TripPlansSection({
 
   return (
     <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
-      <h2 className="text-lg font-semibold text-white">{title}</h2>
+      <h2 className="text-lg font-semibold text-frost-white">{title}</h2>
       {subtitle && <p className="mt-1 text-xs text-frost-slate">{subtitle}</p>}
       {hasGroups ? (
         <div className="mt-4 space-y-4">

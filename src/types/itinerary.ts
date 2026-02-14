@@ -68,10 +68,10 @@ export interface ItineraryDay {
   coordinates?: { lat: number; lng: number }[];
 }
 
-/** One place or plan item: plain string or rich object with link, time, note */
+/** One place or plan item: plain string or rich object with optional link, time, note */
 export type TripPlanItem =
   | string
-  | { text: string; url: string; time?: string; note?: string };
+  | { text: string; url?: string; time?: string; note?: string };
 
 /** Group of trip plan items with an optional section header (e.g. "阿姆斯特丹核心") */
 export interface TripPlanGroup {
