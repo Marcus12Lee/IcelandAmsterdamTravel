@@ -11,18 +11,21 @@ function PlanHotelNotes({
   plan,
   hotel,
   notes,
+  noteLinks,
   t,
 }: {
   plan?: string | string[];
   hotel?: DayHotel;
   notes?: string | string[];
+  noteLinks?: { text: string; url: string }[];
   t: TFunc;
 }) {
   const hasPlan = plan !== undefined && (Array.isArray(plan) ? plan.length > 0 : plan.trim() !== "");
   const hasHotel = hotel?.name?.trim() !== "";
   const hasNotes = notes !== undefined && (Array.isArray(notes) ? notes.length > 0 : notes.trim() !== "");
+  const hasNoteLinks = noteLinks !== undefined && noteLinks.length > 0;
 
-  if (!hasPlan && !hasHotel && !hasNotes) return null;
+  if (!hasPlan && !hasHotel && !hasNotes && !hasNoteLinks) return null;
 
   return (
     <div className="rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 sm:p-4">
@@ -64,10 +67,10 @@ function PlanHotelNotes({
           )}
         </div>
       )}
-      {hasNotes && (
+      {(hasNotes || hasNoteLinks) && (
         <div className={hasHotel || hasPlan ? "mt-2 border-t border-ice-700/40 pt-2" : ""}>
           <span className="text-xs font-semibold uppercase text-glacier-mid">{t("notes")}</span>
-          {Array.isArray(notes) ? (
+          {hasNotes && (Array.isArray(notes) ? (
             <ul className="mt-1 space-y-1.5 text-sm text-frost-slate">
               {notes.map((item, i) => (
                 <li key={i} className="flex gap-2">
@@ -78,6 +81,23 @@ function PlanHotelNotes({
             </ul>
           ) : (
             <p className="mt-1 text-sm text-frost-slate">{notes}</p>
+          ))}
+          {hasNoteLinks && (
+            <ul className="mt-1.5 space-y-1 text-sm">
+              {noteLinks!.map((link, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="shrink-0 text-glacier-mid">→</span>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-glacier-light underline hover:text-glacier-mid"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       )}
@@ -166,7 +186,7 @@ export function ItineraryTimeline({ days }: ItineraryTimelineProps) {
                     {event.type === "day" && <DayBlock event={event} />}
                   </div>
                 ))}
-              <PlanHotelNotes plan={day.plan} hotel={day.hotel} notes={day.notes} t={t} />
+              <PlanHotelNotes plan={day.plan} hotel={day.hotel} notes={day.notes} noteLinks={day.noteLinks} t={t} />
               {day.reminders !== undefined &&
                 (Array.isArray(day.reminders) ? day.reminders.length > 0 : day.reminders.trim() !== "") && (
                   <RemindersBlock reminders={day.reminders!} t={t} />

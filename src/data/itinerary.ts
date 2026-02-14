@@ -256,8 +256,15 @@ export const itinerary: Itinerary = {
       mapUrl: "https://maps.app.goo.gl/v9fCU1MkimRUrTva7",
     },
   ],
-  // Iceland: 2/23 重點餐廳等
+  // Iceland: 景點與計畫
   icelandTripPlans: [
+    {
+      section: "✅ 已預訂活動",
+      items: [
+        { text: "2/24 9:30 冰川健行", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6", note: "集合：Jökulsárlón 停車場" },
+        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland", note: "Ritual 水療儀式" },
+      ],
+    },
     {
       section: "🇮🇸 冰島：2/23 重點餐廳",
       items: [
@@ -267,6 +274,62 @@ export const itinerary: Itinerary = {
           time: "12:00 – 21:00",
           note: "赫本市區必吃。",
         },
+      ],
+    },
+    {
+      section: "🧊 冰洞探索 (Ice Cave Discovery)",
+      items: [
+        {
+          text: "傑古沙龍冰河湖 (Jökulsárlón) 停車場 — 集合地點",
+          url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6",
+          note: "活動：冰川健行 + 藍冰洞探索",
+        },
+        { text: "費用：約 NT$8,265 (34,900 ISK)" },
+        { text: "時長：5~7 小時（深度冒險行程）" },
+        { text: "限制：16 歲以上，鞋號需 EUR 35 以上以固定冰爪" },
+        { text: "關鍵叮嚀：行程長達 5–7 小時，務必確認集合時間。若當天要趕往民宿或 Höfn 晚餐，請務必算準日光時間。" },
+      ],
+    },
+    {
+      section: "🏛️ 雷克雅維克市區 (Reykjavik)",
+      items: [
+        { text: "哈爾格林姆教堂 (Hallgrímskirkja)", url: "https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik+Iceland" },
+        { text: "哈帕音樂廳 (Harpa Concert Hall)", url: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik+Iceland" },
+        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland", note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
+        { text: "→ 體驗分享：藍湖＆天空潟湖", url: "https://lilianyolo.wordpress.com/2025/04/11/冰島自駕自由行｜blue-lagoon-藍湖＆sky-lagoon-天空潟湖體驗全紀/" },
+      ],
+    },
+    {
+      section: "🌋 黃金圈 (Golden Circle)",
+      items: [
+        { text: "辛格韋德利國家公園 (Þingvellir National Park)", url: "https://www.google.com/maps/search/?api=1&query=Thingvellir+National+Park+Iceland" },
+        { text: "史托克間歇噴泉 (Strokkur Geyser)", url: "https://www.google.com/maps/search/?api=1&query=Strokkur+Geyser+Iceland" },
+        { text: "古佛斯瀑布 (Gullfoss Falls)", url: "https://www.google.com/maps/search/?api=1&query=Gullfoss+Falls+Iceland" },
+      ],
+    },
+    {
+      section: "🌊 南岸與東南邊 (South & South East)",
+      items: [
+        { text: "塞里雅蘭瀑布 (Seljalandsfoss) + Gljúfrabúi 瀑布", url: "https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland", note: "Gljúfrabúi 是隱藏在岩縫中的祕境瀑布，就在塞里雅蘭旁邊。" },
+        { text: "斯科加爾瀑布 (Skógafoss)", url: "https://www.google.com/maps/search/?api=1&query=Skogafoss+Iceland" },
+        { text: "飛機殘骸遺址 (Sólheimasandur Plane Wreck)", url: "https://www.google.com/maps/search/?api=1&query=Solheimasandur+Plane+Wreck+Iceland", note: "從停車場走到殘骸處單程約 45–60 分鐘。現場通常有付費接駁車。" },
+        { text: "斯卡夫塔冰川健行 (Skaftafell / Falljökull)", url: "https://www.google.com/maps/search/?api=1&query=Skaftafell+Glacier+Iceland", note: "大部分冰川健行團在此集合。" },
+        { text: "Sea Viewpoint (靠近 Höfn 方向)", url: "https://www.google.com/maps/search/?api=1&query=Sea+Viewpoint+Hofn+Iceland" },
+      ],
+    },
+    {
+      section: "🦭 西邊斯奈山半島 (Snæfellsnes Peninsula)",
+      items: [
+        { text: "海豹沙灘 (Ytri Tunga)", url: "https://www.google.com/maps/search/?api=1&query=Ytri+Tunga+Iceland" },
+        { text: "布迪爾黑教堂 (Búðakirkja)", url: "https://www.google.com/maps/search/?api=1&query=Budakirkja+Black+Church+Iceland" },
+        { text: "瓦汀舍利爾洞穴 (Vatnshellir Cave)", url: "https://www.google.com/maps/search/?api=1&query=Vatnshellir+Cave+Iceland", note: "需預約，約台幣 1,000 / 人。" },
+      ],
+    },
+    {
+      section: "💡 冰島自駕小提醒",
+      items: [
+        "冬日駕駛：2 月前往西邊或東南邊路況變動極大，出發前務必確認 road.is",
+        "Sky Lagoon：建議事先預訂，水療儀式有場次限制。",
       ],
     },
   ],
@@ -348,11 +411,11 @@ export const itinerary: Itinerary = {
       label: "Feb 23",
       plan: [],
       hotel: {
-        name: "Guesthouse Skálafell",
-        address: "Skálafell 1, 781 Hornafjörður, Iceland",
-        phone: "+354 478 1041",
-        coordinates: { lat: 64.24758, lng: -15.68699 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Guesthouse+Sk%C3%A1lafell+Sk%C3%A1lafell+1+Hornafj%C3%B6r%C3%B0ur+Iceland",
+        name: "Vagnsstadir Guesthouse",
+        address: "F985, 781 Hornafjörður, Iceland",
+        phone: "+354 854 3133",
+        coordinates: { lat: 64.5385, lng: -14.3894 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Vagnsstadir+Guesthouse+F985+Hornafjordur+Iceland",
       },
       notes: [
         "08:30 海拉出發：晨曦中啟程，避開全黑駕駛，確保有充足日光看瀑布。",
@@ -360,7 +423,7 @@ export const itinerary: Itinerary = {
         "15:30 冰河湖：享受傑古沙龍與鑽石沙灘的夕陽美景。",
         "17:00 赫本晚餐：抵達赫本吃龍蝦大餐（建議預約 17:00 開門首波）。",
         "18:15 啟程回程：離開赫本往回開約 50 公里（約 45–60 分鐘）。",
-        "19:00 抵達旅館：趕在天色全黑、視覺疲勞前抵達 Guesthouse Skálafell。",
+        "19:00 抵達旅館：趕在天色全黑、視覺疲勞前抵達 Vagnsstadir Guesthouse。",
       ],
       reminders: [
         "側風與黑冰：過了維克後的沙原路段風力極強，2 月路面常有看不見的黑冰，請保持車距。",
@@ -376,12 +439,21 @@ export const itinerary: Itinerary = {
       label: "Feb 24",
       plan: [],
       hotel: {
-        name: "Guesthouse Skálafell",
-        address: "Skálafell 1, 781 Hornafjörður, Iceland",
-        phone: "+354 478 1041",
-        coordinates: { lat: 64.24758, lng: -15.68699 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Guesthouse+Sk%C3%A1lafell+Sk%C3%A1lafell+1+Hornafj%C3%B6r%C3%B0ur+Iceland",
+        name: "Vagnsstadir Guesthouse",
+        address: "F985, 781 Hornafjörður, Iceland",
+        phone: "+354 854 3133",
+        coordinates: { lat: 64.5385, lng: -14.3894 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Vagnsstadir+Guesthouse+F985+Hornafjordur+Iceland",
       },
+      notes: [
+        "Ice Cave Discovery（冰川健行 + 藍冰洞探索）集合：Jökulsárlón 停車場",
+        "行程 5~7 小時，務必確認集合時間。算準日光時間以趕往 Vagnsstadir Guesthouse 或 Höfn 晚餐。",
+        "晚上有機會看到極光",
+        "如果冰川健行取消，挪到 Vík 冰川健行",
+      ],
+      noteLinks: [
+        { text: "Jökulsárlón 停車場（集合地點）", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6" },
+      ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 2", stops: [] },
       ],
@@ -397,6 +469,10 @@ export const itinerary: Itinerary = {
         coordinates: { lat: 63.531, lng: -19.363 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimahj%C3%A1leiga+Guesthouse+871+Iceland",
       },
+      notes: [
+        "冰河湖 → 回頭到 Vík、黑沙灘、追極光",
+        "希望空檔可再往東開一些到「Sea Viewpoint」（網路上說景色很強）（從住宿過去約一小時）",
+      ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 3", stops: [] },
       ],
@@ -412,6 +488,10 @@ export const itinerary: Itinerary = {
         coordinates: { lat: 63.531, lng: -19.363 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimahj%C3%A1leiga+Guesthouse+871+Iceland",
       },
+      notes: [
+        "慢活日 / 天氣緩衝 / 可去飛機殘骸",
+        "2/23、2/25 沒看完的景點可利用今天逛",
+      ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 4", stops: [] },
       ],
@@ -427,6 +507,16 @@ export const itinerary: Itinerary = {
         coordinates: { lat: 64.1124, lng: -21.9127 },
         mapUrl: "https://maps.app.goo.gl/jdE6fjTKqdmSPxHC8",
       },
+      notes: [
+        "Vík → 回市區 → Sky Lagoon 日落 Ritual（已訂 16:30，17:30 入場最美）",
+        "市區景點：",
+        "1. 哈爾格林姆教堂（停留 1 小時）",
+        "2. 哈帕音樂廳（停留 0.5 小時）",
+        "3. 天空之湖溫泉（水療儀式）",
+      ],
+      noteLinks: [
+        { text: "Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/MMFgKrN4oUPZyzBy9" },
+      ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 5", stops: [] },
       ],
@@ -442,6 +532,13 @@ export const itinerary: Itinerary = {
         coordinates: { lat: 64.1124, lng: -21.9127 },
         mapUrl: "https://maps.app.goo.gl/jdE6fjTKqdmSPxHC8",
       },
+      notes: [
+        "黃金圈一日遊（辛格韋德利 → 間歇泉 → 古佛斯）",
+        "回城吃晚餐，輕鬆結束",
+        "還有時間的話：",
+        "1. 凱瑞斯火口湖（10:00～17:00 / 600 克朗 ≈ NT$141 / 免費停車）",
+        "2. 克為努瀑布（Kvernufoss）",
+      ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 6", stops: [] },
       ],
@@ -458,6 +555,12 @@ export const itinerary: Itinerary = {
         mapUrl: "https://www.google.com/maps/search/?api=1&query=Guesthouse+1x6+Vesturbraut+3+Keflavik+Iceland",
       },
       notes: [
+        "返回航站附近住宿、收行李、早睡",
+        "Plan A. 可以去冰島西邊：",
+        "1. 海豹沙灘",
+        "2. 瓦汀舍利爾洞穴（需預約，約台幣 1,000 / 人）",
+        "3. 黑教堂",
+        "Plan B. 市區逛街",
         "Transfer service to/from Keflavík Airport @ ISK 3500 per car / one way. (已經訂「3/1 租車公司到旅館」+「3/2 旅館到機場」接送)",
         "至少兩小時前告知抵達住宿的時間。",
       ],
