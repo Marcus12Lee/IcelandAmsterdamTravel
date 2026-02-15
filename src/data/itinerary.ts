@@ -253,7 +253,7 @@ export const itinerary: Itinerary = {
       lat: 64.25029,
       lng: -15.227,
       label: "Pakkhús Restaurant (龍蝦餐廳)",
-      mapUrl: "https://maps.app.goo.gl/v9fCU1MkimRUrTva7",
+      mapUrl: "https://maps.app.goo.gl/yrNKYbS5LmHxmB6J6",
     },
   ],
   // Iceland: 景點與計畫
@@ -270,7 +270,7 @@ export const itinerary: Itinerary = {
       items: [
         {
           text: "Pakkhús Restaurant (龍蝦餐廳)",
-          url: "https://maps.app.goo.gl/v9fCU1MkimRUrTva7",
+          url: "https://maps.app.goo.gl/yrNKYbS5LmHxmB6J6",
           time: "12:00 – 21:00",
           note: "赫本市區必吃。",
         },
