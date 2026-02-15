@@ -54,12 +54,26 @@ export default function DashboardPage() {
         <p className="mt-4 max-w-xl text-lg text-frost-slate">
           Countdown, itinerary, weather and map for your Iceland and Amsterdam trip.
         </p>
-        <a
-          href="#trip-plans"
-          className="mt-6 rounded-xl bg-white px-6 py-3 text-base font-semibold text-surface-dark shadow-lg transition hover:bg-frost-silver"
-        >
-          {t("tripPlansPageTitle")}
-        </a>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <a
+            href="#trip-plans"
+            className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
+          >
+            行程與景點
+          </a>
+          <a
+            href="#currency-converter"
+            className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
+          >
+            幣別換算
+          </a>
+          <a
+            href="#weather-forecast"
+            className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
+          >
+            天氣與預報連結
+          </a>
+        </div>
       </section>
 
       <div className="mb-8">
@@ -98,11 +112,11 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      <div className="mb-8">
+      <div id="currency-converter" className="mb-8 scroll-mt-6">
         <CurrencyConverter />
       </div>
 
-      <div className="mb-8">
+      <div id="weather-forecast" className="mb-8 scroll-mt-6">
         <ForecastLinksSection />
       </div>
       <div className="mb-8">
