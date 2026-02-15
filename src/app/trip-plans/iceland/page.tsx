@@ -33,7 +33,13 @@ export default function IcelandTripPlansPage() {
       </header>
 
       <div className="mb-8">
-        <IcelandMap route={route} />
+        <IcelandMap
+        route={route}
+        referenceLink={{
+          text: "冰島自由行自駕路線景點規劃 (mimigo)",
+          url: "https://mimigo.tw/iceland-travel/#冰島自由行自駕路線景點規劃",
+        }}
+      />
       </div>
 
       <div className="mb-8">

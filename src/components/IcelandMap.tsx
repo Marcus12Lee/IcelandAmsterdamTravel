@@ -27,9 +27,11 @@ const MapInner = dynamic(
 interface IcelandMapProps {
   /** Route from itinerary (KEF + Iceland hotels). If empty or not provided, shows default KEF → Reykjavík. */
   route?: RoutePoint[];
+  /** Optional reference link shown below the map */
+  referenceLink?: { text: string; url: string };
 }
 
-export function IcelandMap({ route: routeProp }: IcelandMapProps) {
+export function IcelandMap({ route: routeProp, referenceLink }: IcelandMapProps) {
   const { t } = useLocale();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -48,6 +50,16 @@ export function IcelandMap({ route: routeProp }: IcelandMapProps) {
         <div className="flex min-h-[280px] items-center justify-center rounded-xl border border-ice-700/50 bg-ice-900/50 text-frost-slate">
           {t("loading")}
         </div>
+      )}
+      {referenceLink && (
+        <a
+          href={referenceLink.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-block text-sm text-glacier-light underline hover:text-glacier-mid"
+        >
+          → {referenceLink.text}
+        </a>
       )}
     </section>
   );
