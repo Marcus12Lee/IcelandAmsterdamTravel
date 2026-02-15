@@ -59,19 +59,19 @@ export default function DashboardPage() {
             href="#trip-plans"
             className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
           >
-            行程與景點
+            {t("shortcutItinerary")}
           </a>
           <a
             href="#currency-converter"
             className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
           >
-            幣別換算
+            {t("shortcutCurrency")}
           </a>
           <a
             href="#weather-forecast"
             className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
           >
-            天氣與預報連結
+            {t("shortcutWeatherForecast")}
           </a>
         </div>
       </section>

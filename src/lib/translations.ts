@@ -70,6 +70,9 @@ export const translations: Record<
     viewIcelandTripPlans: string;
     backToDashboard: string;
     tripPlansPageTitle: string;
+    shortcutItinerary: string;
+    shortcutCurrency: string;
+    shortcutWeatherForecast: string;
   }
 > = {
   en: {
@@ -139,6 +142,9 @@ export const translations: Record<
     viewIcelandTripPlans: "View Iceland trip plans",
     backToDashboard: "Back to dashboard",
     tripPlansPageTitle: "Trip plans",
+    shortcutItinerary: "Trip plans",
+    shortcutCurrency: "Currency converter",
+    shortcutWeatherForecast: "Weather & forecast links",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -207,6 +213,9 @@ export const translations: Record<
     viewIcelandTripPlans: "查看冰島行程",
     backToDashboard: "返回主頁",
     tripPlansPageTitle: "行程與景點",
+    shortcutItinerary: "行程與景點",
+    shortcutCurrency: "幣別換算",
+    shortcutWeatherForecast: "天氣與預報連結",
   },
 };
 
