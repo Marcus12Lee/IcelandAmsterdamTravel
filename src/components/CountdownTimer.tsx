@@ -51,6 +51,20 @@ function useLocalClocks() {
   return clocks;
 }
 
+function PlaneIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden
+    >
+      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+    </svg>
+  );
+}
+
 export function CountdownTimer({ keyDates }: CountdownTimerProps) {
   const { t, tKeyDate } = useLocale();
   const [result, setResult] = useState<CountdownResult | null>(null);
@@ -73,35 +87,70 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
     { value: result.seconds, label: t("sec") },
   ];
 
+  const title = tKeyDate(result.label);
+
   return (
-    <section className="rounded-2xl border border-white/10 bg-surface/90 p-6 shadow-xl backdrop-blur-sm">
-      <p className="mb-1 text-sm font-medium uppercase tracking-wider text-frost-silver">
+    <section className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 px-6 py-6 shadow-xl backdrop-blur-xl sm:px-8 sm:py-7">
+      {/* Dotted line with plane moving toward title */}
+      <div className="relative mb-4 flex items-center justify-between gap-4">
+        <div className="flex flex-1 items-center gap-2">
+          <span className="flex shrink-0 text-[#A7C4BC] animate-countdown-plane">
+            <PlaneIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+          </span>
+          <span
+            className="h-px flex-1 border-b border-dotted border-white/30"
+            aria-hidden
+          />
+        </div>
+        <p className="shrink-0 text-base font-semibold text-white sm:text-lg">
+          {title}
+        </p>
+      </div>
+
+      <p className="mb-4 text-xs font-medium uppercase tracking-wider text-white/70">
         {t("countdownTo")}
       </p>
-      <p className="mb-2 text-lg font-semibold text-white">{tKeyDate(result.label)}</p>
-      <div className="mb-4 space-y-3">
+
+      {/* Time zones: horizontal row */}
+      <div className="mb-6 flex flex-wrap justify-center gap-6 sm:gap-8">
         {localClocks.map(({ label, value }) => (
-          <p key={label} className="text-sm leading-relaxed text-frost-slate sm:text-base">
-            <span className="font-semibold text-frost-silver">{label}:</span>{" "}
-            <span className="tabular-nums">{value}</span>
-          </p>
+          <div
+            key={label}
+            className="text-center"
+          >
+            <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
+              {label}
+            </p>
+            <p className="mt-0.5 font-mono text-sm tabular-nums text-white/90 sm:text-base">
+              {value}
+            </p>
+          </div>
         ))}
       </div>
+
+      {/* Countdown blocks: mint green with glow */}
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
         {blocks.map(({ value, label }) => (
           <div
             key={label}
-            className="flex min-w-[4rem] flex-col items-center rounded-xl bg-surface-light/80 px-4 py-3 ring-1 ring-white/10"
+            className="flex min-w-[4rem] flex-col items-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm"
           >
-            <span className="font-mono text-2xl font-bold tabular-nums text-accent-light sm:text-3xl">
+            <span
+              className="font-mono text-2xl font-bold tabular-nums sm:text-3xl"
+              style={{
+                color: "#A7C4BC",
+                textShadow: "0 0 20px rgba(167, 196, 188, 0.5), 0 0 40px rgba(167, 196, 188, 0.25)",
+              }}
+            >
               {String(value).padStart(2, "0")}
             </span>
-            <span className="text-xs font-medium text-frost-slate">{label}</span>
+            <span className="mt-1 text-xs font-medium text-white/70">{label}</span>
           </div>
         ))}
       </div>
+
       {(result.isPast || result.isToday) && (
-        <p className="mt-3 text-center text-sm text-accent-light">
+        <p className="mt-4 text-center text-sm text-[#A7C4BC]">
           {result.isPast ? t("eventPassed") : t("today")}
         </p>
       )}

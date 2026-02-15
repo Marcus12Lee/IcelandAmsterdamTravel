@@ -69,11 +69,16 @@ const config: Config = {
       },
       animation: {
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
+        "countdown-plane": "countdown-plane 3s ease-in-out infinite",
       },
       keyframes: {
         "pulse-soft": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.85" },
+        },
+        "countdown-plane": {
+          "0%, 100%": { transform: "translateX(0) scale(1)" },
+          "50%": { transform: "translateX(120px) scale(1.05)" },
         },
       },
     },
