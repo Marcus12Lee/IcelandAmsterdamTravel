@@ -9,7 +9,7 @@ interface CountdownTimerProps {
   keyDates: Itinerary["keyDates"];
 }
 
-/** Same format as Taipei: weekday, month day, year, HH:MM:SS AM/PM */
+/** Full format: Mon, Feb 17, 2025, 10:30:00 AM */
 function formatLocalTime(date: Date, timeZone: string): string {
   return date.toLocaleString("en-CA", {
     timeZone,
@@ -111,17 +111,14 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
         {t("countdownTo")}
       </p>
 
-      {/* Time zones: horizontal row */}
-      <div className="mb-6 flex flex-wrap justify-center gap-6 sm:gap-8">
+      {/* Time zones: label above time per city, centered */}
+      <div className="mb-6 flex flex-col items-center gap-4 text-center">
         {localClocks.map(({ label, value }) => (
-          <div
-            key={label}
-            className="text-center"
-          >
-            <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
-              {label}
+          <div key={label} className="flex flex-col gap-0.5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
+              {label === "Iceland" ? "Iceland:" : label}
             </p>
-            <p className="mt-0.5 font-mono text-sm tabular-nums text-white/90 sm:text-base">
+            <p className="font-mono text-sm tabular-nums text-white/90 sm:text-base">
               {value}
             </p>
           </div>
