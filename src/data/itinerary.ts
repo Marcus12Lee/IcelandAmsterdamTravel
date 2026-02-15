@@ -37,7 +37,7 @@ export const itinerary: Itinerary = {
         },
         {
           text: "凡高博物館 (Van Gogh Museum)",
-          url: "https://maps.google.com/?cid=15319659771873942282&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ",
+          url: "https://maps.app.goo.gl/JirgRS9vL7ayJ5zn6",
           time: "每日 09:00 – 18:00 (週五至 21:00)",
         },
         {
@@ -47,7 +47,7 @@ export const itinerary: Itinerary = {
         },
         {
           text: "老教堂 (Oude Kerk)",
-          url: "https://maps.google.com/maps/contrib/107868822795101671424",
+          url: "https://maps.app.goo.gl/Prpc4ted4xBeQhFT9",
           time: "週一至六 10:00 – 18:00，週日 13:00 – 17:30",
           note: "附近地面有「摸乳磚」景點。",
         },
@@ -58,7 +58,7 @@ export const itinerary: Itinerary = {
       items: [
         {
           text: "鹿特丹馬克塔爾市集 (Markthal)",
-          url: "https://maps.app.goo.gl/eLQZ7Zb5pFomdrB2A",
+          url: "https://maps.app.goo.gl/b53uPMnRuTLB56a9A",
           time: "週一至六 10:00 – 20:00，週日 12:00 – 18:00",
           note: "適合安排午餐。",
         },
@@ -69,7 +69,7 @@ export const itinerary: Itinerary = {
         },
         {
           text: "贊瑟斯漢斯風車村 (Zaanse Schans)",
-          url: "https://maps.google.com/maps/contrib/110276884242487209420",
+          url: "https://maps.app.goo.gl/363ZLKxjLLME41ADA",
           time: "園區開放至 17:00",
           note: "推薦 Henri Willig 霜淇淋。",
         },
