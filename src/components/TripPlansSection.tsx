@@ -3,8 +3,9 @@
 import type { TripPlanItem, TripPlanGroup } from "@/types/itinerary";
 
 type LinkStyle = "default" | "button-transparent";
+type LinkVariant = "blue" | "mint";
 
-/** Iceland page: every link = same light blue (like 天空之湖溫泉). Only links containing this stay a different color (light gray). */
+/** Iceland: blue links. Only links containing this stay gray. AMS: use linkVariant="mint" for Recommended Choice. */
 const EXPERIENCE_SHARE_PREFIX = "→ 體驗分享";
 
 interface TripPlansSectionProps {
@@ -13,11 +14,13 @@ interface TripPlansSectionProps {
   items?: TripPlanItem[];
   groups?: TripPlanGroup[];
   emptyMessage?: string;
-  /** When "button-transparent", links are styled as transparent pill/buttons (Iceland page). */
+  /** When "button-transparent", links are styled as transparent pill/buttons. */
   linkStyle?: LinkStyle;
+  /** "mint" = Recommended Choice (muted mint border, off-white text, slight emerald glow) for AMS trip. */
+  linkVariant?: LinkVariant;
 }
 
-function PlanItem({ item, i, linkStyle = "default" }: { item: TripPlanItem; i: number; linkStyle?: LinkStyle }) {
+function PlanItem({ item, i, linkStyle = "default", linkVariant = "blue" }: { item: TripPlanItem; i: number; linkStyle?: LinkStyle; linkVariant?: LinkVariant }) {
   const text = typeof item === "string" ? item : item.text;
   const url = typeof item === "string" ? undefined : item.url;
   const time = typeof item === "string" ? undefined : item.time;
@@ -30,6 +33,9 @@ function PlanItem({ item, i, linkStyle = "default" }: { item: TripPlanItem; i: n
     const base = "inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition";
     if (isExperienceShare) {
       return `${base} border-white/25 bg-white/5 text-gray-400 hover:border-white/40 hover:bg-white/10 hover:text-gray-200`;
+    }
+    if (linkVariant === "mint") {
+      return `${base} border-[#A7C4BC] bg-[#A7C4BC]/10 text-[#F1F5F9] shadow-[0_0_12px_rgba(167,196,188,0.25)] hover:border-[#A7C4BC] hover:bg-[#A7C4BC]/20 hover:shadow-[0_0_16px_rgba(167,196,188,0.35)]`;
     }
     return `${base} border-[#38bdf8] bg-[#0ea5e9]/25 text-[#bae6fd] hover:border-[#7dd3fc] hover:bg-[#0ea5e9]/40 hover:text-[#7dd3fc]`;
   };
@@ -79,6 +85,7 @@ export function TripPlansSection({
   groups,
   emptyMessage = "Add your plans and places in src/data/itinerary.ts",
   linkStyle = "default",
+  linkVariant = "blue",
 }: TripPlansSectionProps) {
   const hasGroups = groups && groups.length > 0;
   const flatItems = hasGroups ? [] : items;
@@ -97,7 +104,7 @@ export function TripPlansSection({
               </h3>
               <ul className="space-y-2">
                 {group.items.map((item, i) => (
-                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} />
+                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} />
                 ))}
               </ul>
             </div>
@@ -106,7 +113,7 @@ export function TripPlansSection({
       ) : hasFlat ? (
         <ul className="mt-4 space-y-2">
           {flatItems.map((item, i) => (
-            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} />
+            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} />
           ))}
         </ul>
       ) : (

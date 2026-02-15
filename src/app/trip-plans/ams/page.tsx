@@ -36,6 +36,8 @@ export default function AmsTripPlansPage() {
           groups={props.groups}
           items={props.items}
           emptyMessage={t("emptyPlansHint")}
+          linkStyle="button-transparent"
+          linkVariant="mint"
         />
       </div>
 
