@@ -28,10 +28,10 @@ function PlanHotelNotes({
   if (!hasPlan && !hasHotel && !hasNotes && !hasNoteLinks) return null;
 
   return (
-    <div className="rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 sm:p-4">
+    <div className="rounded-lg border border-white/10 bg-surface-light/50 p-3 sm:p-4">
       {hasPlan && (
         <div className="mb-2">
-          <span className="text-xs font-semibold uppercase text-glacier-mid">{t("plan")}</span>
+          <span className="text-xs font-semibold uppercase text-frost-silver">{t("plan")}</span>
           {Array.isArray(plan) ? (
             <ul className="mt-1 list-inside list-disc text-sm text-frost-slate">
               {plan.map((item, i) => (
@@ -45,14 +45,14 @@ function PlanHotelNotes({
       )}
       {hasHotel && (
         <div>
-          <span className="text-xs font-semibold uppercase text-glacier-mid">{t("hotel")}</span>
+          <span className="text-xs font-semibold uppercase text-frost-silver">{t("hotel")}</span>
           <p className="mt-1 font-medium text-white">{hotel!.name}</p>
           {hotel!.address && (
             <p className="text-sm text-frost-slate">{hotel!.address}</p>
           )}
           {hotel!.phone && (
             <p className="text-sm text-frost-slate">
-              <a href={`tel:${hotel!.phone.replace(/\s/g, "")}`} className="hover:text-glacier-light">{hotel!.phone}</a>
+              <a href={`tel:${hotel!.phone.replace(/\s/g, "")}`} className="hover:text-accent-light">{hotel!.phone}</a>
             </p>
           )}
           {hotel!.mapUrl && (
@@ -60,7 +60,7 @@ function PlanHotelNotes({
               href={hotel!.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-sm font-medium text-glacier-light underline decoration-glacier-mid underline-offset-2 hover:text-glacier-light hover:decoration-glacier-light"
+              className="mt-2 inline-block text-sm font-medium text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent hover:decoration-accent"
             >
               {t("viewOnGoogleMaps")}
             </a>
@@ -68,13 +68,13 @@ function PlanHotelNotes({
         </div>
       )}
       {(hasNotes || hasNoteLinks) && (
-        <div className={hasHotel || hasPlan ? "mt-2 border-t border-ice-700/40 pt-2" : ""}>
-          <span className="text-xs font-semibold uppercase text-glacier-mid">{t("notes")}</span>
+        <div className={hasHotel || hasPlan ? "mt-2 border-t border-white/10 pt-2" : ""}>
+          <span className="text-xs font-semibold uppercase text-frost-silver">{t("notes")}</span>
           {hasNotes && (Array.isArray(notes) ? (
             <ul className="mt-1 space-y-1.5 text-sm text-frost-slate">
               {notes.map((item, i) => (
                 <li key={i} className="flex gap-2">
-                  <span className="shrink-0 text-glacier-mid">•</span>
+                  <span className="shrink-0 text-frost-silver">•</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -86,12 +86,12 @@ function PlanHotelNotes({
             <ul className="mt-1.5 space-y-1 text-sm">
               {noteLinks!.map((link, i) => (
                 <li key={i} className="flex gap-2">
-                  <span className="shrink-0 text-glacier-mid">→</span>
+                  <span className="shrink-0 text-frost-silver">→</span>
                   <a
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-glacier-light underline hover:text-glacier-mid"
+                    className="text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent hover:decoration-accent"
                   >
                     {link.text}
                   </a>
@@ -124,8 +124,8 @@ function RemindersBlock({ reminders, t }: { reminders: string | string[]; t: TFu
 
 function FlightBlock({ event, t }: { event: FlightEvent; t: TFunc }) {
   return (
-    <div className="rounded-lg border border-ice-700/40 bg-ice-900/40 p-3 sm:p-4">
-      <span className="text-xs font-semibold uppercase text-glacier-mid">{t("flight")}</span>
+    <div className="rounded-lg border border-white/10 bg-surface-light/50 p-3 sm:p-4">
+      <span className="text-xs font-semibold uppercase text-frost-silver">{t("flight")}</span>
       <p className="font-medium text-white">{event.summary}</p>
       {event.legs.map((leg, i) => (
         <p key={i} className="mt-1 text-sm text-frost-slate">
@@ -138,17 +138,17 @@ function FlightBlock({ event, t }: { event: FlightEvent; t: TFunc }) {
 
 function ActivityBlock({ event }: { event: ActivityEvent }) {
   return (
-    <div className="rounded-lg border border-ice-700/40 bg-ice-900/40 p-3 sm:p-4">
+    <div className="rounded-lg border border-white/10 bg-surface-light/50 p-3 sm:p-4">
       <p className="font-medium text-white">{event.title}</p>
       {event.description && <p className="text-sm text-frost-slate">{event.description}</p>}
-      {event.time && <p className="text-xs text-glacier-mid">{event.time}</p>}
+      {event.time && <p className="text-xs text-frost-slate">{event.time}</p>}
     </div>
   );
 }
 
 function DayBlock({ event }: { event: DayEvent }) {
   return (
-    <div className="rounded-lg border border-ice-700/40 bg-ice-900/40 p-3 sm:p-4">
+    <div className="rounded-lg border border-white/10 bg-surface-light/50 p-3 sm:p-4">
       <p className="font-medium text-white">{event.title}</p>
       {event.description && <p className="text-sm text-frost-slate">{event.description}</p>}
       {event.stops?.length ? (
@@ -165,16 +165,16 @@ function DayBlock({ event }: { event: DayEvent }) {
 export function ItineraryTimeline({ days }: ItineraryTimelineProps) {
   const { t } = useLocale();
   return (
-    <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
-      <h2 className="mb-6 text-xl font-semibold text-frost-white sm:text-2xl">{t("itinerary")}</h2>
-      <div className="flex max-h-[75vh] min-h-[420px] flex-col gap-8 overflow-y-auto pr-3 scrollbar-thin scrollbar-track-ice-900 scrollbar-thumb-ice-600">
+    <section className="rounded-2xl border border-white/10 bg-surface/90 p-6 sm:p-8 shadow-xl backdrop-blur-sm">
+      <h2 className="mb-6 text-xl font-semibold text-white sm:text-2xl">{t("itinerary")}</h2>
+      <div className="flex max-h-[75vh] min-h-[420px] flex-col gap-8 overflow-y-auto pr-3 scrollbar-thin">
         {days.map((day) => (
           <div key={day.date} className="flex gap-5">
             <div className="flex shrink-0 flex-col items-center">
-              <span className="rounded-lg bg-glacier-dark px-3 py-1.5 text-sm font-semibold text-glacier-light">
+              <span className="rounded-lg bg-white/10 px-3 py-1.5 text-sm font-semibold text-white">
                 {day.label}
               </span>
-              <div className="mt-2 h-full w-px bg-ice-700" />
+              <div className="mt-2 h-full w-px bg-white/10" />
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-3 pb-2">
               {[...day.events]

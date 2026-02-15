@@ -74,11 +74,11 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
   ];
 
   return (
-    <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
+    <section className="rounded-2xl border border-white/10 bg-surface/90 p-6 shadow-xl backdrop-blur-sm">
       <p className="mb-1 text-sm font-medium uppercase tracking-wider text-frost-silver">
         {t("countdownTo")}
       </p>
-      <p className="mb-2 text-lg font-semibold text-frost-white">{tKeyDate(result.label)}</p>
+      <p className="mb-2 text-lg font-semibold text-white">{tKeyDate(result.label)}</p>
       <div className="mb-4 space-y-3">
         {localClocks.map(({ label, value }) => (
           <p key={label} className="text-sm leading-relaxed text-frost-slate sm:text-base">
@@ -91,9 +91,9 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
         {blocks.map(({ value, label }) => (
           <div
             key={label}
-            className="flex min-w-[4rem] flex-col items-center rounded-xl bg-ice-900/80 px-4 py-3 ring-1 ring-ice-700/50"
+            className="flex min-w-[4rem] flex-col items-center rounded-xl bg-surface-light/80 px-4 py-3 ring-1 ring-white/10"
           >
-            <span className="font-mono text-2xl font-bold tabular-nums text-glacier-light sm:text-3xl">
+            <span className="font-mono text-2xl font-bold tabular-nums text-accent-light sm:text-3xl">
               {String(value).padStart(2, "0")}
             </span>
             <span className="text-xs font-medium text-frost-slate">{label}</span>
@@ -101,7 +101,7 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
         ))}
       </div>
       {(result.isPast || result.isToday) && (
-        <p className="mt-3 text-center text-sm text-glacier-mid">
+        <p className="mt-3 text-center text-sm text-accent-light">
           {result.isPast ? t("eventPassed") : t("today")}
         </p>
       )}

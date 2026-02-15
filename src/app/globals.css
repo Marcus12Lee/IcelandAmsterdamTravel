@@ -7,6 +7,10 @@
   --ice-surface: #075985;
   --ice-text: #f8fafc;
   --ice-muted: #94a3b8;
+  --theme-bg: #0a0a0f;
+  --theme-surface: #16161d;
+  --theme-accent: #8b5cf6;
+  --theme-accent-light: #a78bfa;
 }
 
 .dark {
@@ -21,7 +25,9 @@ html {
 }
 
 body {
-  @apply bg-ice-950 text-frost-white;
+  background-color: var(--theme-bg);
+  background-image: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 55%);
+  @apply text-frost-white;
   min-height: 100vh;
 }
 
@@ -30,22 +36,22 @@ body {
   width: 6px;
 }
 .scrollbar-thin::-webkit-scrollbar-track {
-  @apply bg-ice-900 rounded-full;
+  @apply bg-surface-dark rounded-full;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  @apply bg-ice-600 rounded-full;
+  @apply bg-surface-light rounded-full;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  @apply bg-ice-500;
+  @apply bg-accent/40 rounded-full;
 }
 
 /* Leaflet map container */
 .leaflet-container {
-  @apply bg-ice-900 font-sans;
+  @apply bg-surface font-sans;
 }
 
 /* Focus for accessibility */
 a:focus-visible,
 button:focus-visible {
-  @apply outline-2 outline-offset-2 outline-glacier-mid/70;
+  @apply outline-2 outline-offset-2 outline-accent/70;
 }

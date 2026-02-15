@@ -50,7 +50,7 @@ function WeatherCard({ city, t }: { city: string; t: TFunc }) {
   if (error) {
     const message = error === "Weather unavailable" ? t("weatherUnavailable") : error;
     return (
-      <div className="rounded-xl border border-ice-700/50 bg-ice-900/50 p-4">
+      <div className="rounded-xl border border-white/10 bg-surface-light/50 p-4">
         <p className="font-semibold text-white">{city}</p>
         <p className="text-sm text-amber-400">{message}</p>
       </div>
@@ -59,7 +59,7 @@ function WeatherCard({ city, t }: { city: string; t: TFunc }) {
 
   if (!data) {
     return (
-      <div className="rounded-xl border border-ice-700/50 bg-ice-900/50 p-4">
+      <div className="rounded-xl border border-white/10 bg-surface-light/50 p-4">
         <p className="font-semibold text-white">{city}</p>
         <p className="text-sm text-frost-slate">{t("loading")}</p>
       </div>
@@ -69,11 +69,11 @@ function WeatherCard({ city, t }: { city: string; t: TFunc }) {
   const iconUrl = `https://openweathermap.org/img/wn/${data.icon}@2x.png`;
 
   return (
-    <div className="rounded-xl border border-ice-700/50 bg-ice-900/50 p-4">
+    <div className="rounded-xl border border-white/10 bg-surface-light/50 p-4">
       <div className="flex items-center justify-between">
         <div>
           <p className="font-semibold text-white">{data.city}</p>
-          <p className="text-2xl font-bold text-glacier-light">{data.temp}°C</p>
+          <p className="text-2xl font-bold text-accent-light">{data.temp}°C</p>
           <p className="text-sm capitalize text-frost-slate">{data.description}</p>
           <p className="mt-1 text-xs text-frost-slate">
             {t("feelsLike")} {data.feelsLike}°C · {data.humidity}% {t("humidity")} · {data.windSpeed} m/s {t("wind")}
@@ -90,7 +90,7 @@ function WeatherCard({ city, t }: { city: string; t: TFunc }) {
 export function WeatherModule() {
   const { t } = useLocale();
   return (
-    <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80">
+    <section className="rounded-2xl border border-white/10 bg-surface/90 p-6 shadow-xl backdrop-blur-sm">
       <h2 className="mb-4 text-lg font-semibold text-white">{t("weather")}</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CITIES.map((city) => (
@@ -100,7 +100,7 @@ export function WeatherModule() {
       <p className="mt-3 text-xs text-frost-slate">
         {t("weatherApiHint")}
       </p>
-      <p className="mt-1 text-xs text-glacier-mid">
+      <p className="mt-1 text-xs text-accent/80">
         {t("weatherApiHintVercel")}
       </p>
     </section>

@@ -10,7 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Icelandic Winter (1st version) – fine-tuned
+        // Visuo-style dark theme
+        surface: {
+          DEFAULT: "#16161d",
+          light: "#1e1e26",
+          dark: "#0f0f14",
+        },
+        accent: {
+          DEFAULT: "#8b5cf6",
+          light: "#a78bfa",
+          dark: "#7c3aed",
+        },
+        // Icelandic Winter – kept for compatibility
         ice: {
           50: "#f0f9ff",
           100: "#e0f2fe",
@@ -36,6 +47,13 @@ const config: Config = {
           deep: "#0891b2",
           dark: "#0e7490",
         },
+        /** Strong light blue for map/place links (Iceland page, self-drive navigation) */
+        "map-link": {
+          DEFAULT: "#0ea5e9",
+          light: "#7dd3fc",
+          bright: "#bae6fd",
+          border: "#38bdf8",
+        },
       },
       fontFamily: {
         sans: ["system-ui", "Segoe UI", "Roboto", "sans-serif"],
@@ -46,6 +64,8 @@ const config: Config = {
           "linear-gradient(165deg, #0f172a 0%, #082f49 35%, #0c4a6e 70%, #075985 100%)",
         "gradient-aurora":
           "linear-gradient(180deg, #0e7490 0%, #0c4a6e 50%, #1e293b 100%)",
+        "gradient-glow":
+          "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 55%)",
       },
       animation: {
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",

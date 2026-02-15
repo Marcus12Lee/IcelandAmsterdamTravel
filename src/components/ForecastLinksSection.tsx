@@ -51,15 +51,15 @@ export function ForecastLinksSection() {
   const lang = locale === "zh-TW" ? "zh-TW" : "en";
 
   return (
-    <section className="rounded-2xl border border-ice-700/50 bg-ice-950/60 p-6 shadow-xl backdrop-blur-sm dark:border-glacier-dark/50 dark:bg-ice-950/80 sm:p-8">
-      <h2 className="mb-1 text-lg font-semibold text-frost-white sm:text-xl">
+    <section className="rounded-2xl border border-white/10 bg-surface/90 p-6 shadow-xl backdrop-blur-sm sm:p-8">
+      <h2 className="mb-1 text-lg font-semibold text-white sm:text-xl">
         {t("forecastLinksTitle")}
       </h2>
       <p className="mb-6 text-sm text-frost-slate">
         {t("forecastLinksSubtitle")}
       </p>
 
-      <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-glacier-mid">
+      <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-frost-silver">
         {t("forecastTipsTitle")}
       </h3>
       <div className="mb-6 grid gap-3 sm:grid-cols-1 md:grid-cols-3">
@@ -67,32 +67,32 @@ export function ForecastLinksSection() {
           href={FORECAST_LINKS.aurora.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+          className="block rounded-lg border border-white/10 bg-surface-light/50 p-3 transition hover:border-accent/40 hover:bg-surface-light/80"
         >
-          <p className="font-medium text-glacier-light">{t("forecastAuroraTipTitle")}</p>
+          <p className="font-medium text-accent-light">{t("forecastAuroraTipTitle")}</p>
           <p className="mt-1 text-xs text-frost-slate">{t("forecastAuroraTipBody")}</p>
         </a>
         <a
           href={FORECAST_LINKS.roadConditions.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+          className="block rounded-lg border border-white/10 bg-surface-light/50 p-3 transition hover:border-accent/40 hover:bg-surface-light/80"
         >
-          <p className="font-medium text-glacier-light">{t("forecastRoadTipTitle")}</p>
+          <p className="font-medium text-accent-light">{t("forecastRoadTipTitle")}</p>
           <p className="mt-1 text-xs text-frost-slate">{t("forecastRoadTipBody")}</p>
         </a>
         <a
           href={FORECAST_LINKS.safeTravel.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+          className="block rounded-lg border border-white/10 bg-surface-light/50 p-3 transition hover:border-accent/40 hover:bg-surface-light/80"
         >
-          <p className="font-medium text-glacier-light">{t("forecastSafeTipTitle")}</p>
+          <p className="font-medium text-accent-light">{t("forecastSafeTipTitle")}</p>
           <p className="mt-1 text-xs text-frost-slate">{t("forecastSafeTipBody")}</p>
         </a>
       </div>
 
-      <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-glacier-mid">
+      <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-frost-silver">
         {t("forecastOfficialLinks")}
       </h3>
       <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
@@ -105,11 +105,11 @@ export function ForecastLinksSection() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block rounded-lg border border-ice-700/40 bg-ice-900/40 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+                className="block rounded-lg border border-white/10 bg-surface-light/50 p-3 transition hover:border-accent/40 hover:bg-surface-light/80"
               >
-                <span className="font-medium text-glacier-light">{title}</span>
+                <span className="font-medium text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent hover:decoration-accent">{title}</span>
                 <p className="mt-1 text-sm text-frost-slate">{desc}</p>
-                <span className="mt-2 inline-block break-all text-xs text-glacier-mid">
+                <span className="mt-2 inline-block break-all text-xs text-accent/80">
                   {item.url}
                 </span>
               </a>
