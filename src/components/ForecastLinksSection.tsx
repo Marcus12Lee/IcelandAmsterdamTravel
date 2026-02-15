@@ -14,10 +14,20 @@ const FORECAST_LINKS = {
     en: { title: "Iceland Weather Forecast", desc: "Official Icelandic Met Office – weather across Iceland." },
     "zh-TW": { title: "冰島天氣預報", desc: "冰島氣象局官方 – 全冰島天氣。" },
   },
-  weatherMaps: {
-    url: "https://en.vedur.is/weather/forecasts/",
-    en: { title: "Weather maps & regional forecasts", desc: "Wind, precipitation, and regional forecasts with maps." },
-    "zh-TW": { title: "天氣圖與區域預報", desc: "風力、降水與區域預報地圖。" },
+  stationForecasts: {
+    url: "https://en.vedur.is/weather/forecasts/areas/",
+    en: { title: "Station forecasts – Overview stations", desc: "Station forecasts for the whole country with forecast map and tables." },
+    "zh-TW": { title: "測站預報 – 全冰島概覽", desc: "全冰島測站預報，含預報地圖與表格。" },
+  },
+  windTemperaturePrecip: {
+    url: "https://en.vedur.is/weather/forecasts/elements/",
+    en: { title: "Wind, temperature, precipitation forecasts", desc: "Wind, temperature, and precipitation maps by region and time." },
+    "zh-TW": { title: "風力、溫度、降水預報", desc: "各地區與時段之風力、溫度、降水預報圖。" },
+  },
+  textForecast: {
+    url: "https://en.vedur.is/weather/forecasts/text/",
+    en: { title: "Text forecast", desc: "Written weather outlook and forecast for the next several days." },
+    "zh-TW": { title: "文字預報", desc: "天氣展望與未來數日文字預報。" },
   },
   roadConditions: {
     url: "https://road.is/",
@@ -25,7 +35,7 @@ const FORECAST_LINKS = {
     "zh-TW": { title: "路況查詢 (road.is)", desc: "冰島道路狀況 – 冬季自駕必查。" },
   },
   avalanche: {
-    url: "https://en.vedur.is/avalanches/forecast",
+    url: "https://gottvedur.is/snjoflod/en/",
     en: { title: "Avalanche forecast", desc: "Regional avalanche bulletins (Oct–Jun). Check if you plan to go near steep, snow-covered slopes." },
     "zh-TW": { title: "雪崩預報", desc: "區域雪崩公報（10月–6月）。若前往陡峭積雪區請先查閱。" },
   },
@@ -53,18 +63,33 @@ export function ForecastLinksSection() {
         {t("forecastTipsTitle")}
       </h3>
       <div className="mb-6 grid gap-3 sm:grid-cols-1 md:grid-cols-3">
-        <div className="rounded-lg border border-ice-700/40 bg-ice-900/30 p-3">
+        <a
+          href={FORECAST_LINKS.aurora.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+        >
           <p className="font-medium text-glacier-light">{t("forecastAuroraTipTitle")}</p>
           <p className="mt-1 text-xs text-frost-slate">{t("forecastAuroraTipBody")}</p>
-        </div>
-        <div className="rounded-lg border border-ice-700/40 bg-ice-900/30 p-3">
+        </a>
+        <a
+          href={FORECAST_LINKS.roadConditions.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+        >
           <p className="font-medium text-glacier-light">{t("forecastRoadTipTitle")}</p>
           <p className="mt-1 text-xs text-frost-slate">{t("forecastRoadTipBody")}</p>
-        </div>
-        <div className="rounded-lg border border-ice-700/40 bg-ice-900/30 p-3">
+        </a>
+        <a
+          href={FORECAST_LINKS.safeTravel.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-lg border border-ice-700/40 bg-ice-900/30 p-3 transition hover:border-glacier-mid/60 hover:bg-ice-800/50"
+        >
           <p className="font-medium text-glacier-light">{t("forecastSafeTipTitle")}</p>
           <p className="mt-1 text-xs text-frost-slate">{t("forecastSafeTipBody")}</p>
-        </div>
+        </a>
       </div>
 
       <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-glacier-mid">
