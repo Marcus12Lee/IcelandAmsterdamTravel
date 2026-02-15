@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { CurrencyConverter } from "@/components/CurrencyConverter";
 import { ItineraryTimeline } from "@/components/ItineraryTimeline";
 import { ForecastLinksSection } from "@/components/ForecastLinksSection";
 import { IcelandMap } from "@/components/IcelandMap";
@@ -96,6 +97,10 @@ export default function DashboardPage() {
           </Link>
         </div>
       </section>
+
+      <div className="mb-8">
+        <CurrencyConverter />
+      </div>
 
       <div className="mb-8">
         <ForecastLinksSection />
