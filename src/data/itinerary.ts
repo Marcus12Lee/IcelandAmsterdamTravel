@@ -314,6 +314,15 @@ export const itinerary: Itinerary = {
       ],
     },
     {
+      section: "🍽️ 冰島金圈美食",
+      items: [
+        { text: "Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://maps.app.goo.gl/cAGUdLnULZ45SnMV7" },
+        { text: "Kaffi Krus：漢堡披薩", url: "https://maps.app.goo.gl/yY8q8t2hC6SycqMa6", note: "Kronan 超市旁順道補貨" },
+        { text: "→ 體驗分享：Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://mimigo.tw/farmhotel-efstidalur/" },
+        { text: "→ 體驗分享：Kaffi Krus 塞爾福斯北歐小館", url: "https://mimigo.tw/selfoss-kaffi-krus/" },
+      ],
+    },
+    {
       section: "🌊 南岸與東南邊 (South & South East)",
       items: [
         { text: "塞里雅蘭瀑布 (Seljalandsfoss) + Gljúfrabúi 瀑布", url: "https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland", note: "Gljúfrabúi 是隱藏在岩縫中的祕境瀑布，就在塞里雅蘭旁邊。" },
