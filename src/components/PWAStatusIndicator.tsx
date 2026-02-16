@@ -21,10 +21,28 @@ const LABELS: Record<string, Record<SWStatus, string>> = {
 };
 
 export function PWAStatusIndicator() {
-  const { locale } = useLocale();
+  const { t, locale } = useLocale();
   const [status, setStatus] = useState<SWStatus>("checking");
+  const [isOnline, setIsOnline] = useState(true);
+
   const lang = locale === "zh-TW" ? "zh-TW" : "en";
-  const label = LABELS[lang][status];
+  const label = !isOnline ? t("pwaOfflineUseGps") : LABELS[lang][status];
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setIsOnline(navigator.onLine);
+    const handleOnline = () => {
+      setIsOnline(true);
+      setStatus("checking");
+    };
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) {
@@ -69,7 +87,7 @@ export function PWAStatusIndicator() {
 
   if (status === "unsupported") return null;
 
-  const isReady = status === "ready";
+  const isReady = !isOnline || status === "ready";
 
   return (
     <div

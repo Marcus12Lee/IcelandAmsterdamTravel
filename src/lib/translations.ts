@@ -95,6 +95,7 @@ export const translations: Record<
     amsTrafficSubtitle: string;
     offlineMapTip: string;
     latLngLabel: string;
+    pwaOfflineUseGps: string;
   }
 > = {
   en: {
@@ -189,6 +190,7 @@ export const translations: Record<
     amsTrafficSubtitle: "Public transport, trains, and airport links for getting around Amsterdam.",
     offlineMapTip: "Please confirm you have downloaded Iceland offline map in Google Maps App.",
     latLngLabel: "Lat, Lng",
+    pwaOfflineUseGps: "Choose GPS location",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -282,6 +284,7 @@ export const translations: Record<
     amsTrafficSubtitle: "大眾運輸、火車與機場交通連結，方便在阿姆斯特丹移動。",
     offlineMapTip: "請確認已在 Google Maps App 中下載冰島離線地圖。",
     latLngLabel: "緯度／經度",
+    pwaOfflineUseGps: "選擇 GPS 座標導航",
   },
 };
 
