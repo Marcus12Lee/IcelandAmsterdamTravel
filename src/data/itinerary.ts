@@ -407,6 +407,7 @@ export const itinerary: Itinerary = {
       hotel: {
         name: "Loa's Nest",
         address: "851 Hella, Iceland",
+        phone: "+354 894 9151",
         coordinates: { lat: 63.872796, lng: -20.328638 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=Loa%27s+Nest+851+Hella+Iceland",
       },
