@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Dark purple theme
+        // Visuo-style dark theme
         surface: {
-          DEFAULT: "#1a1620",
-          light: "#221c2e",
-          dark: "#0f0a14",
+          DEFAULT: "#16161d",
+          light: "#1e1e26",
+          dark: "#0f0f14",
         },
         accent: {
           DEFAULT: "#8b5cf6",
