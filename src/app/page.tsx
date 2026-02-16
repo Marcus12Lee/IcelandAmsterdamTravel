@@ -8,6 +8,7 @@ import { ForecastLinksSection } from "@/components/ForecastLinksSection";
 import { IcelandMap } from "@/components/IcelandMap";
 import { AmsterdamMap } from "@/components/AmsterdamMap";
 import { DriverInfoSection } from "@/components/DriverInfoSection";
+import { CarRentalArrivalGuide } from "@/components/CarRentalArrivalGuide";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
 import { itinerary } from "@/data/itinerary";
@@ -44,17 +45,32 @@ export default function DashboardPage() {
       </header>
 
       {/* Hero */}
-      <section className="mb-12 flex flex-col items-center text-center">
+      <section className="mb-20 flex flex-col items-center text-center sm:mb-24">
         <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/5 px-4 py-1.5 text-sm text-frost-silver">
           {t("travelCompanion")}
         </span>
-        <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        <h1
+          className="max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl"
+          style={{
+            textShadow: "0 0 24px rgba(167,196,188,0.35), 0 0 48px rgba(167,196,188,0.2)",
+          }}
+        >
           {itinerary.tripName}
         </h1>
-        <p className="mt-4 max-w-xl text-lg text-frost-slate">
-          Countdown, itinerary, weather and map for your Iceland and Amsterdam trip.
+        <p className="mt-6 max-w-xl text-lg font-normal text-frost-slate">
+          {t("heroDescriptionLine1")}
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <p className="mt-2 max-w-xl text-lg font-bold text-white">
+          {t("heroDescriptionLine2")}
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-medium uppercase tracking-wider">
+          <span className="text-[#A7C4BC]">{t("heroTag1")}</span>
+          <span className="text-white/30" aria-hidden>•</span>
+          <span className="text-[#A7C4BC]">{t("heroTag2")}</span>
+          <span className="text-white/30" aria-hidden>•</span>
+          <span className="text-[#A7C4BC]">{t("heroTag3")}</span>
+        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href="#trip-plans"
             className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
@@ -72,6 +88,12 @@ export default function DashboardPage() {
             className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
           >
             {t("shortcutWeatherForecast")}
+          </a>
+          <a
+            href="#car-rental-arrival-guide"
+            className="rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-lg transition hover:bg-frost-silver"
+          >
+            {t("shortcutCarRental")}
           </a>
         </div>
       </section>
@@ -126,7 +148,8 @@ export default function DashboardPage() {
         <AmsterdamMap points={getAmsterdamStops(itinerary.days)} />
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 space-y-8">
+        <CarRentalArrivalGuide />
         <DriverInfoSection drivers={drivers} />
       </div>
 

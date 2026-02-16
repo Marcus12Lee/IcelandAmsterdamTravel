@@ -73,6 +73,24 @@ export const translations: Record<
     shortcutItinerary: string;
     shortcutCurrency: string;
     shortcutWeatherForecast: string;
+    shortcutCarRental: string;
+    heroDescriptionLine1: string;
+    heroDescriptionLine2: string;
+    heroTag1: string;
+    heroTag2: string;
+    heroTag3: string;
+    carRentalArrivalTitle: string;
+    carRentalArrivalSubtitle: string;
+    carRentalBookingLabel: string;
+    carRentalStep1Title: string;
+    carRentalStep1Desc: string;
+    carRentalStep2Title: string;
+    carRentalStep2Desc: string;
+    carRentalStep3Title: string;
+    carRentalStep3Desc: string;
+    carRentalViewMap: string;
+    carRentalBookShuttle: string;
+    carRentalAssistance: string;
   }
 > = {
   en: {
@@ -145,6 +163,24 @@ export const translations: Record<
     shortcutItinerary: "Trip plans",
     shortcutCurrency: "Currency converter",
     shortcutWeatherForecast: "Weather & forecast links",
+    shortcutCarRental: "Car rental arrival",
+    heroDescriptionLine1: "Integrated itinerary for Iceland & Amsterdam.",
+    heroDescriptionLine2: "Skip the chat logs. Forget Notion. One-tap navigation and daily plans, all in one place.",
+    heroTag1: "Zero Chat Searching",
+    heroTag2: "One-Tap Maps",
+    heroTag3: "Real-Time Sync",
+    carRentalArrivalTitle: "Car Rental Arrival Guide",
+    carRentalArrivalSubtitle: "Lotus Car Rental – KEF airport pick-up",
+    carRentalBookingLabel: "Booking number",
+    carRentalStep1Title: "Arrival",
+    carRentalStep1Desc: "Clear customs and collect baggage.",
+    carRentalStep2Title: "Meeting point",
+    carRentalStep2Desc: "Find the Lotus Car Rental meeting area.",
+    carRentalStep3Title: "Shuttle",
+    carRentalStep3Desc: "Take the shuttle to the rental office.",
+    carRentalViewMap: "View airport map",
+    carRentalBookShuttle: "Book shuttle now",
+    carRentalAssistance: "Lotus Assistance Portal",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -216,6 +252,24 @@ export const translations: Record<
     shortcutItinerary: "行程與景點",
     shortcutCurrency: "幣別換算",
     shortcutWeatherForecast: "天氣與預報連結",
+    shortcutCarRental: "租車抵達指南",
+    heroDescriptionLine1: "冰島與阿姆斯特丹整合行程。",
+    heroDescriptionLine2: "別再翻聊天紀錄。忘掉 Notion。一鍵導航與每日計畫，通通在這裡。",
+    heroTag1: "Zero Chat Searching",
+    heroTag2: "One-Tap Maps",
+    heroTag3: "Real-Time Sync",
+    carRentalArrivalTitle: "租車抵達指南",
+    carRentalArrivalSubtitle: "Lotus Car Rental – 凱夫拉維克機場取車",
+    carRentalBookingLabel: "訂單編號",
+    carRentalStep1Title: "抵達",
+    carRentalStep1Desc: "通關、領取行李。",
+    carRentalStep2Title: "集合點",
+    carRentalStep2Desc: "前往 Lotus Car Rental 集合處。",
+    carRentalStep3Title: "接駁車",
+    carRentalStep3Desc: "搭乘接駁車至租車辦公室。",
+    carRentalViewMap: "查看機場地圖",
+    carRentalBookShuttle: "預約接駁車",
+    carRentalAssistance: "Lotus Assistance Portal",
   },
 };
 
