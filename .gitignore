@@ -32,3 +32,13 @@ Thumbs.db
 # TypeScript
 next-env.d.ts
 *.tsbuildinfo
+
+# PWA generated (rebuilt on each build)
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
+public/swe-worker-*.js
+public/swe-worker-*.js.map
+public/worker-*.js
+public/fallback-*.js
