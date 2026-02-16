@@ -407,7 +407,7 @@ export const itinerary: Itinerary = {
       hotel: {
         name: "Loa's Nest",
         address: "851 Hella, Iceland",
-        coordinates: { lat: 63.8343, lng: -20.3942 },
+        coordinates: { lat: 63.872796, lng: -20.328638 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=Loa%27s+Nest+851+Hella+Iceland",
       },
       notes: [
@@ -434,7 +434,7 @@ export const itinerary: Itinerary = {
         name: "Vagnsstadir Guesthouse",
         address: "F985, 781 Hornafjörður, Iceland",
         phone: "+354 854 3133",
-        coordinates: { lat: 64.5385, lng: -14.3894 },
+        coordinates: { lat: 64.181849, lng: -15.810204 },
         mapUrl: "https://maps.app.goo.gl/ptdZ398wpUCnN3kWA",
       },
       notes: [
@@ -462,7 +462,7 @@ export const itinerary: Itinerary = {
         name: "Vagnsstadir Guesthouse",
         address: "F985, 781 Hornafjörður, Iceland",
         phone: "+354 854 3133",
-        coordinates: { lat: 64.5385, lng: -14.3894 },
+        coordinates: { lat: 64.181849, lng: -15.810204 },
         mapUrl: "https://maps.app.goo.gl/ptdZ398wpUCnN3kWA",
       },
       notes: [
@@ -486,7 +486,7 @@ export const itinerary: Itinerary = {
         name: "Sólheimahjáleiga Guesthouse",
         address: "Sólheimahjáleiguvegur, 871 Iceland",
         phone: "+354 864 2919",
-        coordinates: { lat: 63.531, lng: -19.363 },
+        coordinates: { lat: 63.490022, lng: -19.321517 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimahj%C3%A1leiga+Guesthouse+871+Iceland",
       },
       notes: [
@@ -505,7 +505,7 @@ export const itinerary: Itinerary = {
         name: "Sólheimahjáleiga Guesthouse",
         address: "Sólheimahjáleiguvegur, 871 Iceland",
         phone: "+354 864 2919",
-        coordinates: { lat: 63.531, lng: -19.363 },
+        coordinates: { lat: 63.490022, lng: -19.321517 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimahj%C3%A1leiga+Guesthouse+871+Iceland",
       },
       notes: [
@@ -524,7 +524,7 @@ export const itinerary: Itinerary = {
         name: "Icelandic Apartments by Heimaleiga",
         address: "Urðarhvarf, 203 Kópavogur, Iceland",
         phone: "+354 449 4904",
-        coordinates: { lat: 64.1124, lng: -21.9127 },
+        coordinates: { lat: 64.095987, lng: -21.806478 },
         mapUrl: "https://maps.app.goo.gl/jdE6fjTKqdmSPxHC8",
       },
       notes: [
@@ -549,7 +549,7 @@ export const itinerary: Itinerary = {
         name: "Icelandic Apartments by Heimaleiga",
         address: "Urðarhvarf, 203 Kópavogur, Iceland",
         phone: "+354 449 4904",
-        coordinates: { lat: 64.1124, lng: -21.9127 },
+        coordinates: { lat: 64.095987, lng: -21.806478 },
         mapUrl: "https://maps.app.goo.gl/jdE6fjTKqdmSPxHC8",
       },
       notes: [
@@ -571,7 +571,7 @@ export const itinerary: Itinerary = {
         name: "Guesthouse 1x6",
         address: "Vesturbraut 3, 230 Keflavík, Iceland",
         phone: "+354 857 1589",
-        coordinates: { lat: 63.999, lng: -22.5613 },
+        coordinates: { lat: 64.007075, lng: -22.558821 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=Guesthouse+1x6+Vesturbraut+3+Keflavik+Iceland",
       },
       notes: [
