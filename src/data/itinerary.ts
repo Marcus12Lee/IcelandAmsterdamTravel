@@ -320,7 +320,7 @@ export const itinerary: Itinerary = {
     {
       section: "🍽️ 冰島金圈美食",
       items: [
-        { text: "Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://maps.app.goo.gl/cAGUdLnULZ45SnMV7", lat: 64.2434, lng: -20.552138 },
+        { text: "Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://maps.app.goo.gl/cAGUdLnULZ45SnMV7", lat: 64.242431, lng: -20.551983 },
         { text: "Kaffi Krus：漢堡披薩", url: "https://maps.app.goo.gl/yY8q8t2hC6SycqMa6", lat: 63.9344, lng: -20.9972, note: "Kronan 超市旁順道補貨" },
         { text: "→ 體驗分享：Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://mimigo.tw/farmhotel-efstidalur/" },
         { text: "→ 體驗分享：Kaffi Krus 塞爾福斯北歐小館", url: "https://mimigo.tw/selfoss-kaffi-krus/" },
