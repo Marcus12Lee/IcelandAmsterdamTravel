@@ -3,16 +3,18 @@
 import Link from "next/link";
 import { IcelandMap } from "@/components/IcelandMap";
 import { TripPlansSection } from "@/components/TripPlansSection";
+import { IcelandHotelsSection } from "@/components/IcelandHotelsSection";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
 import { getTripPlanProps } from "@/lib/tripPlans";
-import { getIcelandRoute } from "@/lib/getIcelandRoute";
+import { getIcelandRoute, getIcelandHotels } from "@/lib/getIcelandRoute";
 import { itinerary } from "@/data/itinerary";
 
 export default function IcelandTripPlansPage() {
   const { t } = useLocale();
   const props = getTripPlanProps(itinerary.icelandTripPlans);
   const route = getIcelandRoute(itinerary.days, itinerary.icelandMapExtraStops);
+  const hotels = getIcelandHotels(itinerary.days);
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
@@ -43,7 +45,7 @@ export default function IcelandTripPlansPage() {
       </div>
 
       <div className="mb-8">
-<TripPlansSection
+        <TripPlansSection
           title={t("icelandTripPlans")}
           subtitle={t("icelandTripPlansSubtitle")}
           groups={props.groups}
@@ -52,7 +54,11 @@ export default function IcelandTripPlansPage() {
           linkStyle="button-transparent"
           linkVariant="blue"
           isIceland
-            />
+        />
+      </div>
+
+      <div className="mb-8">
+        <IcelandHotelsSection hotels={hotels} />
       </div>
 
       <footer className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-frost-slate">

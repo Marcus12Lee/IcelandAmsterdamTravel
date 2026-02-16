@@ -99,6 +99,10 @@ export const translations: Record<
     offlineMapsMeTip: string;
     openInMapsMe: string;
     openInGoogleMaps: string;
+    icelandHotelsTitle: string;
+    icelandHotelsSubtitle: string;
+    gpsLocation: string;
+    nights: string;
   }
 > = {
   en: {
@@ -197,6 +201,10 @@ export const translations: Record<
     offlineMapsMeTip: "When offline, choose: MAPS.ME (GPS) or Google Maps.",
     openInMapsMe: "MAPS.ME (GPS)",
     openInGoogleMaps: "Google Maps",
+    icelandHotelsTitle: "Iceland Hotels (GPS for offline)",
+    icelandHotelsSubtitle: "All booked hotels with GPS coordinates. Use MAPS.ME when offline.",
+    gpsLocation: "GPS",
+    nights: "Nights",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -294,6 +302,10 @@ export const translations: Record<
     offlineMapsMeTip: "離線時請選擇：MAPS.ME（GPS）或 Google 地圖。",
     openInMapsMe: "MAPS.ME（GPS）",
     openInGoogleMaps: "Google 地圖",
+    icelandHotelsTitle: "冰島住宿（離線 GPS）",
+    icelandHotelsSubtitle: "所有預訂住宿與 GPS 座標。離線時請使用 MAPS.ME。",
+    gpsLocation: "GPS",
+    nights: "住宿日期",
   },
 };
 

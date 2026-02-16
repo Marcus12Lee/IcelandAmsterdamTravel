@@ -59,6 +59,61 @@ export function getIcelandRoute(
   return points;
 }
 
+export interface IcelandHotelWithDates {
+  name: string;
+  address?: string;
+  phone?: string;
+  coordinates: { lat: number; lng: number };
+  mapUrl?: string;
+  /** e.g. "Feb 22" or "Feb 23–24" */
+  dateRange: string;
+}
+
+/**
+ * Returns unique Iceland hotels with date ranges and GPS coordinates (for offline MAPS.ME).
+ */
+export function getIcelandHotels(days: ItineraryDay[]): IcelandHotelWithDates[] {
+  const icelandDays = days.filter(
+    (d) => d.date >= ICELAND_START && d.date <= ICELAND_END
+  );
+  const result: IcelandHotelWithDates[] = [];
+  let i = 0;
+
+  while (i < icelandDays.length) {
+    const day = icelandDays[i];
+    const hotel = day.hotel;
+    if (!hotel?.name?.trim() || !hotel.coordinates) {
+      i++;
+      continue;
+    }
+    const startLabel = day.label;
+    let endLabel = startLabel;
+    let j = i + 1;
+    while (j < icelandDays.length) {
+      const next = icelandDays[j];
+      const nextKey = next.hotel?.coordinates
+        ? `${next.hotel.coordinates.lat},${next.hotel.coordinates.lng}`
+        : "";
+      const currKey = `${hotel.coordinates.lat},${hotel.coordinates.lng}`;
+      if (nextKey !== currKey) break;
+      endLabel = next.label;
+      j++;
+    }
+    const dateRange = startLabel === endLabel ? startLabel : `${startLabel}–${endLabel}`;
+    result.push({
+      name: hotel.name,
+      address: hotel.address,
+      phone: hotel.phone,
+      coordinates: hotel.coordinates,
+      mapUrl: hotel.mapUrl,
+      dateRange,
+    });
+    i = j;
+  }
+
+  return result;
+}
+
 /**
  * Builds Amsterdam hotel stops from itinerary (unique hotels with coordinates).
  */
