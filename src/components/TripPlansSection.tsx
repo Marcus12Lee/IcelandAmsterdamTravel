@@ -1,9 +1,15 @@
 "use client";
 
 import type { TripPlanItem, TripPlanGroup } from "@/types/itinerary";
+import { useLocale } from "@/context/LocaleContext";
 
 type LinkStyle = "default" | "button-transparent";
 type LinkVariant = "blue" | "mint";
+
+/** Deep link: opens Google Maps App or Apple Maps. Use when we have coordinates (Iceland, offline). */
+function geoHref(lat: number, lng: number): string {
+  return `geo:${lat},${lng}`;
+}
 
 /** Iceland: blue links. Only links containing this stay gray. AMS: use linkVariant="mint" for Recommended Choice. */
 const EXPERIENCE_SHARE_PREFIX = "→ 體驗分享";
@@ -18,13 +24,34 @@ interface TripPlansSectionProps {
   linkStyle?: LinkStyle;
   /** "mint" = Recommended Choice (muted mint border, off-white text, slight emerald glow) for AMS trip. */
   linkVariant?: LinkVariant;
+  /** Iceland: use geo: deep link, show offline tip and Lat/Lng for each attraction. */
+  isIceland?: boolean;
 }
 
-function PlanItem({ item, i, linkStyle = "default", linkVariant = "blue" }: { item: TripPlanItem; i: number; linkStyle?: LinkStyle; linkVariant?: LinkVariant }) {
+function PlanItem({
+  item,
+  i,
+  linkStyle = "default",
+  linkVariant = "blue",
+  isIceland = false,
+  latLngLabel,
+}: {
+  item: TripPlanItem;
+  i: number;
+  linkStyle?: LinkStyle;
+  linkVariant?: LinkVariant;
+  isIceland?: boolean;
+  latLngLabel: string;
+}) {
   const text = typeof item === "string" ? item : item.text;
-  const url = typeof item === "string" ? undefined : item.url;
+  const rawUrl = typeof item === "string" ? undefined : item.url;
+  const lat = typeof item === "string" ? undefined : item.lat;
+  const lng = typeof item === "string" ? undefined : item.lng;
   const time = typeof item === "string" ? undefined : item.time;
   const note = typeof item === "string" ? undefined : item.note;
+  const hasCoords = lat != null && lng != null;
+  /** Iceland + coords: deep link to open Maps app; otherwise use original url. */
+  const url = isIceland && hasCoords ? geoHref(lat, lng) : rawUrl;
 
   const isExperienceShare = typeof text === "string" && text.includes(EXPERIENCE_SHARE_PREFIX);
 
@@ -73,6 +100,11 @@ function PlanItem({ item, i, linkStyle = "default", linkVariant = "blue" }: { it
         {note && (
           <p className="mt-0.5 text-xs text-amber-400/90">Note：{note}</p>
         )}
+        {isIceland && hasCoords && (
+          <p className="mt-0.5 font-mono text-xs text-frost-slate">
+            {latLngLabel}：{lat},{lng}
+          </p>
+        )}
       </div>
     </li>
   );
@@ -86,7 +118,9 @@ export function TripPlansSection({
   emptyMessage = "Add your plans and places in src/data/itinerary.ts",
   linkStyle = "default",
   linkVariant = "blue",
+  isIceland = false,
 }: TripPlansSectionProps) {
+  const { t } = useLocale();
   const hasGroups = groups && groups.length > 0;
   const flatItems = hasGroups ? [] : items;
   const hasFlat = flatItems.length > 0;
@@ -95,6 +129,9 @@ export function TripPlansSection({
     <section className="rounded-2xl border border-white/10 bg-surface/90 p-6 shadow-xl backdrop-blur-sm">
       <h2 className="text-lg font-semibold text-white">{title}</h2>
       {subtitle && <p className="mt-1 text-xs text-frost-slate">{subtitle}</p>}
+      {isIceland && (
+        <p className="mt-1 text-xs text-amber-400/90">{t("offlineMapTip")}</p>
+      )}
       {hasGroups ? (
         <div className="mt-4 space-y-4">
           {groups!.map((group, gi) => (
@@ -104,7 +141,7 @@ export function TripPlansSection({
               </h3>
               <ul className="space-y-2">
                 {group.items.map((item, i) => (
-                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} />
+                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} latLngLabel={t("latLngLabel")} />
                 ))}
               </ul>
             </div>
@@ -113,7 +150,7 @@ export function TripPlansSection({
       ) : hasFlat ? (
         <ul className="mt-4 space-y-2">
           {flatItems.map((item, i) => (
-            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} />
+            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} latLngLabel={t("latLngLabel")} />
           ))}
         </ul>
       ) : (

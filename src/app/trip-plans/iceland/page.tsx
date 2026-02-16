@@ -50,7 +50,8 @@ export default function IcelandTripPlansPage() {
           items={props.items}
           emptyMessage={t("emptyPlansHint")}
           linkStyle="button-transparent"
-          linkVariant="mint"
+          linkVariant="blue"
+          isIceland
             />
       </div>
 

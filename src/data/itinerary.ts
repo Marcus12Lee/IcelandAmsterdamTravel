@@ -261,8 +261,8 @@ export const itinerary: Itinerary = {
     {
       section: "✅ 已預訂活動",
       items: [
-        { text: "2/24 9:30 冰川健行", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6", note: "集合：Jökulsárlón 停車場" },
-        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland", note: "Ritual 水療儀式" },
+        { text: "2/24 9:30 冰川健行", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6", lat: 64.0484, lng: -16.1794, note: "集合：Jökulsárlón 停車場" },
+        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland", lat: 64.0121, lng: -22.0397, note: "Ritual 水療儀式" },
       ],
     },
     {
@@ -271,6 +271,8 @@ export const itinerary: Itinerary = {
         {
           text: "Pakkhús Restaurant (龍蝦餐廳)",
           url: "https://maps.app.goo.gl/yrNKYbS5LmHxmB6J6",
+          lat: 64.2532,
+          lng: -15.2115,
           time: "12:00 – 21:00",
           note: "赫本市區必吃。",
         },
@@ -282,6 +284,8 @@ export const itinerary: Itinerary = {
         {
           text: "傑古沙龍冰河湖 (Jökulsárlón) 停車場 — 集合地點",
           url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6",
+          lat: 64.0484,
+          lng: -16.1794,
           note: "活動：冰川健行 + 藍冰洞探索",
         },
         { text: "Official website：Ice Cave Adventure (Local Guide)", url: "https://localguide.is/ice-cave-adventure/" },
@@ -294,18 +298,18 @@ export const itinerary: Itinerary = {
     {
       section: "🏛️ 雷克雅維克市區 (Reykjavik)",
       items: [
-        { text: "哈爾格林姆教堂 (Hallgrímskirkja)", url: "https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik+Iceland" },
-        { text: "哈帕音樂廳 (Harpa Concert Hall)", url: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik+Iceland" },
-        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland", note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
+        { text: "哈爾格林姆教堂 (Hallgrímskirkja)", url: "https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik+Iceland", lat: 64.1416, lng: -21.9266 },
+        { text: "哈帕音樂廳 (Harpa Concert Hall)", url: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik+Iceland", lat: 64.1503, lng: -21.9328 },
+        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland", lat: 64.0121, lng: -22.0397, note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
         { text: "→ 體驗分享：藍湖＆天空潟湖", url: "https://lilianyolo.wordpress.com/2025/04/11/冰島自駕自由行｜blue-lagoon-藍湖＆sky-lagoon-天空潟湖體驗全紀/" },
       ],
     },
     {
       section: "🌋 黃金圈 (Golden Circle)",
       items: [
-        { text: "辛格韋德利國家公園 (Þingvellir National Park)", url: "https://www.google.com/maps/search/?api=1&query=Thingvellir+National+Park+Iceland" },
-        { text: "史托克間歇噴泉 (Strokkur Geyser)", url: "https://www.google.com/maps/search/?api=1&query=Strokkur+Geyser+Iceland" },
-        { text: "古佛斯瀑布 (Gullfoss Falls)", url: "https://www.google.com/maps/search/?api=1&query=Gullfoss+Falls+Iceland" },
+        { text: "辛格韋德利國家公園 (Þingvellir National Park)", url: "https://www.google.com/maps/search/?api=1&query=Thingvellir+National+Park+Iceland", lat: 64.2554, lng: -21.1287 },
+        { text: "史托克間歇噴泉 (Strokkur Geyser)", url: "https://www.google.com/maps/search/?api=1&query=Strokkur+Geyser+Iceland", lat: 64.3126, lng: -20.2994 },
+        { text: "古佛斯瀑布 (Gullfoss Falls)", url: "https://www.google.com/maps/search/?api=1&query=Gullfoss+Falls+Iceland", lat: 64.3261, lng: -20.1212 },
         { text: "→ 體驗分享：辛格韋勒國家公園必拍景點", url: "https://mimigo.tw/thingvallavatn/" },
         { text: "→ 體驗分享：Kerið Crater 6500年巨大火山口", url: "https://mimigo.tw/kerid-crater/" },
         { text: "→ 體驗分享：Bruarfoss 蒂芬尼藍瀑布", url: "https://mimigo.tw/bruarfoss-waterfall/" },
@@ -316,8 +320,8 @@ export const itinerary: Itinerary = {
     {
       section: "🍽️ 冰島金圈美食",
       items: [
-        { text: "Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://maps.app.goo.gl/cAGUdLnULZ45SnMV7" },
-        { text: "Kaffi Krus：漢堡披薩", url: "https://maps.app.goo.gl/yY8q8t2hC6SycqMa6", note: "Kronan 超市旁順道補貨" },
+        { text: "Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://maps.app.goo.gl/cAGUdLnULZ45SnMV7", lat: 64.183, lng: -20.783 },
+        { text: "Kaffi Krus：漢堡披薩", url: "https://maps.app.goo.gl/yY8q8t2hC6SycqMa6", lat: 63.9344, lng: -20.9972, note: "Kronan 超市旁順道補貨" },
         { text: "→ 體驗分享：Efsti-Dalur II 農場 (鮮奶冰淇淋)", url: "https://mimigo.tw/farmhotel-efstidalur/" },
         { text: "→ 體驗分享：Kaffi Krus 塞爾福斯北歐小館", url: "https://mimigo.tw/selfoss-kaffi-krus/" },
       ],
@@ -325,20 +329,20 @@ export const itinerary: Itinerary = {
     {
       section: "🌊 南岸與東南邊 (South & South East)",
       items: [
-        { text: "塞里雅蘭瀑布 (Seljalandsfoss) + Gljúfrabúi 瀑布", url: "https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland", note: "Gljúfrabúi 是隱藏在岩縫中的祕境瀑布，就在塞里雅蘭旁邊。" },
-        { text: "斯科加爾瀑布 (Skógafoss)", url: "https://www.google.com/maps/search/?api=1&query=Skogafoss+Iceland" },
-        { text: "飛機殘骸遺址 (Sólheimasandur Plane Wreck)", url: "https://www.google.com/maps/search/?api=1&query=Solheimasandur+Plane+Wreck+Iceland", note: "從停車場走到殘骸處單程約 45–60 分鐘。現場通常有付費接駁車。" },
-        { text: "斯卡夫塔冰川健行 (Skaftafell / Falljökull)", url: "https://www.google.com/maps/search/?api=1&query=Skaftafell+Glacier+Iceland", note: "大部分冰川健行團在此集合。" },
-        { text: "鑽石冰沙灘 (Diamond Beach) 781", url: "https://maps.app.goo.gl/Gkuj6zXzzuZHSJuF9" },
-        { text: "Sea Viewpoint (靠近 Höfn 方向)", url: "https://www.google.com/maps/search/?api=1&query=Sea+Viewpoint+Hofn+Iceland" },
+        { text: "塞里雅蘭瀑布 (Seljalandsfoss) + Gljúfrabúi 瀑布", url: "https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland", lat: 63.6157, lng: -19.9893, note: "Gljúfrabúi 是隱藏在岩縫中的祕境瀑布，就在塞里雅蘭旁邊。" },
+        { text: "斯科加爾瀑布 (Skógafoss)", url: "https://www.google.com/maps/search/?api=1&query=Skogafoss+Iceland", lat: 63.532, lng: -19.5113 },
+        { text: "飛機殘骸遺址 (Sólheimasandur Plane Wreck)", url: "https://www.google.com/maps/search/?api=1&query=Solheimasandur+Plane+Wreck+Iceland", lat: 63.4903, lng: -19.3643, note: "從停車場走到殘骸處單程約 45–60 分鐘。現場通常有付費接駁車。" },
+        { text: "斯卡夫塔冰川健行 (Skaftafell / Falljökull)", url: "https://www.google.com/maps/search/?api=1&query=Skaftafell+Glacier+Iceland", lat: 64.015, lng: -16.9753, note: "大部分冰川健行團在此集合。" },
+        { text: "鑽石冰沙灘 (Diamond Beach) 781", url: "https://maps.app.goo.gl/Gkuj6zXzzuZHSJuF9", lat: 64.0467, lng: -16.1778 },
+        { text: "Sea Viewpoint (靠近 Höfn 方向)", url: "https://www.google.com/maps/search/?api=1&query=Sea+Viewpoint+Hofn+Iceland", lat: 64.2592, lng: -15.2099 },
       ],
     },
     {
       section: "🦭 西邊斯奈山半島 (Snæfellsnes Peninsula)",
       items: [
-        { text: "海豹沙灘 (Ytri Tunga)", url: "https://www.google.com/maps/search/?api=1&query=Ytri+Tunga+Iceland" },
-        { text: "布迪爾黑教堂 (Búðakirkja)", url: "https://www.google.com/maps/search/?api=1&query=Budakirkja+Black+Church+Iceland" },
-        { text: "瓦汀舍利爾洞穴 (Vatnshellir Cave)", url: "https://www.google.com/maps/search/?api=1&query=Vatnshellir+Cave+Iceland", note: "需預約，約台幣 1,000 / 人。" },
+        { text: "海豹沙灘 (Ytri Tunga)", url: "https://www.google.com/maps/search/?api=1&query=Ytri+Tunga+Iceland", lat: 64.8699, lng: -23.5544 },
+        { text: "布迪爾黑教堂 (Búðakirkja)", url: "https://www.google.com/maps/search/?api=1&query=Budakirkja+Black+Church+Iceland", lat: 64.8217, lng: -23.3863 },
+        { text: "瓦汀舍利爾洞穴 (Vatnshellir Cave)", url: "https://www.google.com/maps/search/?api=1&query=Vatnshellir+Cave+Iceland", lat: 64.7489, lng: -23.7733, note: "需預約，約台幣 1,000 / 人。" },
       ],
     },
     {

@@ -30,24 +30,26 @@ const LOCAL_CLOCKS: { label: string; timeZone: string }[] = [
   { label: "Iceland", timeZone: "Atlantic/Reykjavik" },
 ];
 
+/** Placeholder until mount so server and client match (avoids hydration error). */
 function useLocalClocks() {
   const [clocks, setClocks] = useState(() =>
-    LOCAL_CLOCKS.map(({ label, timeZone }) => ({
-      label,
-      value: formatLocalTime(new Date(), timeZone),
-    }))
+    LOCAL_CLOCKS.map(({ label }) => ({ label, value: "–" }))
   );
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   useEffect(() => {
-    const id = setInterval(() => {
+    if (!mounted) return;
+    const update = () =>
       setClocks(
         LOCAL_CLOCKS.map(({ label, timeZone }) => ({
           label,
           value: formatLocalTime(new Date(), timeZone),
         }))
       );
-    }, 1000);
+    update();
+    const id = setInterval(update, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [mounted]);
   return clocks;
 }
 
@@ -118,7 +120,7 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
             <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
               {label === "Iceland" ? "Iceland:" : label}
             </p>
-            <p className="font-mono text-sm tabular-nums text-white/90 sm:text-base">
+            <p className="font-mono text-sm tabular-nums text-white/90 sm:text-base" suppressHydrationWarning>
               {value}
             </p>
           </div>
@@ -138,6 +140,7 @@ export function CountdownTimer({ keyDates }: CountdownTimerProps) {
                 color: "#A7C4BC",
                 textShadow: "0 0 20px rgba(167, 196, 188, 0.5), 0 0 40px rgba(167, 196, 188, 0.25)",
               }}
+              suppressHydrationWarning
             >
               {String(value).padStart(2, "0")}
             </span>
