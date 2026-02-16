@@ -96,6 +96,9 @@ export const translations: Record<
     offlineMapTip: string;
     latLngLabel: string;
     pwaOfflineUseGps: string;
+    offlineMapsMeTip: string;
+    openInMapsMe: string;
+    openInGoogleMaps: string;
   }
 > = {
   en: {
@@ -191,6 +194,9 @@ export const translations: Record<
     offlineMapTip: "Please confirm you have downloaded Iceland offline map in Google Maps App.",
     latLngLabel: "Lat, Lng",
     pwaOfflineUseGps: "Choose GPS location",
+    offlineMapsMeTip: "When offline, choose: MAPS.ME (GPS) or Google Maps.",
+    openInMapsMe: "MAPS.ME (GPS)",
+    openInGoogleMaps: "Google Maps",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -285,6 +291,9 @@ export const translations: Record<
     offlineMapTip: "請確認已在 Google Maps App 中下載冰島離線地圖。",
     latLngLabel: "緯度／經度",
     pwaOfflineUseGps: "選擇 GPS 座標導航",
+    offlineMapsMeTip: "離線時請選擇：MAPS.ME（GPS）或 Google 地圖。",
+    openInMapsMe: "MAPS.ME（GPS）",
+    openInGoogleMaps: "Google 地圖",
   },
 };
 

@@ -261,8 +261,8 @@ export const itinerary: Itinerary = {
     {
       section: "✅ 已預訂活動",
       items: [
-        { text: "2/24 9:30 冰川健行", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6", lat: 64.0484, lng: -16.1794, note: "集合：Jökulsárlón 停車場" },
-        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.1164891, lng: -21.9488657, note: "Ritual 水療儀式" },
+        { text: "2/24 9:30 冰川健行", url: "https://maps.app.goo.gl/huRrgov3aFGNE2TY6", lat: 64.048627, lng: -16.179607, note: "集合：Jökulsárlón 停車場" },
+        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.116465, lng: -21.946436, note: "Ritual 水療儀式" },
       ],
     },
     {
@@ -283,9 +283,9 @@ export const itinerary: Itinerary = {
       items: [
         {
           text: "傑古沙龍冰河湖 (Jökulsárlón) 停車場 — 集合地點",
-          url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6",
-          lat: 64.0484,
-          lng: -16.1794,
+          url: "https://maps.app.goo.gl/huRrgov3aFGNE2TY6",
+          lat: 64.048627,
+          lng: -16.179607,
           note: "活動：冰川健行 + 藍冰洞探索",
         },
         { text: "Official website：Ice Cave Adventure (Local Guide)", url: "https://localguide.is/ice-cave-adventure/" },
@@ -300,7 +300,7 @@ export const itinerary: Itinerary = {
       items: [
         { text: "哈爾格林姆教堂 (Hallgrímskirkja)", url: "https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik+Iceland", lat: 64.1416, lng: -21.9266 },
         { text: "哈帕音樂廳 (Harpa Concert Hall)", url: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik+Iceland", lat: 64.1503, lng: -21.9328 },
-        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.1164891, lng: -21.9488657, note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
+        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.116465, lng: -21.946436, note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
         { text: "→ 體驗分享：藍湖＆天空潟湖", url: "https://lilianyolo.wordpress.com/2025/04/11/冰島自駕自由行｜blue-lagoon-藍湖＆sky-lagoon-天空潟湖體驗全紀/" },
       ],
     },
@@ -435,7 +435,7 @@ export const itinerary: Itinerary = {
         address: "F985, 781 Hornafjörður, Iceland",
         phone: "+354 854 3133",
         coordinates: { lat: 64.5385, lng: -14.3894 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Vagnsstadir+Guesthouse+F985+Hornafjordur+Iceland",
+        mapUrl: "https://maps.app.goo.gl/ptdZ398wpUCnN3kWA",
       },
       notes: [
         "08:30 海拉出發：晨曦中啟程，避開全黑駕駛，確保有充足日光看瀑布。",
@@ -463,7 +463,7 @@ export const itinerary: Itinerary = {
         address: "F985, 781 Hornafjörður, Iceland",
         phone: "+354 854 3133",
         coordinates: { lat: 64.5385, lng: -14.3894 },
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Vagnsstadir+Guesthouse+F985+Hornafjordur+Iceland",
+        mapUrl: "https://maps.app.goo.gl/ptdZ398wpUCnN3kWA",
       },
       notes: [
         "Ice Cave Discovery（冰川健行 + 藍冰洞探索）集合：Jökulsárlón 停車場",
@@ -472,7 +472,7 @@ export const itinerary: Itinerary = {
         "如果冰川健行取消，挪到 Vík 冰川健行",
       ],
       noteLinks: [
-        { text: "Jökulsárlón 停車場（集合地點）", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6" },
+        { text: "Jökulsárlón 停車場（集合地點）", url: "https://maps.app.goo.gl/huRrgov3aFGNE2TY6", lat: 64.048627, lng: -16.179607 },
       ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 2", stops: [] },
@@ -535,7 +535,7 @@ export const itinerary: Itinerary = {
         "3. 天空之湖溫泉（水療儀式）",
       ],
       noteLinks: [
-        { text: "Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69" },
+        { text: "Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.116465, lng: -21.946436 },
       ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 5", stops: [] },

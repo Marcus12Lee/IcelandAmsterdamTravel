@@ -37,6 +37,8 @@ function PlanItem({
   isIceland = false,
   isOnline = true,
   latLngLabel,
+  openInMapsMeLabel,
+  openInGoogleMapsLabel,
 }: {
   item: TripPlanItem;
   i: number;
@@ -45,6 +47,8 @@ function PlanItem({
   isIceland?: boolean;
   isOnline?: boolean;
   latLngLabel: string;
+  openInMapsMeLabel: string;
+  openInGoogleMapsLabel: string;
 }) {
   const text = typeof item === "string" ? item : item.text;
   const rawUrl = typeof item === "string" ? undefined : item.url;
@@ -53,18 +57,14 @@ function PlanItem({
   const time = typeof item === "string" ? undefined : item.time;
   const note = typeof item === "string" ? undefined : item.note;
   const hasCoords = lat != null && lng != null;
-  /** Online: use Google link (rawUrl). Offline + Iceland + coords: use geo: to open Maps app. */
-  const url =
-    isIceland && hasCoords && !isOnline
-      ? geoHref(lat, lng)
-      : rawUrl;
+  const showChoice = isIceland && hasCoords && !isOnline && rawUrl;
 
   const isExperienceShare = typeof text === "string" && text.includes(EXPERIENCE_SHARE_PREFIX);
 
-  const getLinkClasses = () => {
-    if (linkStyle !== "button-transparent" || !url) return "";
+  const getLinkClasses = (forExperienceShare?: boolean) => {
+    if (linkStyle !== "button-transparent") return "";
     const base = "inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition";
-    if (isExperienceShare) {
+    if (isExperienceShare || forExperienceShare) {
       return `${base} border-white/25 bg-white/5 text-gray-400 hover:border-white/40 hover:bg-white/10 hover:text-gray-200`;
     }
     if (linkVariant === "mint") {
@@ -77,10 +77,33 @@ function PlanItem({
     <li className="flex items-start gap-2 rounded-lg border border-white/10 bg-surface-light/50 px-3 py-2 text-sm text-frost-slate">
       <span className="mt-0.5 shrink-0 text-frost-silver">•</span>
       <div className="min-w-0 flex-1">
-        {url ? (
+        {showChoice ? (
+          <>
+            <span className="font-medium text-white/90">{text}</span>
+            <p className="mt-2 flex flex-wrap items-center gap-2">
+              <a
+                href={geoHref(lat!, lng!)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={getLinkClasses()}
+              >
+                {openInMapsMeLabel}
+              </a>
+              <span className="text-frost-silver">·</span>
+              <a
+                href={rawUrl!}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={getLinkClasses()}
+              >
+                {openInGoogleMapsLabel}
+              </a>
+            </p>
+          </>
+        ) : rawUrl ? (
           linkStyle === "button-transparent" ? (
             <a
-              href={url}
+              href={rawUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={getLinkClasses()}
@@ -89,7 +112,7 @@ function PlanItem({
             </a>
           ) : (
             <a
-              href={url}
+              href={rawUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent hover:decoration-accent"
@@ -150,7 +173,12 @@ export function TripPlansSection({
       <h2 className="text-lg font-semibold text-white">{title}</h2>
       {subtitle && <p className="mt-1 text-xs text-frost-slate">{subtitle}</p>}
       {isIceland && (
-        <p className="mt-1 text-xs text-amber-400/90">{t("offlineMapTip")}</p>
+        <>
+          <p className="mt-1 text-xs text-amber-400/90">{t("offlineMapTip")}</p>
+          {!isOnline && (
+            <p className="mt-1 text-xs text-amber-400/90">{t("offlineMapsMeTip")}</p>
+          )}
+        </>
       )}
       {hasGroups ? (
         <div className="mt-4 space-y-4">
@@ -161,7 +189,7 @@ export function TripPlansSection({
               </h3>
               <ul className="space-y-2">
                 {group.items.map((item, i) => (
-                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} isOnline={isOnline} latLngLabel={t("latLngLabel")} />
+                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} isOnline={isOnline} latLngLabel={t("latLngLabel")} openInMapsMeLabel={t("openInMapsMe")} openInGoogleMapsLabel={t("openInGoogleMaps")} />
                 ))}
               </ul>
             </div>
@@ -170,7 +198,7 @@ export function TripPlansSection({
       ) : hasFlat ? (
         <ul className="mt-4 space-y-2">
           {flatItems.map((item, i) => (
-            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} isOnline={isOnline} latLngLabel={t("latLngLabel")} />
+            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} isOnline={isOnline} latLngLabel={t("latLngLabel")} openInMapsMeLabel={t("openInMapsMe")} openInGoogleMapsLabel={t("openInGoogleMaps")} />
           ))}
         </ul>
       ) : (
