@@ -91,6 +91,8 @@ export const translations: Record<
     carRentalViewMap: string;
     carRentalBookShuttle: string;
     carRentalAssistance: string;
+    amsTrafficTitle: string;
+    amsTrafficSubtitle: string;
   }
 > = {
   en: {
@@ -181,6 +183,8 @@ export const translations: Record<
     carRentalViewMap: "View airport map",
     carRentalBookShuttle: "Book shuttle now",
     carRentalAssistance: "Lotus Assistance Portal",
+    amsTrafficTitle: "Amsterdam Traffic & Transit",
+    amsTrafficSubtitle: "Public transport, trains, and airport links for getting around Amsterdam.",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -270,6 +274,8 @@ export const translations: Record<
     carRentalViewMap: "查看機場地圖",
     carRentalBookShuttle: "預約接駁車",
     carRentalAssistance: "Lotus Assistance Portal",
+    amsTrafficTitle: "阿姆斯特丹交通資訊",
+    amsTrafficSubtitle: "大眾運輸、火車與機場交通連結，方便在阿姆斯特丹移動。",
   },
 };
 

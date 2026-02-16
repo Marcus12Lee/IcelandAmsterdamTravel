@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { TripPlansSection } from "@/components/TripPlansSection";
+import { AmsterdamTrafficSection } from "@/components/AmsterdamTrafficSection";
+import { NetherlandsTransitGuide } from "@/components/NetherlandsTransitGuide";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLocale } from "@/context/LocaleContext";
 import { getTripPlanProps } from "@/lib/tripPlans";
@@ -40,6 +42,14 @@ export default function AmsTripPlansPage() {
           linkVariant="mint"
         />
       </div>
+
+      <section id="ams-traffic" className="mb-8 scroll-mt-6">
+        <AmsterdamTrafficSection />
+      </section>
+
+      <section id="ams-transit-guide" className="mb-8 scroll-mt-6">
+        <NetherlandsTransitGuide />
+      </section>
 
       <footer className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-frost-slate">
         {t("footer")}
