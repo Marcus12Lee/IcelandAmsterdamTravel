@@ -61,8 +61,8 @@ export interface ItineraryDay {
   hotel?: DayHotel;
   /** Time-based notes / schedule for this day */
   notes?: string | string[];
-  /** Sub-links under notes (e.g. map links for meeting points) */
-  noteLinks?: { text: string; url: string }[];
+  /** Sub-links under notes (e.g. map links for meeting points). Optional lat/lng for offline GPS. */
+  noteLinks?: { text: string; url: string; lat?: number; lng?: number }[];
   /** 注意事項： reminders and cautions (separate section) */
   reminders?: string | string[];
   events: ItineraryEvent[];

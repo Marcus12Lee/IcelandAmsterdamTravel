@@ -17,7 +17,7 @@ function PlanHotelNotes({
   plan?: string | string[];
   hotel?: DayHotel;
   notes?: string | string[];
-  noteLinks?: { text: string; url: string }[];
+  noteLinks?: { text: string; url: string; lat?: number; lng?: number }[];
   t: TFunc;
 }) {
   const hasPlan = plan !== undefined && (Array.isArray(plan) ? plan.length > 0 : plan.trim() !== "");

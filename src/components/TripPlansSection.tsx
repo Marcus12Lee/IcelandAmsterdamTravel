@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { TripPlanItem, TripPlanGroup } from "@/types/itinerary";
 import { useLocale } from "@/context/LocaleContext";
 
@@ -24,7 +25,7 @@ interface TripPlansSectionProps {
   linkStyle?: LinkStyle;
   /** "mint" = Recommended Choice (muted mint border, off-white text, slight emerald glow) for AMS trip. */
   linkVariant?: LinkVariant;
-  /** Iceland: use geo: deep link, show offline tip and Lat/Lng for each attraction. */
+  /** Iceland: when offline use geo:; when online use Google link; show offline tip and Lat/Lng. */
   isIceland?: boolean;
 }
 
@@ -34,6 +35,7 @@ function PlanItem({
   linkStyle = "default",
   linkVariant = "blue",
   isIceland = false,
+  isOnline = true,
   latLngLabel,
 }: {
   item: TripPlanItem;
@@ -41,6 +43,7 @@ function PlanItem({
   linkStyle?: LinkStyle;
   linkVariant?: LinkVariant;
   isIceland?: boolean;
+  isOnline?: boolean;
   latLngLabel: string;
 }) {
   const text = typeof item === "string" ? item : item.text;
@@ -50,8 +53,11 @@ function PlanItem({
   const time = typeof item === "string" ? undefined : item.time;
   const note = typeof item === "string" ? undefined : item.note;
   const hasCoords = lat != null && lng != null;
-  /** Iceland + coords: deep link to open Maps app; otherwise use original url. */
-  const url = isIceland && hasCoords ? geoHref(lat, lng) : rawUrl;
+  /** Online: use Google link (rawUrl). Offline + Iceland + coords: use geo: to open Maps app. */
+  const url =
+    isIceland && hasCoords && !isOnline
+      ? geoHref(lat, lng)
+      : rawUrl;
 
   const isExperienceShare = typeof text === "string" && text.includes(EXPERIENCE_SHARE_PREFIX);
 
@@ -121,6 +127,20 @@ export function TripPlansSection({
   isIceland = false,
 }: TripPlansSectionProps) {
   const { t } = useLocale();
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setIsOnline(navigator.onLine);
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
+
   const hasGroups = groups && groups.length > 0;
   const flatItems = hasGroups ? [] : items;
   const hasFlat = flatItems.length > 0;
@@ -141,7 +161,7 @@ export function TripPlansSection({
               </h3>
               <ul className="space-y-2">
                 {group.items.map((item, i) => (
-                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} latLngLabel={t("latLngLabel")} />
+                  <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} isOnline={isOnline} latLngLabel={t("latLngLabel")} />
                 ))}
               </ul>
             </div>
@@ -150,7 +170,7 @@ export function TripPlansSection({
       ) : hasFlat ? (
         <ul className="mt-4 space-y-2">
           {flatItems.map((item, i) => (
-            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} latLngLabel={t("latLngLabel")} />
+            <PlanItem key={i} item={item} i={i} linkStyle={linkStyle} linkVariant={linkVariant} isIceland={isIceland} isOnline={isOnline} latLngLabel={t("latLngLabel")} />
           ))}
         </ul>
       ) : (
