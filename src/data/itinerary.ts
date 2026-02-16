@@ -262,7 +262,7 @@ export const itinerary: Itinerary = {
       section: "✅ 已預訂活動",
       items: [
         { text: "2/24 9:30 冰川健行", url: "https://maps.app.goo.gl/U9W2uvgZU4sEbPzZ6", lat: 64.0484, lng: -16.1794, note: "集合：Jökulsárlón 停車場" },
-        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://www.google.com/maps/search/?api=1&query=64.1164891,-21.9488657", lat: 64.1164891, lng: -21.9488657, note: "Ritual 水療儀式" },
+        { text: "2/27 16:30 Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.1164891, lng: -21.9488657, note: "Ritual 水療儀式" },
       ],
     },
     {
@@ -300,7 +300,7 @@ export const itinerary: Itinerary = {
       items: [
         { text: "哈爾格林姆教堂 (Hallgrímskirkja)", url: "https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik+Iceland", lat: 64.1416, lng: -21.9266 },
         { text: "哈帕音樂廳 (Harpa Concert Hall)", url: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik+Iceland", lat: 64.1503, lng: -21.9328 },
-        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://www.google.com/maps/search/?api=1&query=64.1164891,-21.9488657", lat: 64.1164891, lng: -21.9488657, note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
+        { text: "天空之湖溫泉 (Sky Lagoon)", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69", lat: 64.1164891, lng: -21.9488657, note: "含著名的 7-step Ritual 水療儀式。建議事先預訂。" },
         { text: "→ 體驗分享：藍湖＆天空潟湖", url: "https://lilianyolo.wordpress.com/2025/04/11/冰島自駕自由行｜blue-lagoon-藍湖＆sky-lagoon-天空潟湖體驗全紀/" },
       ],
     },
@@ -535,7 +535,7 @@ export const itinerary: Itinerary = {
         "3. 天空之湖溫泉（水療儀式）",
       ],
       noteLinks: [
-        { text: "Sky Lagoon 天空之湖", url: "https://www.google.com/maps/search/?api=1&query=64.1164891,-21.9488657" },
+        { text: "Sky Lagoon 天空之湖", url: "https://maps.app.goo.gl/kActQZzajG3vmwm69" },
       ],
       events: [
         { type: "day", title: "Iceland road trip", description: "Day 5", stops: [] },
