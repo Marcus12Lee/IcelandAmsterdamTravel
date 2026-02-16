@@ -34,7 +34,20 @@ interface IcelandMapProps {
 export function IcelandMap({ route: routeProp, referenceLink }: IcelandMapProps) {
   const { t } = useLocale();
   const [mounted, setMounted] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
   useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setIsOnline(navigator.onLine);
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
 
   const route = routeProp && routeProp.length > 0 ? routeProp : DEFAULT_ROUTE;
 
@@ -44,8 +57,16 @@ export function IcelandMap({ route: routeProp, referenceLink }: IcelandMapProps)
       <p className="mb-3 text-sm text-frost-slate">
         {t("mapDescription")}
       </p>
+      {!isOnline && (
+        <p className="mb-3 text-xs text-amber-400/90">{t("offlineMapsMeTip")}</p>
+      )}
       {mounted ? (
-        <MapInner route={route} />
+        <MapInner
+          route={route}
+          isOnline={isOnline}
+          openInMapsMeLabel={t("openInMapsMe")}
+          openInGoogleMapsLabel={t("openInGoogleMaps")}
+        />
       ) : (
         <div className="flex min-h-[280px] items-center justify-center rounded-xl border border-white/10 bg-surface-light/50 text-frost-slate">
           {t("loading")}

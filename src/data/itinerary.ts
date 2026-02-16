@@ -250,8 +250,8 @@ export const itinerary: Itinerary = {
   // Extra stops for Iceland map (restaurants, POIs)
   icelandMapExtraStops: [
     {
-      lat: 64.25029,
-      lng: -15.227,
+      lat: 64.25011,
+      lng: -15.203908,
       label: "Pakkhús Restaurant (龍蝦餐廳)",
       mapUrl: "https://maps.app.goo.gl/yrNKYbS5LmHxmB6J6",
     },
@@ -271,8 +271,8 @@ export const itinerary: Itinerary = {
         {
           text: "Pakkhús Restaurant (龍蝦餐廳)",
           url: "https://maps.app.goo.gl/yrNKYbS5LmHxmB6J6",
-          lat: 64.2532,
-          lng: -15.2115,
+          lat: 64.25011,
+          lng: -15.203908,
           time: "12:00 – 21:00",
           note: "赫本市區必吃。",
         },

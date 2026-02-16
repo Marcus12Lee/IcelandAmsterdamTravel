@@ -4,23 +4,16 @@ import { useEffect, useState } from "react";
 import { useLocale, type TFunc } from "@/context/LocaleContext";
 import type { ItineraryDay, FlightEvent, ActivityEvent, DayEvent, DayHotel } from "@/types/itinerary";
 
-/** When offline, use geo: so Maps app opens (GPS). When online, use Google Maps link. */
-function geoHref(lat: number, lng: number): string {
-  return `geo:${lat},${lng}`;
+/** MAPS.ME deep link: opens MAPS.ME app at coordinates. See https://github.com/mapsme/api-ios */
+function mapsMeHref(lat: number, lng: number): string {
+  return `mapswithme://map?ll=${lat},${lng}`;
 }
 
 function getMapHref(hotel: DayHotel, isOnline: boolean): string | undefined {
-  const { coordinates, mapUrl } = hotel;
-  if (!isOnline && coordinates?.lat != null && coordinates?.lng != null) {
-    return geoHref(coordinates.lat, coordinates.lng);
-  }
-  return mapUrl;
+  return hotel.mapUrl;
 }
 
 function getNoteLinkHref(link: { url: string; lat?: number; lng?: number }, isOnline: boolean): string {
-  if (!isOnline && link.lat != null && link.lng != null) {
-    return geoHref(link.lat, link.lng);
-  }
   return link.url;
 }
 
@@ -96,7 +89,7 @@ function PlanHotelNotes({
             if (!isOnline && hasCoords && mapUrl) {
               return (
                 <p className="mt-2 flex flex-wrap items-center gap-2 text-sm">
-                  <a href={geoHref(coordinates!.lat, coordinates!.lng)} target="_blank" rel="noopener noreferrer" className="text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent">
+                  <a href={mapsMeHref(coordinates!.lat, coordinates!.lng)} target="_blank" rel="noopener noreferrer" className="text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent">
                     {t("openInMapsMe")}
                   </a>
                   <span className="text-frost-silver">·</span>
@@ -148,7 +141,7 @@ function PlanHotelNotes({
                     {showChoice ? (
                       <span className="flex flex-wrap items-center gap-2">
                         <span className="text-frost-slate">{link.text}</span>
-                        <a href={geoHref(link.lat!, link.lng!)} target="_blank" rel="noopener noreferrer" className="text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent">
+                        <a href={mapsMeHref(link.lat!, link.lng!)} target="_blank" rel="noopener noreferrer" className="text-accent-light underline decoration-accent/60 underline-offset-2 hover:text-accent">
                           {t("openInMapsMe")}
                         </a>
                         <span className="text-frost-silver">·</span>

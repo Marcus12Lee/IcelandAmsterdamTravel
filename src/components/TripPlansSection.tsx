@@ -7,9 +7,9 @@ import { useLocale } from "@/context/LocaleContext";
 type LinkStyle = "default" | "button-transparent";
 type LinkVariant = "blue" | "mint";
 
-/** Deep link: opens Google Maps App or Apple Maps. Use when we have coordinates (Iceland, offline). */
-function geoHref(lat: number, lng: number): string {
-  return `geo:${lat},${lng}`;
+/** MAPS.ME deep link: opens MAPS.ME app at coordinates. See https://github.com/mapsme/api-ios */
+function mapsMeHref(lat: number, lng: number): string {
+  return `mapswithme://map?ll=${lat},${lng}`;
 }
 
 /** Iceland: blue links. Only links containing this stay gray. AMS: use linkVariant="mint" for Recommended Choice. */
@@ -82,7 +82,7 @@ function PlanItem({
             <span className="font-medium text-white/90">{text}</span>
             <p className="mt-2 flex flex-wrap items-center gap-2">
               <a
-                href={geoHref(lat!, lng!)}
+                href={mapsMeHref(lat!, lng!)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={getLinkClasses()}
