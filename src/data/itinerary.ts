@@ -435,7 +435,7 @@ export const itinerary: Itinerary = {
         name: "Vagnsstadir Guesthouse",
         address: "F985, 781 Hornafjörður, Iceland",
         phone: "+354 854 3133",
-        coordinates: { lat: 64.181849, lng: -15.810204 },
+        coordinates: { lat: 64.183062, lng: -15.80785 },
         mapUrl: "https://maps.app.goo.gl/ptdZ398wpUCnN3kWA",
       },
       notes: [
@@ -463,7 +463,7 @@ export const itinerary: Itinerary = {
         name: "Vagnsstadir Guesthouse",
         address: "F985, 781 Hornafjörður, Iceland",
         phone: "+354 854 3133",
-        coordinates: { lat: 64.181849, lng: -15.810204 },
+        coordinates: { lat: 64.183062, lng: -15.80785 },
         mapUrl: "https://maps.app.goo.gl/ptdZ398wpUCnN3kWA",
       },
       notes: [
@@ -487,7 +487,7 @@ export const itinerary: Itinerary = {
         name: "Sólheimahjáleiga Guesthouse",
         address: "Sólheimahjáleiguvegur, 871 Iceland",
         phone: "+354 864 2919",
-        coordinates: { lat: 63.490022, lng: -19.321517 },
+        coordinates: { lat: 63.49031, lng: -19.320071 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimahj%C3%A1leiga+Guesthouse+871+Iceland",
       },
       notes: [
@@ -506,7 +506,7 @@ export const itinerary: Itinerary = {
         name: "Sólheimahjáleiga Guesthouse",
         address: "Sólheimahjáleiguvegur, 871 Iceland",
         phone: "+354 864 2919",
-        coordinates: { lat: 63.490022, lng: -19.321517 },
+        coordinates: { lat: 63.49031, lng: -19.320071 },
         mapUrl: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimahj%C3%A1leiga+Guesthouse+871+Iceland",
       },
       notes: [
