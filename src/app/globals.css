@@ -55,3 +55,17 @@ a:focus-visible,
 button:focus-visible {
   @apply outline-2 outline-offset-2 outline-accent/70;
 }
+
+/* Trip summary print styles */
+.trip-summary-page .prose,
+.trip-summary-page .prose * {
+  text-align: left !important;
+}
+@media print {
+  .trip-summary-section:first-of-type {
+    page-break-after: always;
+  }
+  .trip-summary-section {
+    break-inside: avoid;
+  }
+}

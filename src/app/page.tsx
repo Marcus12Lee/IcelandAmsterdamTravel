@@ -108,6 +108,14 @@ export default function DashboardPage() {
 
       <section id="trip-plans" className="mb-8 scroll-mt-6">
         <h2 className="mb-4 text-xl font-semibold text-white">Trip plans</h2>
+        <div className="mb-4 flex justify-end">
+          <Link
+            href="/trip-summary"
+            className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-frost-slate transition hover:bg-white/10 hover:text-white"
+          >
+            {t("printTripSummary")}
+          </Link>
+        </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <Link
             href="/trip-plans/ams"
@@ -151,6 +159,18 @@ export default function DashboardPage() {
       <div className="mb-8 space-y-8">
         <CarRentalArrivalGuide />
         <DriverInfoSection drivers={drivers} />
+      </div>
+
+      <div className="mb-8 flex justify-center">
+        <Link
+          href="/trip-summary"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-white/10 hover:border-accent/40"
+        >
+          <span aria-hidden>📄</span>
+          {t("viewTripSummaryPdf")}
+        </Link>
       </div>
 
       <footer className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-frost-slate">

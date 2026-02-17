@@ -103,6 +103,10 @@ export const translations: Record<
     icelandHotelsSubtitle: string;
     gpsLocation: string;
     nights: string;
+    printTripSummary: string;
+    printOrSavePdf: string;
+    viewTripSummaryPdf: string;
+    tripNotPlannedYet: string;
   }
 > = {
   en: {
@@ -205,6 +209,10 @@ export const translations: Record<
     icelandHotelsSubtitle: "All booked hotels with GPS coordinates. Use MAPS.ME when offline.",
     gpsLocation: "GPS",
     nights: "Nights",
+    printTripSummary: "Print Trip Summary",
+    printOrSavePdf: "Print / Save as PDF",
+    viewTripSummaryPdf: "View Trip Summary PDF",
+    tripNotPlannedYet: "Itinerary not yet planned in detail. Above is a reference list.",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -306,6 +314,10 @@ export const translations: Record<
     icelandHotelsSubtitle: "所有預訂住宿與 GPS 座標。離線時請使用 MAPS.ME。",
     gpsLocation: "GPS",
     nights: "住宿日期",
+    printTripSummary: "列印行程摘要",
+    printOrSavePdf: "列印 / 儲存為 PDF",
+    viewTripSummaryPdf: "檢視行程摘要 PDF",
+    tripNotPlannedYet: "行程尚未詳細規劃，以上為參考清單。",
   },
 };
 
