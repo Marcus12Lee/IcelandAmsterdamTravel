@@ -135,7 +135,7 @@ export const itinerary: Itinerary = {
         },
         {
           text: "De Bijenkorf (蜂巢百貨)",
-          url: "https://maps.google.com/maps/contrib/101823263129660771153",
+          url: "https://maps.app.goo.gl/rNPGCh8PsoKQAQ3Y8",
           note: "高檔精品百貨，水壩廣場旁，冬天躲進去逛兼吹暖氣。",
         },
         {
