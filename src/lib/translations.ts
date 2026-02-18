@@ -107,6 +107,23 @@ export const translations: Record<
     printOrSavePdf: string;
     viewTripSummaryPdf: string;
     tripNotPlannedYet: string;
+    hotelPriceSheetTitle: string;
+    hotelPriceSheetSubtitle: string;
+    date: string;
+    address: string;
+    phone: string;
+    price: string;
+    downloadHotelPdf: string;
+    hotelPdfHint: string;
+    hotelPriceSheet: string;
+    newPrice: string;
+    newPricePlaceholder: string;
+    notesPlaceholder: string;
+    save: string;
+    saved: string;
+    eachPays: string;
+    eachPaysTotal: string;
+    eachPaysHint: string;
   }
 > = {
   en: {
@@ -213,6 +230,23 @@ export const translations: Record<
     printOrSavePdf: "Print / Save as PDF",
     viewTripSummaryPdf: "View Trip Summary PDF",
     tripNotPlannedYet: "Itinerary not yet planned in detail. Above is a reference list.",
+    hotelPriceSheetTitle: "Hotel Price Summary",
+    hotelPriceSheetSubtitle: "Note prices and details for each night. Download PDF to fill in offline.",
+    date: "Date",
+    address: "Address",
+    phone: "Phone",
+    price: "Price",
+    downloadHotelPdf: "Download PDF",
+    hotelPdfHint: "Run npm run generate-pdf-hotel to regenerate the PDF. Use Print / Save as PDF for a quick copy.",
+    hotelPriceSheet: "Hotel Price Sheet",
+    newPrice: "New price",
+    newPricePlaceholder: "e.g. 200 EUR",
+    notesPlaceholder: "e.g. Cancel by...",
+    save: "Save",
+    saved: "Saved!",
+    eachPays: "Each pays (÷3)",
+    eachPaysTotal: "Total (shared by 3)",
+    eachPaysHint: "Each person pays",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -318,6 +352,23 @@ export const translations: Record<
     printOrSavePdf: "列印 / 儲存為 PDF",
     viewTripSummaryPdf: "檢視行程摘要 PDF",
     tripNotPlannedYet: "行程尚未詳細規劃，以上為參考清單。",
+    hotelPriceSheetTitle: "住宿價格表",
+    hotelPriceSheetSubtitle: "記錄每晚價格與備註。下載 PDF 可離線填寫。",
+    date: "日期",
+    address: "地址",
+    phone: "電話",
+    price: "價格",
+    downloadHotelPdf: "下載 PDF",
+    hotelPdfHint: "執行 npm run generate-pdf-hotel 可重新產生 PDF。或使用列印／儲存為 PDF 快速複製。",
+    hotelPriceSheet: "住宿價格表",
+    newPrice: "新價格",
+    newPricePlaceholder: "例：200 EUR",
+    notesPlaceholder: "例：取消期限…",
+    save: "儲存",
+    saved: "已儲存！",
+    eachPays: "每人 (÷3)",
+    eachPaysTotal: "總計（3 人分攤）",
+    eachPaysHint: "每人",
   },
 };
 

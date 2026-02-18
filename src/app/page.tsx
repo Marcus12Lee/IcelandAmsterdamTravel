@@ -161,7 +161,7 @@ export default function DashboardPage() {
         <DriverInfoSection drivers={drivers} />
       </div>
 
-      <div className="mb-8 flex justify-center">
+      <div className="mb-8 flex flex-wrap justify-center gap-4">
         <Link
           href="/trip-summary"
           target="_blank"
@@ -170,6 +170,13 @@ export default function DashboardPage() {
         >
           <span aria-hidden>📄</span>
           {t("viewTripSummaryPdf")}
+        </Link>
+        <Link
+          href="/hotel-prices"
+          className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-white/10 hover:border-accent/40"
+        >
+          <span aria-hidden>🏨</span>
+          {t("hotelPriceSheet")}
         </Link>
       </div>
 
