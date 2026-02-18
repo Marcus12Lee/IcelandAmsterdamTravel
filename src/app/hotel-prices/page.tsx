@@ -12,14 +12,33 @@ import {
   type HotelPriceRow,
 } from "@/data/hotelPricesTemplate";
 
+const EUR_TO_TWD_FALLBACK = 34.5;
+
+function getEurToTwd(): number {
+  if (typeof window === "undefined") return EUR_TO_TWD_FALLBACK;
+  try {
+    const raw = localStorage.getItem("currency-rates");
+    if (!raw) return EUR_TO_TWD_FALLBACK;
+    const data = JSON.parse(raw) as { rates?: { EUR_TO_TWD?: number } };
+    return data?.rates?.EUR_TO_TWD ?? EUR_TO_TWD_FALLBACK;
+  } catch {
+    return EUR_TO_TWD_FALLBACK;
+  }
+}
+
 export default function HotelPricesPage() {
   const { t } = useLocale();
   const daysWithHotels = itinerary.days.filter((d) => d.hotel?.name?.trim());
 
   const [edits, setEdits] = useState<Record<string, HotelPriceRow>>({});
+  const [eurToTwd, setEurToTwd] = useState(EUR_TO_TWD_FALLBACK);
 
   useEffect(() => {
     setEdits(loadHotelPrices());
+    setEurToTwd(getEurToTwd());
+    const onStorage = () => setEurToTwd(getEurToTwd());
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
   }, []);
 
   const handleChange = (date: string, field: "newPrice" | "notes", value: string) => {
@@ -81,6 +100,9 @@ export default function HotelPricesPage() {
           {t("hotelPriceSheetTitle")}
         </h1>
         <p className="mt-2 text-frost-slate">{t("hotelPriceSheetSubtitle")}</p>
+        <p className="mt-1 text-xs text-frost-slate">
+          {t("eurToTwdRate")}: 1 EUR = {eurToTwd} TWD
+        </p>
       </header>
 
       <div className="overflow-x-auto rounded-xl border border-white/10 bg-surface/90 backdrop-blur-sm">
@@ -93,6 +115,7 @@ export default function HotelPricesPage() {
               <th className="px-4 py-3 font-semibold text-white">{t("phone")}</th>
               <th className="px-4 py-3 font-semibold text-accent-light">{t("price")}</th>
               <th className="px-4 py-3 font-semibold text-accent-light">{t("eachPays")}</th>
+              <th className="px-4 py-3 font-semibold text-accent-light">{t("twd")}</th>
               <th className="px-4 py-3 font-semibold text-accent-light">{t("newPrice")}</th>
               <th className="px-4 py-3 font-semibold text-white">{t("notes")}</th>
             </tr>
@@ -121,6 +144,14 @@ export default function HotelPricesPage() {
                       return v != null && v > 0 ? `${(v / 3).toFixed(2)} EUR` : (template.eachPays || "—");
                     })()}
                   </td>
+                  <td className="px-4 py-3 text-frost-slate">
+                    {(() => {
+                      const v = getEffectiveTotal(day.date);
+                      return v != null && v > 0
+                        ? `NT$ ${Math.round(v * eurToTwd).toLocaleString()}`
+                        : "—";
+                    })()}
+                  </td>
                   <td className="px-4 py-2">
                     <input
                       type="text"
@@ -133,7 +164,7 @@ export default function HotelPricesPage() {
                   <td className="px-4 py-2">
                     <input
                       type="text"
-                      value={row.notes}
+                      value={row.notes || template.notes}
                       onChange={(e) => handleChange(day.date, "notes", e.target.value)}
                       placeholder={t("notesPlaceholder")}
                       className="w-full min-w-[100px] rounded border border-white/20 bg-white/5 px-2 py-1.5 text-sm text-white placeholder:text-frost-slate/50 focus:border-accent/50 focus:outline-none print:border-0 print:bg-transparent print:p-0"
@@ -154,8 +185,11 @@ export default function HotelPricesPage() {
               <td className="px-4 py-3 font-semibold text-accent-light">
                 {eachPaysTotal.toFixed(2)} EUR
               </td>
+              <td className="px-4 py-3 text-frost-slate">
+                NT$ {Math.round(eachPaysTotal * eurToTwd).toLocaleString()}
+              </td>
               <td colSpan={2} className="px-4 py-3 text-frost-slate">
-                {t("eachPaysHint")}
+                {t("eachPaysHint")} · Total: NT$ {Math.round(totals.sum * eurToTwd).toLocaleString()}
               </td>
             </tr>
           </tfoot>

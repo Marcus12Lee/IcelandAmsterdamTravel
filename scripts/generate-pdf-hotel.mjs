@@ -13,19 +13,21 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUTPUT = join(ROOT, "public", "Hotel-Prices-Summary.pdf");
 
+const EUR_TO_TWD = 34.5;
+
 const HOTELS = [
-  { date: "Feb 20", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "374.65 EUR (2 nights)", eachPays: "124.88 EUR", newPrice: "", notes: "Cancel by 2/18" },
-  { date: "Feb 21", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "—", eachPays: "—", newPrice: "", notes: "—" },
-  { date: "Feb 22", name: "Loa's Nest", address: "851 Hella, Iceland", phone: "+354 894 9151", price: "165.60 EUR", eachPays: "55.20 EUR", newPrice: "", notes: "" },
-  { date: "Feb 23", name: "Vagnsstadir Guesthouse", address: "F985, 781 Hornafjörður, Iceland", phone: "+354 854 3133", price: "439.36 EUR (2 nights)", eachPays: "146.45 EUR", newPrice: "", notes: "" },
-  { date: "Feb 24", name: "Vagnsstadir Guesthouse", address: "F985, 781 Hornafjörður, Iceland", phone: "+354 854 3133", price: "—", eachPays: "—", newPrice: "", notes: "—" },
-  { date: "Feb 25", name: "Sólheimahjáleiga Guesthouse", address: "Sólheimahjáleiguvegur, 871 Iceland", phone: "+354 864 2919", price: "403.12 EUR (2 nights)", eachPays: "134.37 EUR", newPrice: "", notes: "" },
-  { date: "Feb 26", name: "Sólheimahjáleiga Guesthouse", address: "Sólheimahjáleiguvegur, 871 Iceland", phone: "+354 864 2919", price: "—", eachPays: "—", newPrice: "", notes: "—" },
-  { date: "Feb 27", name: "Icelandic Apartments by Heimaleiga", address: "Urðarhvarf, 203 Kópavogur, Iceland", phone: "+354 449 4904", price: "283.44 EUR (2 nights)", eachPays: "94.48 EUR", newPrice: "", notes: "" },
-  { date: "Feb 28", name: "Icelandic Apartments by Heimaleiga", address: "Urðarhvarf, 203 Kópavogur, Iceland", phone: "+354 449 4904", price: "—", eachPays: "—", newPrice: "", notes: "—" },
-  { date: "Mar 01", name: "Guesthouse 1x6", address: "Vesturbraut 3, 230 Keflavík, Iceland", phone: "+354 857 1589", price: "160.05 EUR", eachPays: "53.35 EUR", newPrice: "", notes: "" },
-  { date: "Mar 02", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "354.39 EUR (2 nights)", eachPays: "118.13 EUR", newPrice: "", notes: "Cancel by 2/28" },
-  { date: "Mar 03", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "—", eachPays: "—", newPrice: "", notes: "—" },
+  { date: "Feb 20", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "374.65 EUR (2 nights)", eachPays: "124.88 EUR", twd: "12,925", newPrice: "", notes: "Free Cancel by 2/18" },
+  { date: "Feb 21", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "—", eachPays: "—", twd: "—", newPrice: "", notes: "—" },
+  { date: "Feb 22", name: "Loa's Nest", address: "851 Hella, Iceland", phone: "+354 894 9151", price: "165.60 EUR", eachPays: "55.20 EUR", twd: "5,713", newPrice: "", notes: "Free Cancel by 2/19" },
+  { date: "Feb 23", name: "Vagnsstadir Guesthouse", address: "F985, 781 Hornafjörður, Iceland", phone: "+354 854 3133", price: "439.36 EUR (2 nights)", eachPays: "146.45 EUR", twd: "15,158", newPrice: "", notes: "Free Cancel by 2/20" },
+  { date: "Feb 24", name: "Vagnsstadir Guesthouse", address: "F985, 781 Hornafjörður, Iceland", phone: "+354 854 3133", price: "—", eachPays: "—", twd: "—", newPrice: "", notes: "—" },
+  { date: "Feb 25", name: "Sólheimahjáleiga Guesthouse", address: "Sólheimahjáleiguvegur, 871 Iceland", phone: "+354 864 2919", price: "403.12 EUR (2 nights)", eachPays: "134.37 EUR", twd: "13,908", newPrice: "", notes: "Free Cancel by 2/23" },
+  { date: "Feb 26", name: "Sólheimahjáleiga Guesthouse", address: "Sólheimahjáleiguvegur, 871 Iceland", phone: "+354 864 2919", price: "—", eachPays: "—", twd: "—", newPrice: "", notes: "—" },
+  { date: "Feb 27", name: "Icelandic Apartments by Heimaleiga", address: "Urðarhvarf, 203 Kópavogur, Iceland", phone: "+354 449 4904", price: "283.44 EUR (2 nights)", eachPays: "94.48 EUR", twd: "9,779", newPrice: "", notes: "Free Cancel by 2/22" },
+  { date: "Feb 28", name: "Icelandic Apartments by Heimaleiga", address: "Urðarhvarf, 203 Kópavogur, Iceland", phone: "+354 449 4904", price: "—", eachPays: "—", twd: "—", newPrice: "", notes: "—" },
+  { date: "Mar 01", name: "Guesthouse 1x6", address: "Vesturbraut 3, 230 Keflavík, Iceland", phone: "+354 857 1589", price: "160.05 EUR", eachPays: "53.35 EUR", twd: "5,522", newPrice: "", notes: "Free Cancel by 1/30" },
+  { date: "Mar 02", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "354.39 EUR (2 nights)", eachPays: "118.13 EUR", twd: "12,226", newPrice: "", notes: "Free Cancel by 2/28" },
+  { date: "Mar 03", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XL Amsterdam", phone: "+31 20 634 8000", price: "—", eachPays: "—", twd: "—", newPrice: "", notes: "—" },
 ];
 
 const rows = HOTELS.map(
@@ -37,6 +39,7 @@ const rows = HOTELS.map(
   <td>${h.phone}</td>
   <td>${h.price}</td>
   <td>${h.eachPays}</td>
+  <td>NT$ ${h.twd}</td>
   <td class="fill-cell">${h.newPrice}</td>
   <td class="fill-cell">${h.notes}</td>
 </tr>`
@@ -72,14 +75,14 @@ const HTML = `
     </div>
     <div class="summary">
       <div class="summary-title">Summary</div>
-      <div class="summary-item">NH Amsterdam Noord Feb 20–21: 374.65 EUR · Cancel by 2/18</div>
-      <div class="summary-item">NH Amsterdam Noord Mar 02–03: 354.39 EUR · Cancel by 2/28</div>
+      <div class="summary-item">NH Amsterdam Noord Feb 20–21: 374.65 EUR · Free Cancel by 2/18</div>
+      <div class="summary-item">NH Amsterdam Noord Mar 02–03: 354.39 EUR · Free Cancel by 2/28</div>
       <div class="summary-item">Loa's Nest Feb 22: 165.60 EUR</div>
       <div class="summary-item">Vagnsstadir Guesthouse Feb 23–24: 439.36 EUR</div>
       <div class="summary-item">Sólheimahjáleiga Guesthouse Feb 25–26: 403.12 EUR</div>
       <div class="summary-item">Icelandic Apartments Feb 27–28: 283.44 EUR</div>
       <div class="summary-item">Guesthouse 1x6 Mar 01: 160.05 EUR</div>
-      <div class="summary-item" style="margin-top:8px; font-weight:600;">Total: 2,180.61 EUR · Each pays (÷3): 726.87 EUR</div>
+      <div class="summary-item" style="margin-top:8px; font-weight:600;">Total: 2,180.61 EUR (NT$ 75,231) · Each pays: 726.87 EUR (NT$ 25,077) · 1 EUR = ${EUR_TO_TWD} TWD</div>
     </div>
     <table>
       <thead>
@@ -90,6 +93,7 @@ const HTML = `
           <th>Phone</th>
           <th>Price</th>
           <th>Each pays (÷3)</th>
+          <th>TWD (NT$)</th>
           <th>New price</th>
           <th>Notes</th>
         </tr>
@@ -102,7 +106,8 @@ const HTML = `
           <td colspan="4">Total (shared by 3)</td>
           <td>2,180.61 EUR</td>
           <td>726.87 EUR</td>
-          <td colspan="2">Each person pays 726.87 EUR</td>
+          <td>NT$ 25,077</td>
+          <td colspan="2">Each person pays 726.87 EUR (NT$ 25,077)</td>
         </tr>
       </tfoot>
     </table>

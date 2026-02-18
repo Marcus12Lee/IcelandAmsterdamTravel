@@ -124,6 +124,8 @@ export const translations: Record<
     eachPays: string;
     eachPaysTotal: string;
     eachPaysHint: string;
+    twd: string;
+    eurToTwdRate: string;
   }
 > = {
   en: {
@@ -247,6 +249,8 @@ export const translations: Record<
     eachPays: "Each pays (÷3)",
     eachPaysTotal: "Total (shared by 3)",
     eachPaysHint: "Each person pays",
+    twd: "TWD (NT$)",
+    eurToTwdRate: "Rate",
   },
   "zh-TW": {
     travelCompanion: "旅遊小幫手",
@@ -369,6 +373,8 @@ export const translations: Record<
     eachPays: "每人 (÷3)",
     eachPaysTotal: "總計（3 人分攤）",
     eachPaysHint: "每人",
+    twd: "台幣 (NT$)",
+    eurToTwdRate: "匯率",
   },
 };
 
